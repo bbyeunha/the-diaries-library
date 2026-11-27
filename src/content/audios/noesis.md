@@ -1,4 +1,5 @@
 ---
+formulaRefs: [{"slug":"aurelis","role":"main","version":"3.3"},{"slug":"continuum","role":"reinforcement","version":"II"},{"slug":"semantic-knowledge-integration","role":"technique"}]
 issue: "002"
 series: "NOESIS"
 code: "PROJECT 002"

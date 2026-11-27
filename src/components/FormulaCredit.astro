@@ -1,0 +1,7 @@
+---
+import Words from './Words.astro';
+import {archiveCopy} from '../lib/formulas';
+---
+<aside class="archive-credit">
+  {archiveCopy.note.map(line => <p><Words {...line}/></p>)}
+</aside>

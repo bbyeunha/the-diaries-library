@@ -1,0 +1,23 @@
+.archive {max-width:70rem;padding-block:1.5rem 4rem}
+.archive h1,.archive h2,.archive dt,.archive .motto {font-family:var(--font-display);font-weight:400}
+.archive h1 {font-size:clamp(2.8rem,6vw,5.3rem);line-height:.99;margin:.3em 0;overflow-wrap:anywhere;text-wrap:balance}
+.archive h2 {font-size:clamp(1.85rem,3.5vw,2.7rem);line-height:1.1;margin:.5em 0}
+.archive .motto {color:var(--accent);font-size:clamp(1.4rem,3vw,2rem);font-style:italic;margin:.4em 0}
+.archive-intro,.folio {display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;margin:1.4rem 0 3rem}
+.catalog,.principles {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem}
+.catalog-entry {border-bottom:1px solid var(--border);padding-bottom:1.6rem}
+.catalog-cover {display:block;padding:10px 10px 18px;background:var(--plate);color:var(--caption);text-align:center;text-decoration:none}
+.catalog-cover:hover {color:var(--caption)}
+.catalog-cover img {width:100%;height:clamp(12rem,22vw,16rem);object-fit:cover}
+.catalog-cover h2 {font-size:clamp(1.45rem,3vw,2rem);margin:.5em 0 .15em}
+.classification,.audio-ref small {font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.folio figure {margin:0;padding:.6rem;border:1px solid var(--border)}
+.folio img {width:100%;max-height:24rem;object-fit:contain;background:var(--surface)}
+.folio figcaption {font-size:.76rem;padding:.5em .3em;color:var(--muted)}
+.dossier section {margin:2.5rem 0;border-top:1px solid var(--border);padding-top:1rem}
+.essay {max-width:65ch}.principles {gap:1.3rem 3rem}.principles dt {font-size:1.5rem}.principles dd {margin:0}
+.audio-ref {display:flex;align-items:center;gap:1.3rem;text-decoration:none}.audio-ref img {width:min(30%,12rem);height:auto}.audio-ref strong {display:block;font:italic 1.6rem var(--font-display)}
+.archive-credit {margin:3rem 0 1rem;padding:1rem 0;border-top:1px solid var(--border);font-size:.9rem;color:var(--muted);max-width:72ch}
+.dossier[data-edition=syneris] h1 {font-style:italic}.dossier[data-edition=continuum] .folio figure {border-radius:50% 50% 0 0;overflow:hidden}.dossier[data-edition=semantic-knowledge-integration] .folio img {max-height:28rem}
+@media(min-width:681px){.dossier[data-edition=syneris] .folio figure,.dossier[data-edition=semantic-knowledge-integration] .folio figure {grid-column:1;grid-row:1}}
+@media(max-width:680px){.archive-intro,.folio,.catalog,.principles {grid-template-columns:1fr;gap:1.25rem}.catalog{gap:2rem}.folio img{max-height:18rem}}

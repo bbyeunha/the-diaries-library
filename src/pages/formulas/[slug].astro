@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Words from '../../components/Words.astro';
+import FormulaCredit from '../../components/FormulaCredit.astro';
+import { formulas, formulaUrl, artwork, relatedAudios } from '../../lib/formulas';
+import { withBase } from '../../lib/site';
+import '../../styles/formulas.css';
+export function getStaticPaths(){return formulas.map(f => ({ params:{slug:f.slug}, props:{f} }));}
+const { f } = Astro.props;
+const audios=relatedAudios(f.slug,await getCollection('audios'));
+const [ink,shadow,rule,accent,pale,paper]=f.colors;
+const light={bg:paper,surface:pale,text:ink,muted:shadow,accent:shadow,accentSoft:shadow,border:rule};
+const dark={bg:ink,surface:shadow,text:paper,muted:pale,accent:pale,accentSoft:accent,border:rule};
+const image=artwork(f.slug);
+---
+<BaseLayout title={f.name+' — '+f.subtitle+' | The Diaries Library'} description={f.philosophy[0].es+' '+f.philosophy[0].en} ogImage={new URL(image.src,Astro.site).href} pageTheme={{name:f.name,coverLayout:'spread',light,dark}}>
+<article class="shell archive dossier" data-edition={f.slug}>
+<a class="back-link" href={withBase('/formulas/')}><Words es="← Archivo de fórmulas" en="← The Formula Archives"/></a>
+<header class="folio"><div><p class="classification"><Words {...f.category}/> {f.version && ' · '+f.version}</p><h1>{f.name}</h1><p class="motto">{f.subtitle}</p>{f.identity && <p>{f.identity}</p>}</div>
+<figure><Image src={image} alt={f.art.title} widths={[400,700,1000]} sizes="(max-width: 680px) 90vw, 480px" format="webp"/><figcaption><a href={'https://www.clevelandart.org/art/'+f.art.id}>{f.art.title}</a> · Cleveland Museum of Art · CC0</figcaption></figure></header>
+<section class="essay"><h2><Words es="Filosofía" en="Philosophy"/></h2>{f.philosophy.map(p=><p><Words {...p}/></p>)}</section>
+<section><h2><Words es="Principios creativos" en="Creative principles"/></h2><dl class="principles">{f.principles.map(p=><div><dt><Words {...p.label}/></dt><dd><Words {...p.text}/></dd></div>)}</dl></section>
+{f.version && <section><h2><Words es="Versión pública" en="Public version"/></h2><p>{f.short} {f.version}{f.slug==='aurelis' && <> · <Words es="Primera implementación en NOESIS." en="First implementation featured in NOESIS."/></>}</p></section>}
+{f.note && <p class="essay"><Words {...f.note}/></p>}
+<section><h2><Words es={f.role==='main'?'Audios creados con esta fórmula':'Audios que la incorporan'} en={f.role==='main'?'Audios created with this formula':'Audios featuring this method'}/></h2>
+{audios.map(audio=><a class="audio-ref" href={withBase('/audios/'+audio.id+'/')}><Image src={audio.data.cover} alt="" width={240} format="webp"/><span><small>{audio.data.series==='NOESIS'?'NOESIS':audio.data.code} · <Words {...audio.data.category}/></small><strong>{audio.data.title} ↗</strong>{audio.data.formulaRefs.find(ref=>ref.slug===f.slug)?.version}</span></a>)}</section>
+{f.related.length>0 && <section><h2><Words es="Arquitecturas y técnicas relacionadas" en="Related architectures and techniques"/></h2>{f.related.map(slug=><p><a href={formulaUrl(slug)}>{formulas.find(item=>item.slug===slug)?.name} →</a></p>)}</section>}
+<FormulaCredit/><a class="back-link" href={withBase('/')}><Words es="← Volver a la biblioteca" en="← Back to the library"/></a></article></BaseLayout>

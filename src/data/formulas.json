@@ -1,0 +1,457 @@
+{
+  "archive": {
+    "intro": {
+      "es": "holiii, este es un pequeño archivo de las fórmulas y metodologías que voy desarrollando para mis audios. cada una nace de una idea diferente y tiene su propia filosofía, características y propósito. me gusta experimentar con la manera en que organizo las afirmaciones y explorar distintas formas de representar los beneficios que quiero incluir. aquí pueden conocer un poquito más sobre ese proceso creativo, sin entrar en los detalles privados de producción. ♡",
+      "en": "hiii, this is a little archive of the formulas and methodologies i'm developing for my audios. each one is born from a different idea and has its own philosophy, characteristics and purpose. i love experimenting with the way i organize affirmations and exploring different ways of representing the benefits i want to include. here you can learn a little more about that creative process, without getting into the private production details. ♡"
+    },
+    "note": [
+      {
+        "es": "las arquitecturas y técnicas de afirmaciones presentadas en este archivo son metodologías creativas desarrolladas por bbyeunha.",
+        "en": "the affirmation architectures and techniques featured in this archive are creative methodologies developed by bbyeunha."
+      },
+      {
+        "es": "este espacio comparte su filosofía, dirección creativa y características generales. los guiones originales, las estructuras internas y las metodologías de producción permanecen privados.",
+        "en": "this space shares their philosophy, creative direction and general characteristics. the original scripts, internal structures and production methodologies remain private."
+      },
+      {
+        "es": "estas fórmulas son marcos creativos experimentales y no mecanismos científicamente validados.",
+        "en": "these formulas are experimental creative frameworks, not scientifically validated mechanisms."
+      },
+      {
+        "es": "made for myself, shared with love. ♡",
+        "en": "made for myself, shared with love. ♡"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "slug": "aurelis",
+      "name": "AURELIS",
+      "short": "AURELIS",
+      "version": "3.3",
+      "category": {
+        "es": "Arquitectura general",
+        "en": "General architecture"
+      },
+      "role": "main",
+      "subtitle": "the architecture of expansion.",
+      "colors": [
+        "#211D17",
+        "#443628",
+        "#80633F",
+        "#B99A61",
+        "#D8C7A4",
+        "#F3EBDD"
+      ],
+      "art": {
+        "title": "The Court of Heaven — Initial G",
+        "id": "1930.105"
+      },
+      "related": [
+        "continuum",
+        "semantic-knowledge-integration"
+      ],
+      "identity": null,
+      "philosophy": [
+        {
+          "es": "AURELIS es una arquitectura experimental de afirmaciones que nació de mi fascinación por los beneficios extremadamente detallados.",
+          "en": "AURELIS is an experimental affirmation architecture born from my fascination with extremely detailed benefits."
+        },
+        {
+          "es": "Su propósito creativo es explorar un mismo objetivo desde múltiples perspectivas, desarrollando sus diferentes dimensiones y las relaciones que existen entre ellas.",
+          "en": "Its creative purpose is to explore a single objective from multiple perspectives, developing its different dimensions and the relationships between them."
+        },
+        {
+          "es": "Me gusta que los audios abarquen tanto las características generales de un objetivo como sus aspectos más específicos, incluyendo diferentes contextos, experiencias y posibilidades de aplicación.",
+          "en": "I enjoy creating audios that encompass both the general characteristics of an objective and its more specific aspects, including different contexts, experiences and possible applications."
+        },
+        {
+          "es": "AURELIS fue diseñada como una arquitectura flexible que puede adaptarse a diferentes temáticas.",
+          "en": "AURELIS was designed as a flexible architecture that can be adapted to different themes."
+        }
+      ],
+      "principles": [
+        {
+          "label": {
+            "es": "Hiperespecificidad",
+            "en": "Hyper-specificity"
+          },
+          "text": {
+            "es": "Exploración detallada de los diferentes aspectos de un objetivo.",
+            "en": "Detailed exploration of the different aspects of an objective."
+          }
+        },
+        {
+          "label": {
+            "es": "Expansión multidimensional",
+            "en": "Multidimensional expansion"
+          },
+          "text": {
+            "es": "Integración de diferentes capacidades, características y contextos relacionados con una misma temática.",
+            "en": "Integration of different abilities, characteristics and contexts related to a single theme."
+          }
+        },
+        {
+          "label": {
+            "es": "Integración conceptual",
+            "en": "Conceptual integration"
+          },
+          "text": {
+            "es": "Exploración de las relaciones existentes entre los diferentes beneficios.",
+            "en": "Exploration of the relationships between different intended benefits."
+          }
+        },
+        {
+          "label": {
+            "es": "Diversidad lingüística",
+            "en": "Linguistic diversity"
+          },
+          "text": {
+            "es": "Variedad creativa en las formas de expresar los objetivos del audio.",
+            "en": "Creative variety in the ways the audio's objectives are expressed."
+          }
+        },
+        {
+          "label": {
+            "es": "Accesibilidad personal",
+            "en": "Personal accessibility"
+          },
+          "text": {
+            "es": "Compatibilidad con diferentes estilos de representación mental, sin exigir visualización.",
+            "en": "Compatibility with different mental representation styles, without requiring visualization."
+          }
+        },
+        {
+          "label": {
+            "es": "Flexibilidad temática",
+            "en": "Thematic flexibility"
+          },
+          "text": {
+            "es": "Posibilidad de adaptar la arquitectura a diferentes temáticas y proyectos.",
+            "en": "The ability to adapt the architecture to different themes and projects."
+          }
+        },
+        {
+          "label": {
+            "es": "Refuerzo integrado",
+            "en": "Integrated reinforcement"
+          },
+          "text": {
+            "es": "Posibilidad de incorporar elementos complementarios orientados a la continuidad de los objetivos.",
+            "en": "The possibility of incorporating complementary elements focused on the continuity of the intended objectives."
+          }
+        }
+      ],
+      "note": null
+    },
+    {
+      "slug": "syneris",
+      "name": "SYNERIS",
+      "short": "SYNERIS",
+      "version": null,
+      "category": {
+        "es": "Arquitectura especializada",
+        "en": "Specialized architecture"
+      },
+      "role": "main",
+      "subtitle": "the art of selective alignment.",
+      "colors": [
+        "#110D19",
+        "#201627",
+        "#69415F",
+        "#DC9EB8",
+        "#C7A1D8",
+        "#F2DDE9"
+      ],
+      "art": {
+        "title": "Roses in a Vase",
+        "id": "1941.14"
+      },
+      "related": [],
+      "identity": "selective alignment · personal growth · reciprocal connection",
+      "philosophy": [
+        {
+          "es": "SYNERIS es una arquitectura especializada creada para explorar objetivos relacionados con preferencias personales, vínculos románticos y experiencias de conexión.",
+          "en": "SYNERIS is a specialized architecture created to explore objectives related to personal preferences, romantic relationships and experiences of connection."
+        },
+        {
+          "es": "Su enfoque creativo permite desarrollar las características deseadas de una relación, teniendo en cuenta la personalización, la compatibilidad, el autoconcepto y el crecimiento personal.",
+          "en": "Its creative approach allows the desired characteristics of a relationship to be explored while considering personalization, compatibility, self-concept and personal growth."
+        },
+        {
+          "es": "La fórmula explora tanto las cualidades que se desean encontrar en una pareja como las experiencias y dinámicas que se desean compartir dentro de una relación recíproca.",
+          "en": "The formula explores both the qualities someone wishes to find in a partner and the experiences and dynamics they wish to share within a reciprocal relationship."
+        }
+      ],
+      "principles": [
+        {
+          "label": {
+            "es": "Alineación selectiva",
+            "en": "Selective alignment"
+          },
+          "text": {
+            "es": "Exploración de cualidades y preferencias seleccionadas personalmente.",
+            "en": "Exploration of personally selected qualities and preferences."
+          }
+        },
+        {
+          "label": {
+            "es": "Personalización",
+            "en": "Personalization"
+          },
+          "text": {
+            "es": "Adaptación de los objetivos a los gustos y deseos individuales.",
+            "en": "Adaptation of objectives to individual tastes and desires."
+          }
+        },
+        {
+          "label": {
+            "es": "Compatibilidad selectiva",
+            "en": "Selective compatibility"
+          },
+          "text": {
+            "es": "Espacio para conservar características, preferencias y límites personales.",
+            "en": "Room to preserve personal characteristics, preferences and boundaries."
+          }
+        },
+        {
+          "label": {
+            "es": "Crecimiento personal",
+            "en": "Personal growth"
+          },
+          "text": {
+            "es": "Integración del autoconcepto y el bienestar personal dentro de los objetivos del audio.",
+            "en": "Integration of self-concept and personal well-being into the audio's objectives."
+          }
+        },
+        {
+          "label": {
+            "es": "Conexión recíproca",
+            "en": "Reciprocal connection"
+          },
+          "text": {
+            "es": "Exploración de vínculos basados en el interés mutuo, el respeto y la reciprocidad.",
+            "en": "Exploration of relationships based on mutual interest, respect and reciprocity."
+          }
+        },
+        {
+          "label": {
+            "es": "Autonomía personal",
+            "en": "Personal autonomy"
+          },
+          "text": {
+            "es": "Respeto por la libertad de decisión de todas las personas involucradas.",
+            "en": "Respect for the freedom of choice of everyone involved."
+          }
+        }
+      ],
+      "note": null
+    },
+    {
+      "slug": "continuum",
+      "name": "CONTINUUM",
+      "short": "CONTINUUM",
+      "version": "II",
+      "category": {
+        "es": "Sistema de refuerzo integrado",
+        "en": "Integrated reinforcement system"
+      },
+      "role": "reinforcement",
+      "subtitle": "the philosophy of continuity.",
+      "colors": [
+        "#101622",
+        "#202B3C",
+        "#465773",
+        "#8397B6",
+        "#BCCADD",
+        "#E9E7E1"
+      ],
+      "art": {
+        "title": "Urania (astronomy), from the Tarocchi",
+        "id": "1924.432.12"
+      },
+      "related": [
+        "aurelis"
+      ],
+      "identity": null,
+      "philosophy": [
+        {
+          "es": "CONTINUUM es un sistema de refuerzo creativo que puede incorporarse dentro de otras arquitecturas de afirmaciones.",
+          "en": "CONTINUUM is a creative reinforcement system that can be incorporated into other affirmation architectures."
+        },
+        {
+          "es": "Nació de mi interés por explorar la continuidad de los objetivos de un audio, su relación con las experiencias cotidianas y la posibilidad de integrarlos de manera flexible.",
+          "en": "It was born from my interest in exploring the continuity of an audio's objectives, their relationship with everyday experiences and the possibility of integrating them flexibly."
+        },
+        {
+          "es": "Su enfoque contempla el desarrollo progresivo, la autonomía personal y diferentes formas de experimentar los audios, sin exigir una visualización específica ni un estado emocional determinado.",
+          "en": "Its approach considers progressive development, personal autonomy and different ways of experiencing audios, without requiring specific visualization or a particular emotional state."
+        }
+      ],
+      "principles": [
+        {
+          "label": {
+            "es": "Continuidad",
+            "en": "Continuity"
+          },
+          "text": {
+            "es": "Orientación hacia la continuidad de los objetivos.",
+            "en": "A focus on the continuity of intended objectives."
+          }
+        },
+        {
+          "label": {
+            "es": "Desarrollo progresivo",
+            "en": "Progressive development"
+          },
+          "text": {
+            "es": "Exploración del desarrollo acumulativo y progresivo.",
+            "en": "Exploration of cumulative and progressive development."
+          }
+        },
+        {
+          "label": {
+            "es": "Integración cotidiana",
+            "en": "Everyday integration"
+          },
+          "text": {
+            "es": "Relación de los objetivos con experiencias cotidianas.",
+            "en": "Connection between intended objectives and everyday experiences."
+          }
+        },
+        {
+          "label": {
+            "es": "Flexibilidad emocional",
+            "en": "Emotional flexibility"
+          },
+          "text": {
+            "es": "Escucha compatible con diferentes estados emocionales.",
+            "en": "Listening compatible with different emotional states."
+          }
+        },
+        {
+          "label": {
+            "es": "Accesibilidad personal",
+            "en": "Personal accessibility"
+          },
+          "text": {
+            "es": "Ausencia de requisitos obligatorios de visualización.",
+            "en": "No mandatory visualization requirements."
+          }
+        },
+        {
+          "label": {
+            "es": "Autonomía",
+            "en": "Autonomy"
+          },
+          "text": {
+            "es": "Respeto por las preferencias, decisiones y ritmos personales.",
+            "en": "Respect for personal preferences, decisions and individual pace."
+          }
+        }
+      ],
+      "note": {
+        "es": "CONTINUUM puede integrarse dentro del mismo audio.",
+        "en": "CONTINUUM can be integrated into the audio itself."
+      }
+    },
+    {
+      "slug": "semantic-knowledge-integration",
+      "name": "Semantic Knowledge Integration",
+      "short": "SKI",
+      "version": null,
+      "category": {
+        "es": "Técnica experimental",
+        "en": "Experimental technique"
+      },
+      "role": "technique",
+      "subtitle": "connecting the worlds of knowledge.",
+      "colors": [
+        "#1D241C",
+        "#343D30",
+        "#55664C",
+        "#8A9674",
+        "#C2C8AD",
+        "#F0EBDD"
+      ],
+      "art": {
+        "title": "White Cape-Coast Lily",
+        "id": "1955.142"
+      },
+      "related": [
+        "aurelis"
+      ],
+      "identity": null,
+      "philosophy": [
+        {
+          "es": "Semantic Knowledge Integration es una técnica creativa experimental que explora la incorporación de información educativa dentro de audios de afirmaciones.",
+          "en": "Semantic Knowledge Integration is an experimental creative technique that explores the incorporation of educational information into affirmation audios."
+        },
+        {
+          "es": "Su propósito es combinar objetivos relacionados con la curiosidad, el aprendizaje y la comprensión intelectual con conceptos fundamentales procedentes de distintas disciplinas.",
+          "en": "Its purpose is to combine objectives related to curiosity, learning and intellectual understanding with foundational concepts from different disciplines."
+        },
+        {
+          "es": "Fue incorporada en NOESIS como una manera de explorar conjuntamente la inteligencia multidimensional, la cultura general y las relaciones entre diferentes áreas del conocimiento.",
+          "en": "It was incorporated into NOESIS as a way to explore multidimensional intelligence, general knowledge and the relationships between different fields of knowledge together."
+        }
+      ],
+      "principles": [
+        {
+          "label": {
+            "es": "Conocimiento declarativo",
+            "en": "Declarative knowledge"
+          },
+          "text": {
+            "es": "Incorporación de conceptos y conocimientos fundamentales.",
+            "en": "Incorporation of foundational concepts and knowledge."
+          }
+        },
+        {
+          "label": {
+            "es": "Pensamiento interdisciplinario",
+            "en": "Interdisciplinary thinking"
+          },
+          "text": {
+            "es": "Exploración de conexiones entre diferentes disciplinas.",
+            "en": "Exploration of connections between different disciplines."
+          }
+        },
+        {
+          "label": {
+            "es": "Curiosidad intelectual",
+            "en": "Intellectual curiosity"
+          },
+          "text": {
+            "es": "Interés por descubrir nuevas áreas del conocimiento.",
+            "en": "Interest in discovering new fields of knowledge."
+          }
+        },
+        {
+          "label": {
+            "es": "Familiaridad conceptual",
+            "en": "Conceptual familiarity"
+          },
+          "text": {
+            "es": "Exposición a terminología científica, cultural y académica.",
+            "en": "Exposure to scientific, cultural and academic terminology."
+          }
+        },
+        {
+          "label": {
+            "es": "Integración educativa",
+            "en": "Educational integration"
+          },
+          "text": {
+            "es": "Combinación creativa de objetivos intelectuales y contenido educativo.",
+            "en": "Creative combination of intellectual objectives and educational content."
+          }
+        }
+      ],
+      "note": {
+        "es": "Esta técnica es experimental. Comprender y recordar los conceptos requiere estudio y práctica.",
+        "en": "This technique is experimental. Understanding and remembering concepts takes active study and practice."
+      }
+    }
+  ]
+}

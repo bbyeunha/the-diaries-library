@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE, withBase } from '../lib/site';
+import { formulaUrl } from '../lib/formulas';
 import { UI } from '../lib/i18n';
 
 const allAudios = (await getCollection('audios')).sort(
@@ -63,6 +64,7 @@ function buildSearchCorpus(entry: (typeof allAudios)[number]): string {
           <span lang="en" data-i18n-lang="en">{UI.en.aboutMe}</span>
           <span class="link-arrow" aria-hidden="true">→</span>
         </a>
+        <a class="nav-text-link" href={withBase('/formulas/')}><span data-i18n-lang="es">Fórmulas</span><span data-i18n-lang="en">Formula Archives</span></a>
       </div>
     </div>
   </section>
@@ -149,6 +151,7 @@ function buildSearchCorpus(entry: (typeof allAudios)[number]): string {
 
     <ol class="publications__list" id="archive-list">
       {allAudios.map((entry, index) => {
+        const primary = entry.data.formulaRefs.find(ref => ref.role === 'main');
         const internalHref = withBase(`/audios/${entry.id}`);
         const searchCorpus = buildSearchCorpus(entry);
         const maxWidth = Math.min(entry.data.cover.width, 1120);
@@ -185,7 +188,7 @@ function buildSearchCorpus(entry: (typeof allAudios)[number]): string {
                       <span data-i18n-lang="en">{entry.data.category.en}</span>
                     </span>
                     <span aria-hidden="true">·</span>
-                    <span class="pub-spread__formula">{entry.data.series}</span>
+                    {primary ? <a class="pub-spread__formula" href={formulaUrl(primary.slug)}><span class="sr-only" data-i18n-lang="es">Fórmula de </span><span class="sr-only" data-i18n-lang="en">Formula for </span>{entry.data.series}</a> : <span>{entry.data.series}</span>}
                   </div>
                 </div>
 
@@ -206,7 +209,7 @@ function buildSearchCorpus(entry: (typeof allAudios)[number]): string {
                   {entry.data.formula && (
                     <>
                       {' · '}
-                      {entry.data.formula}
+                      {primary ? <a href={formulaUrl(primary.slug)}>{entry.data.formula}</a> : entry.data.formula}
                     </>
                   )}
                 </p>
