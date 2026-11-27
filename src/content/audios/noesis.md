@@ -11,8 +11,8 @@ category:
   es: "Intelligence · Memory · Polymathy"
   en: "Intelligence · Memory · Polymathy"
 description:
-  es: "An archive of human intelligence and knowledge — inteligencia multidimensional, memoria, polimatía, cultura general y rendimiento académico."
-  en: "An archive of human intelligence and knowledge — multidimensional intelligence, memory, polymathy, general knowledge and academic performance."
+  es: "Mi archivo personal de inteligencia multidimensional, memoria, polimatía, cultura general y rendimiento académico."
+  en: "My personal archive of multidimensional intelligence, memory, polymathy, general knowledge, and academic performance."
 publishedAt: 2026-05-02
 duration: "02:00"
 formula: "AURELIS 3.3"

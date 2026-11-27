@@ -9,7 +9,8 @@
 body.page-noesis {
   --noesis-bg: #F1E8D6;
   --noesis-bg-alt: #E6DAC2;
-  --noesis-surface: #FAF5E9;
+  --noesis-surface: rgba(250, 245, 233, 0.88);
+  --noesis-surface-solid: #FAF5E9;
   --noesis-surface-strong: #DFCFAF;
   --noesis-parchment: #D1C0A0;
   --noesis-ink: #2C241B;
@@ -18,14 +19,15 @@ body.page-noesis {
   --noesis-gold-rule: #A18B65;
   --noesis-olive: #4C533F;
   --noesis-glow: #A18B65;
-  --noesis-border: rgba(138, 114, 73, 0.34);
-  --noesis-border-strong: rgba(122, 98, 59, 0.58);
+  --noesis-border: rgba(138, 114, 73, 0.36);
+  --noesis-border-strong: rgba(122, 98, 59, 0.60);
   --noesis-grid-line: rgba(122, 98, 59, 0.085);
-  --noesis-grid-fine: rgba(122, 98, 59, 0.04);
-  --noesis-watermark: rgba(105, 86, 56, 0.14);
+  --noesis-grid-fine: rgba(122, 98, 59, 0.038);
+  --noesis-ambient-a: rgba(161, 139, 101, 0.14);
+  --noesis-ambient-b: rgba(76, 83, 63, 0.08);
 
   --bg: var(--noesis-bg);
-  --surface: var(--noesis-surface);
+  --surface: var(--noesis-surface-solid);
   --text: var(--noesis-ink);
   --muted: var(--noesis-ink-muted);
   --accent: var(--noesis-gold);
@@ -41,7 +43,8 @@ body.page-noesis {
 html[data-theme='dark'] body.page-noesis {
   --noesis-bg: #211F1A;
   --noesis-bg-alt: #2B2720;
-  --noesis-surface: #28241E;
+  --noesis-surface: rgba(40, 36, 30, 0.86);
+  --noesis-surface-solid: #28241E;
   --noesis-surface-strong: #443B2E;
   --noesis-parchment: #443B2E;
   --noesis-ink: #E9DFC9;
@@ -50,14 +53,15 @@ html[data-theme='dark'] body.page-noesis {
   --noesis-gold-rule: #A18B65;
   --noesis-olive: #6D775B;
   --noesis-glow: #D4C09B;
-  --noesis-border: rgba(161, 139, 101, 0.32);
-  --noesis-border-strong: rgba(197, 177, 140, 0.52);
+  --noesis-border: rgba(161, 139, 101, 0.34);
+  --noesis-border-strong: rgba(197, 177, 140, 0.54);
   --noesis-grid-line: rgba(197, 177, 140, 0.075);
-  --noesis-grid-fine: rgba(197, 177, 140, 0.035);
-  --noesis-watermark: rgba(197, 177, 140, 0.14);
+  --noesis-grid-fine: rgba(197, 177, 140, 0.032);
+  --noesis-ambient-a: rgba(201, 181, 144, 0.08);
+  --noesis-ambient-b: rgba(109, 119, 91, 0.09);
 
   --bg: var(--noesis-bg);
-  --surface: var(--noesis-surface);
+  --surface: var(--noesis-surface-solid);
   --text: var(--noesis-ink);
   --muted: var(--noesis-ink-muted);
   --accent: var(--noesis-gold);
@@ -86,21 +90,33 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 /* ==========================================================================
-   GIANT STUDY DESK CANVAS (Drafting Grid + Candlelit Glow + Layered Artifacts)
+   ARCHIVAL DRAFTING SURFACE (Clean Grid + Ambient Pools, Zero Repeating Formulas)
    ========================================================================== */
 .noesis-universe {
   position: relative;
   background-color: var(--noesis-bg);
   background-image:
-    radial-gradient(ellipse 90% 34% at 50% 0%, rgba(161, 139, 101, 0.14), transparent 72%),
-    radial-gradient(ellipse 60% 25% at 88% 35%, rgba(85, 92, 71, 0.10), transparent 70%),
-    radial-gradient(ellipse 65% 28% at 12% 72%, rgba(161, 139, 101, 0.11), transparent 70%),
+    radial-gradient(920px 560px at 14% 280px, var(--noesis-ambient-a), transparent 72%),
+    radial-gradient(840px 520px at 88% 960px, var(--noesis-ambient-b), transparent 72%),
     linear-gradient(to right, var(--noesis-grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--noesis-grid-line) 1px, transparent 1px),
     linear-gradient(to right, var(--noesis-grid-fine) 1px, transparent 1px),
     linear-gradient(to bottom, var(--noesis-grid-fine) 1px, transparent 1px);
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    repeat,
+    repeat,
+    repeat,
+    repeat;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
   background-size:
-    100% 100%,
     100% 100%,
     100% 100%,
     96px 96px,
@@ -111,83 +127,71 @@ html[data-theme='dark'] body.page-noesis {
   overflow-x: clip;
 }
 
-/* Decorative Etched Desk Backdrops Positioned Down the Page */
-.noesis-desk-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.noesis-desk-glyph {
-  position: absolute;
-  color: var(--noesis-watermark);
-  user-select: none;
-}
-
-.noesis-desk-glyph--wheel {
-  top: 40px;
-  right: -140px;
-  width: 680px;
-  height: 680px;
-  opacity: 0.85;
-}
-
-.noesis-desk-glyph--spiral {
-  top: 24%;
-  left: -130px;
-  width: 520px;
-  height: 520px;
-  opacity: 0.72;
-}
-
-.noesis-desk-glyph--polyhedron {
-  top: 52%;
-  right: -110px;
-  width: 540px;
-  height: 540px;
-  opacity: 0.72;
-}
-
-.noesis-desk-glyph--orbits {
-  top: 78%;
-  left: -120px;
-  width: 560px;
-  height: 560px;
-  opacity: 0.75;
-}
-
-/* Vertical Margin Formula Strips (Wide Desktop Gutters) */
-.noesis-gutter-note {
-  position: absolute;
-  font-family: 'EB Garamond', Georgia, serif;
-  font-style: italic;
-  font-size: 0.88rem;
-  letter-spacing: 0.14em;
-  color: var(--noesis-gold);
-  opacity: 0.34;
-  white-space: nowrap;
-  writing-mode: vertical-rl;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.noesis-gutter-note--left-1 { left: 16px; top: 340px; transform: rotate(180deg); }
-.noesis-gutter-note--right-1 { right: 16px; top: 980px; }
-.noesis-gutter-note--left-2 { left: 16px; top: 2400px; transform: rotate(180deg); }
-.noesis-gutter-note--right-2 { right: 16px; top: 4100px; }
-.noesis-gutter-note--left-3 { left: 16px; top: 5800px; transform: rotate(180deg); }
-
-@media (max-width: 1320px) {
-  .noesis-gutter-note { display: none; }
-}
-
 .noesis-shell {
   position: relative;
   z-index: 2;
-  width: min(100% - 2.5rem, 1240px);
+  width: min(100% - 2.5rem, 1180px);
   margin-inline: auto;
+}
+
+/* ==========================================================================
+   FULL-HEIGHT NON-REPEATING DESK BACKDROP (28 Unique Background Visuals)
+   ========================================================================== */
+.noesis-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.noesis-bg-piece {
+  position: absolute;
+  top: var(--y, 2%);
+  width: var(--w, 280px);
+  color: var(--noesis-gold);
+  opacity: 0.3;
+  transform: rotate(var(--rot, 0deg));
+}
+
+html[data-theme='dark'] .noesis-bg-piece {
+  opacity: 0.34;
+}
+
+.noesis-bg-piece.is-left {
+  left: clamp(0.6rem, 1.8vw, 3rem);
+}
+
+.noesis-bg-piece.is-right {
+  right: clamp(0.6rem, 1.8vw, 3rem);
+}
+
+.noesis-bg-piece.is-offset-left {
+  left: clamp(2rem, 12vw, 15rem);
+  opacity: 0.24;
+}
+
+.noesis-bg-piece.is-offset-right {
+  right: clamp(2rem, 12vw, 15rem);
+  opacity: 0.24;
+}
+
+.noesis-bg-piece.is-center-wide {
+  left: 50%;
+  width: min(var(--w, 580px), 86vw);
+  transform: translateX(-50%) rotate(var(--rot, 0deg));
+  opacity: 0.2;
+}
+
+html[data-theme='dark'] .noesis-bg-piece.is-center-wide {
+  opacity: 0.23;
+}
+
+.noesis-bg-piece svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Top Return Breadcrumb */
@@ -221,7 +225,7 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 /* ==========================================================================
-   HERO — THE NOESIS ARCHIVE (Rich Layered Polymath Study Desk)
+   HERO — THE NOESIS ARCHIVE
    ========================================================================== */
 .noesis-hero {
   position: relative;
@@ -230,20 +234,19 @@ html[data-theme='dark'] body.page-noesis {
 
 .noesis-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
-  gap: clamp(2rem, 4.5vw, 4.25rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3.75rem);
   align-items: center;
 }
 
 .noesis-hero__folio {
   position: relative;
-  padding: 1.5rem 1.75rem;
-  background: linear-gradient(155deg, var(--noesis-surface) 0%, var(--noesis-bg-alt) 100%);
+  padding: 1.55rem 1.75rem;
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
-  box-shadow: 0 22px 54px rgba(12, 9, 6, 0.22);
+  box-shadow: 0 22px 54px rgba(12, 9, 6, 0.24);
 }
 
-/* Ornate Brass Corner Ticks on Hero Folio */
 .noesis-hero__folio::before,
 .noesis-hero__folio::after {
   content: '';
@@ -284,7 +287,7 @@ html[data-theme='dark'] body.page-noesis {
   margin: 0;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 500;
-  font-size: clamp(3.2rem, 6.4vw, 5.2rem);
+  font-size: clamp(3.2rem, 6.2vw, 5.1rem);
   line-height: 0.92;
   letter-spacing: 0.25em;
   color: var(--noesis-ink);
@@ -400,7 +403,7 @@ html[data-theme='dark'] body.page-noesis {
   border-color: var(--noesis-ink);
 }
 
-/* Hero Desk Collage (3 Layered Specimen Plates + Stamp) */
+/* Hero Desk Collage */
 .noesis-hero__plates {
   position: relative;
 }
@@ -409,7 +412,7 @@ html[data-theme='dark'] body.page-noesis {
   position: relative;
   margin: 0;
   padding: 0.65rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
   box-shadow: 0 22px 54px rgba(10, 8, 5, 0.28);
 }
@@ -446,7 +449,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-hero__mini-plate {
   margin: 0;
   padding: 0.4rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border);
   box-shadow: 0 10px 24px rgba(10, 8, 5, 0.16);
 }
@@ -455,7 +458,7 @@ html[data-theme='dark'] body.page-noesis {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
@@ -525,7 +528,7 @@ html[data-theme='dark'] body.page-noesis {
 
 .noesis-note-card {
   padding: clamp(1.65rem, 3.8vw, 2.75rem);
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
   outline: 1px solid var(--noesis-border);
   outline-offset: -7px;
@@ -626,7 +629,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-interlude {
   margin: 2.5rem 0 3.25rem;
   padding: clamp(1.35rem, 3vw, 2.15rem);
-  background: linear-gradient(135deg, var(--noesis-surface) 0%, var(--noesis-bg-alt) 100%);
+  background: linear-gradient(135deg, var(--noesis-surface-solid) 0%, var(--noesis-bg-alt) 100%);
   border: 1px solid var(--noesis-border-strong);
   position: relative;
   display: grid;
@@ -722,13 +725,115 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 /* ==========================================================================
+   21 UNIQUE CHAPTER-SPECIFIC VISUAL EXHIBITS (Varied Shapes, Sizes & Layouts)
+   ========================================================================== */
+.noesis-exhibit {
+  position: relative;
+  margin: 0.75rem auto;
+  width: min(100%, 640px);
+  padding: 1.05rem 1.35rem;
+  color: var(--noesis-gold);
+}
+
+.noesis-exhibit[hidden] {
+  display: none;
+}
+
+.noesis-exhibit__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noesis-exhibit svg {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  display: block;
+}
+
+/* Variant 1: Framed museum blueprint plate with brass corners */
+.noesis-exhibit.is-plate {
+  background: radial-gradient(circle at 18% 50%, var(--noesis-ambient-a), transparent 68%),
+    var(--noesis-bg-alt);
+  border-top: 1px solid var(--noesis-border-strong);
+  border-bottom: 1px solid var(--noesis-border-strong);
+  border-left: 1px solid var(--noesis-border);
+  border-right: 1px solid var(--noesis-border);
+  box-shadow: 0 10px 26px rgba(10, 8, 5, 0.12);
+}
+
+.noesis-exhibit.is-plate::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) top left / 12px 1.5px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) top left / 1.5px 12px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) top right / 12px 1.5px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) top right / 1.5px 12px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) bottom left / 12px 1.5px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) bottom left / 1.5px 12px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) bottom right / 12px 1.5px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) bottom right / 1.5px 12px no-repeat;
+}
+
+/* Variant 2: Open floating ink sketch directly on the desk grid (no box!) */
+.noesis-exhibit.is-floating {
+  width: min(100%, 560px);
+  padding: 0.65rem 0.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  opacity: 0.88;
+}
+
+.noesis-exhibit.is-floating svg {
+  max-width: 520px;
+}
+
+/* Variant 3: Full-column wide chalkboard manuscript band */
+.noesis-exhibit.is-wide {
+  width: 100%;
+  padding: 1.15rem 1.75rem;
+  background: linear-gradient(90deg, transparent, var(--noesis-bg-alt) 14%, var(--noesis-bg-alt) 86%, transparent);
+  border-top: 1px double var(--noesis-border-strong);
+  border-bottom: 1px double var(--noesis-border-strong);
+}
+
+.noesis-exhibit.is-wide svg {
+  max-width: 680px;
+}
+
+/* Variant 4: Asymmetric compact archival stamp (offset left or right on desktop) */
+.noesis-exhibit.is-stamp-left,
+.noesis-exhibit.is-stamp-right {
+  width: min(100%, 490px);
+  padding: 0.85rem 1.1rem;
+  background-color: var(--noesis-surface);
+  border: 1px dashed var(--noesis-border-strong);
+  border-radius: 2px;
+}
+
+.noesis-exhibit.is-stamp-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.noesis-exhibit.is-stamp-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* ==========================================================================
    ARCHIVE WORKSPACE (Sticky Desk Index + 5-Volume Encyclopedia)
    ========================================================================== */
 .noesis-workspace {
   padding: 1rem 0 4.5rem;
   display: grid;
-  grid-template-columns: 286px minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 3.75rem);
+  grid-template-columns: 278px minmax(0, 1fr);
+  gap: clamp(1.75rem, 3.5vw, 3.25rem);
   align-items: start;
 }
 
@@ -738,7 +843,7 @@ html[data-theme='dark'] body.page-noesis {
   max-height: calc(100vh - 2.5rem);
   overflow-y: auto;
   padding: 1.35rem 1.2rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
   box-shadow: 0 14px 34px rgba(10, 8, 5, 0.16);
   scrollbar-width: thin;
@@ -873,7 +978,7 @@ html[data-theme='dark'] body.page-noesis {
   width: 100%;
   min-height: 40px;
   padding: 0.45rem 2.25rem 0.45rem 0.85rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
   color: var(--noesis-ink);
   font-family: 'EB Garamond', Georgia, serif;
@@ -915,7 +1020,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-ctrl-btn {
   min-height: 38px;
   padding: 0.4rem 0.8rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border);
   color: var(--noesis-ink);
   font-family: 'Cinzel', 'Cormorant Garamond', serif;
@@ -935,7 +1040,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-mobile-index {
   display: none;
   margin-bottom: 1.5rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
 }
 
@@ -1015,7 +1120,7 @@ html[data-theme='dark'] body.page-noesis {
   background-color: var(--noesis-bg-alt);
   border-left: 2px solid var(--noesis-olive);
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   line-height: 1.55;
   color: var(--noesis-ink-muted);
 }
@@ -1027,11 +1132,28 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 .noesis-chapter {
+  position: relative;
+  overflow: hidden;
   background-color: var(--noesis-surface);
   border: 1px solid var(--noesis-border);
   border-left: 3px solid var(--noesis-border-strong);
   scroll-margin-top: 5.5rem;
   box-shadow: 0 8px 24px rgba(10, 8, 5, 0.08);
+}
+
+/* Subtle Watermark Mathematical / Astral Glyph inside every Chapter Card */
+.noesis-chapter__watermark {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.35rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 4.4rem;
+  line-height: 1;
+  color: var(--noesis-gold);
+  opacity: 0.085;
+  pointer-events: none;
+  user-select: none;
 }
 
 .noesis-chapter[hidden] {
@@ -1051,7 +1173,7 @@ html[data-theme='dark'] body.page-noesis {
 
 .noesis-chapter[open] > .noesis-chapter__summary {
   border-bottom-color: var(--noesis-border);
-  background-color: rgba(161, 139, 101, 0.045);
+  background-color: rgba(161, 139, 101, 0.05);
 }
 
 .noesis-chapter__summary::-webkit-details-marker {
@@ -1126,6 +1248,8 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 .noesis-chapter__body {
+  position: relative;
+  z-index: 1;
   padding: 1.2rem 1.45rem 1.45rem;
 }
 
@@ -1136,6 +1260,19 @@ html[data-theme='dark'] body.page-noesis {
   line-height: 1.7;
   color: var(--noesis-ink);
   max-width: 68ch;
+}
+
+/* Personal handwritten-feel author whisper pill (e.g. Chapter 45 Aviation!) */
+.noesis-author-whisper {
+  display: inline-block;
+  margin: 0 0 1.05rem;
+  padding: 0.38rem 0.85rem;
+  background-color: var(--noesis-bg-alt);
+  border: 1px dashed var(--noesis-border-strong);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.14rem;
+  color: var(--noesis-gold);
 }
 
 .noesis-chapter__list {
@@ -1248,7 +1385,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-empty-search {
   padding: 2.25rem 1.5rem;
   text-align: center;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border);
   font-family: 'EB Garamond', Georgia, serif;
   font-style: italic;
@@ -1299,6 +1436,16 @@ html[data-theme='dark'] body.page-noesis {
 
 /* Responsive Breakpoints */
 @media (max-width: 980px) {
+  .noesis-universe {
+    background-size:
+      100% 100%,
+      100% 100%,
+      64px 64px,
+      64px 64px,
+      16px 16px,
+      16px 16px;
+  }
+
   .noesis-hero__grid,
   .noesis-note-spread,
   .noesis-workspace {
@@ -1312,11 +1459,20 @@ html[data-theme='dark'] body.page-noesis {
   .noesis-mobile-index {
     display: block;
   }
+
+  .noesis-bg-piece {
+    width: min(var(--w, 240px), 44vw);
+    opacity: 0.22;
+  }
+
+  html[data-theme='dark'] .noesis-bg-piece {
+    opacity: 0.24;
+  }
 }
 
 @media (max-width: 680px) {
   .noesis-shell {
-    width: min(100% - 1.5rem, 1240px);
+    width: min(100% - 1.5rem, 1180px);
   }
 
   .noesis-hero__folio {
@@ -1338,6 +1494,17 @@ html[data-theme='dark'] body.page-noesis {
   .noesis-interlude {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .noesis-exhibit,
+  .noesis-exhibit.is-plate,
+  .noesis-exhibit.is-floating,
+  .noesis-exhibit.is-wide,
+  .noesis-exhibit.is-stamp-left,
+  .noesis-exhibit.is-stamp-right {
+    width: 100%;
+    margin: 0.45rem auto;
+    padding: 0.7rem 0.65rem;
   }
 
   .noesis-plate {

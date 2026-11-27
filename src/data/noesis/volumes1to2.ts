@@ -9,12 +9,12 @@ export const VOLUMES_1_TO_2: NoesisVolume[] = [
       en: 'Volume I — The Architecture of Intelligence',
     },
     subtitle: {
-      es: 'Inteligencia general, cognición fluida y cristalizada, memoria, atención, velocidad de procesamiento, metacognición y creatividad.',
-      en: 'General intelligence, fluid and crystallized cognition, memory, attention, processing speed, metacognition and creativity.',
+      es: 'Cómo procesamos, conectamos ideas al vuelo, retenemos sin esfuerzo y resolvemos problemas nuevos.',
+      en: 'How we process, connect dots on the fly, hold onto things effortlessly, and crack unfamiliar problems.',
     },
     epigraph: {
-      es: 'Las capacidades descritas en este volumen representan áreas cognitivas que NOESIS busca reforzar y explorar.',
-      en: 'The capacities outlined in this volume represent cognitive areas that NOESIS aims to reinforce and explore.',
+      es: 'Aquí armé el motor central del audio: todas las áreas cognitivas que quería trabajar y potenciar en mí.',
+      en: 'This is where I built the core engine of the audio—every cognitive angle I wanted to sharpen and explore for myself.',
     },
     chapters: [
       {
@@ -386,12 +386,12 @@ export const VOLUMES_1_TO_2: NoesisVolume[] = [
       en: 'Volume II — The Dimensions of Human Intelligence',
     },
     subtitle: {
-      es: 'Capacidades lingüísticas, lógico-matemáticas, espaciales, musicales, cinestésicas, naturalistas, científicas, estratégicas, emocionales y filosóficas.',
-      en: 'Linguistic, logical-mathematical, spatial, musical, kinesthetic, naturalistic, scientific, strategic, emotional and philosophical capacities.',
+      es: 'Desde idiomas, cálculo y música hasta estrategia, intuición social, coordinación física y criterio propio.',
+      en: 'From languages, math, and music to strategy, social intuition, physical coordination, and independent judgment.',
     },
     disclaimer: {
-      es: 'Nota editorial: estas categorías representan distintas capacidades humanas que el audio explora y organiza temáticamente; no se presentan como inteligencias independientes cuya existencia esté universalmente validada.',
-      en: 'Editorial note: these categories represent distinct human capacities explored and organized thematically by the audio; they are not presented as universally validated independent intelligences.',
+      es: 'Ojo: dividí este volumen así para cubrir cada faceta de cómo pensamos, sentimos y creamos, no porque sean «inteligencias separadas» grabadas en piedra.',
+      en: 'Quick heads-up: I split these up to cover every angle of how we think, move, and create—not claiming they’re strictly separate “intelligences” set in stone.',
     },
     chapters: [
       {
