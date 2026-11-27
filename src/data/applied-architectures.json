@@ -19,12 +19,12 @@
     ],
     "intro": [
       {
-        "es": "Siempre me ha dado curiosidad cómo una conversación puede empezar con una pregunta sobre el cielo y terminar en historia, matemáticas o filosofía. NOESIS nació de esas ganas de entender temas muy distintos y de tener algo que aportar cuando alguien abre una conversación que nunca había tenido.",
-        "en": "I’ve always loved how a conversation can start with a question about the sky and end up in history, maths or philosophy. NOESIS grew out of wanting to understand wildly different subjects and have something to add when someone takes a conversation somewhere I’ve never been."
+        "es": "puedo empezar leyendo sobre una estrella y acabar con quince pestañas abiertas sobre historia, matemáticas y filosofía. luego alguien menciona uno de esos temas en conversación y por fin puedo sacar ese dato que llevaba semanas guardado en mi cabeza JAJAJA. de ahí salió NOESIS.",
+        "en": "I’ll look up one star and somehow end up with fifteen tabs open on history, maths and philosophy. Then someone brings up one of those topics and I finally get to use that random fact I’ve had in my head for weeks. That’s where NOESIS came from."
       },
       {
-        "es": "Para este proyecto reuní tres formas de trabajar que encajaban con lo que tenía en mente. Con AURELIS 3.3 pude desglosar la inteligencia en capacidades concretas. CONTINUUM II me ayudó a pensar en cómo se expresan con el tiempo y en la vida diaria. Con Semantic Knowledge Integration pude darle un lugar al conocimiento en sí. De ahí salió una arquitectura para explorar la inteligencia, la memoria, la curiosidad y la polimatía en un mismo audio.",
-        "en": "For this project I brought together three approaches that fit what I had in mind. AURELIS 3.3 gave me room to break intelligence down into specific abilities. CONTINUUM II helped me think about how those abilities show up over time and in everyday life. Semantic Knowledge Integration gave me a place for the knowledge itself. Together they gave me a way to explore intelligence, memory, curiosity and polymathy in one audio."
+        "es": "cuando me senté a escribirlo, «quiero aprender de todo» me quedó cortísimo. con AURELIS 3.3 pude entrar en los detalles de cómo recuerdo, razono o explico algo. CONTINUUM II me llevó a pensar en dónde uso todo eso fuera de clase, y con Semantic Knowledge Integration pude meter temas que yo misma quería leer.",
+        "en": "When I sat down to write it, “I want to learn everything” barely covered it. AURELIS 3.3 let me get specific about how I remember, reason and explain things. CONTINUUM II got me thinking about where I use any of that outside class, and Semantic Knowledge Integration made room for subjects I actually wanted to read about."
       }
     ],
     "parts": {
@@ -50,8 +50,8 @@
         },
         "paragraphs": [
           {
-            "es": "Me interesaba lo que pasa cuando me enfrento a un problema nuevo y lo que ya traigo a la mesa. Ahí distingo la inteligencia fluida, que me permite razonar ante lo desconocido, de la cristalizada, que reúne vocabulario, conocimientos y experiencia. En la práctica se cruzan todo el tiempo. Para entender un argumento, por ejemplo, puedo necesitar reconocer sus términos y deducir algo que el texto deja implícito.",
-            "en": "I was interested in what happens when I face an unfamiliar problem and what I already bring to the table. That’s where I distinguish fluid intelligence, which helps me reason through something new, from crystallised intelligence, which draws on vocabulary, knowledge and experience. In practice they overlap all the time. To follow an argument, for instance, I might need to recognise its terms and infer something the text leaves unstated."
+            "es": "puedo entender todas las palabras de un texto y aun así quedarme un buen rato intentando seguir el argumento. para mí ese ejemplo separa bastante bien dos cosas que quería incluir: lo que ya sé por experiencia (inteligencia cristalizada) y lo que puedo deducir cuando algo es nuevo para mí (inteligencia fluida). las dos entran en juego en la misma página.",
+            "en": "I can know every word on a page and still spend ages trying to follow the argument. That’s a pretty good example of two things I wanted to cover: what I already know from experience (crystallised intelligence) and what I can figure out when something is new to me (fluid intelligence). Both come up on the same page."
           },
           {
             "es": "También quise mirar qué hace posible ese recorrido. La atención me ayuda a escoger qué mirar, la memoria de trabajo a mantener varias ideas presentes y la memoria a largo plazo a recuperar lo que ya aprendí. Al procesar esa información puedo entender el lenguaje, encontrar una asociación creativa o revisar mi estrategia si me atasco. Por eso el razonamiento, la creatividad y las funciones ejecutivas tienen su propio espacio y vuelven a encontrarse en distintos capítulos.",
@@ -67,8 +67,8 @@
         },
         "paragraphs": [
           {
-            "es": "Puedo interesarme por la facilidad con la que aprendo y, en la misma tarde, preguntarme qué me gustaría aprender. La segunda pregunta me llevó al conocimiento declarativo. Quise reservar espacio para los hechos, conceptos y relaciones que puedo explicar con palabras, como los que aparecen en física, historia, música o informática.",
-            "en": "I can be curious about how easily I learn and, that same afternoon, wonder what I’d actually like to learn. The second question took me to declarative knowledge. I wanted to make room for facts, concepts and relationships I can put into words, like the ones I come across in physics, history, music or computer science."
+            "es": "cuando estaba armando esta parte, una cosa era escribir sobre tener buena memoria y otra era decidir qué me gustaría recordar. ahí entraron los conceptos de física, historia, música e informática. quería que esas materias tuvieran su sitio dentro del audio porque son temas que me da curiosidad estudiar por mi cuenta.",
+            "en": "When I was putting this part together, writing about having a good memory was one thing. Deciding what I’d actually want to remember was a whole other question. That’s how physics, history, music and computer science made it in. They’re subjects I’d happily go down a rabbit hole on anyway."
           },
           {
             "es": "Me gustó poder reunir ciencias, humanidades, artes y tecnología sin que todo quedara bajo el rótulo de «aprender más rápido». La memoria y el razonamiento aparecen como capacidades. Las disciplinas me dan algo concreto que recordar, interpretar y discutir.",
@@ -84,8 +84,8 @@
         },
         "paragraphs": [
           {
-            "es": "Lo que más me atrae de la polimatía es poder seguir una pregunta aunque me lleve a un tema que apenas conozco. Un instrumento musical puede llevarme de la acústica a la historia de cómo se fabricaba. Si me interesa cómo viajó entre países, termino preguntándome también por el comercio y la geografía.",
-            "en": "What draws me to polymathy is being able to follow a question even when it takes me into a subject I barely know. A musical instrument can lead me from acoustics to the history of how it was made. If I get curious about how it travelled between countries, I end up asking about trade and geography too."
+            "es": "me encanta cuando una pregunta se sale del tema y termino aprendiendo algo que ni había pensado buscar. puedo partir de cómo suena un instrumento, pasar por cómo se fabricaba y acabar mirando por dónde viajaba la gente que lo tocaba. esa es la parte de la polimatía que quería llevar al audio.",
+            "en": "I love when a question goes off on a tangent and I end up learning something I’d never have thought to look up. I can start with how an instrument sounds, get sidetracked by how it was made and end up looking at where the people who played it used to travel. That’s the bit of polymathy I wanted in the audio."
           },
           {
             "es": "Esa familiaridad con varias disciplinas me sirve para reconocer cuándo dos campos están mirando el mismo objeto desde lugares distintos. Me interesa tanto encontrar el punto en común como aprender a hacer la pregunta que le corresponde a cada campo.",
@@ -101,8 +101,8 @@
         },
         "paragraphs": [
           {
-            "es": "Cuando pienso en cómo quiero desenvolverme, me imagino haciendo preguntas sin pena y explicando lo que entiendo con palabras que le sirvan a la persona que tengo enfrente. Para mí, la elocuencia tiene mucho de escuchar, ordenar una idea y ajustar la explicación cuando alguien te mira con cara de «¿qué?».",
-            "en": "When I think about how I want to carry myself, I picture asking questions without feeling awkward and explaining what I understand in words that make sense to the person in front of me. To me, being articulate has a lot to do with listening, putting an idea in order and trying a different explanation when someone gives you that “wait, what?” look."
+            "es": "cuando algo me interesa, quiero poder hablar de eso sin quedarme en blanco justo cuando me piden que lo explique. también quiero poder preguntar sin pena y cambiar de ejemplo si la otra persona me mira con cara de «¿qué?». eso es lo que tenía en mente cuando escribí esta parte sobre la elocuencia.",
+            "en": "When I’m into something, I want to be able to talk about it without going blank the second someone asks me to explain. I also want to ask questions without feeling awkward and switch examples when someone gives me that “wait, what?” look. That’s what I had in mind when I wrote this part about being articulate."
           },
           {
             "es": "De ahí salió la parte de autoconcepto. Me gusta imaginar una vida en la que sigo aprendiendo por gusto, aunque nadie me vaya a poner nota, y en la que descubrir que estaba equivocada me da una razón para seguir leyendo.",
@@ -118,8 +118,8 @@
         },
         "paragraphs": [
           {
-            "es": "Me resulta más fácil escribir sobre una capacidad cuando puedo imaginar dónde entra en juego. En clase puedo conectar una explicación con la lectura de ayer. En una evaluación quizá me toque decidir qué información importa y en qué orden usarla. En una conversación tengo el reto de explicar algo sin perder el hilo mientras la otra persona me hace preguntas.",
-            "en": "I find it easier to write about an ability when I can picture where it comes into play. In class I might connect an explanation to yesterday’s reading. In an exam I might have to decide what information matters and in what order to use it. In a conversation I have to explain something without losing my train of thought while someone asks questions."
+            "es": "en clase a veces me cae el veinte cuando el profe dice algo que se parece a lo que leí la noche anterior. en un examen me toca decidir qué parte de todo eso me sirve para responder. y en una charla igual tengo que acordarme de dónde iba si me interrumpen a mitad de la historia. me basé en momentos así para escribir esta parte.",
+            "en": "Sometimes something clicks in class because the teacher says something that reminds me of what I read the night before. In an exam I have to work out which bit of that helps me answer the question. And in conversation I still have to remember where I was if someone cuts in halfway through the story. Those are the moments I had in mind for this part."
           },
           {
             "es": "También me interesan los momentos menos académicos. Cuando algo falla en casa, puedo comparar explicaciones, probar una y cambiar de idea si lo que observo apunta a otra causa. Situaciones así me ayudaron a darle una forma reconocible a lo que quería explorar.",
@@ -135,8 +135,8 @@
         },
         "paragraphs": [
           {
-            "es": "Con CONTINUUM II me interesaba lo que ocurre entre un primer encuentro con una idea y el día en que la vuelvo a encontrar en otro sitio. Puedo retomarla después de una pausa, relacionarla con una lectura nueva o probar a explicarla en voz alta. Pensé en un desarrollo que deja espacio para el descanso, los cambios de interés y los ritmos de cada quien.",
-            "en": "With CONTINUUM II I was interested in what happens between first meeting an idea and coming across it again somewhere else. I might pick it back up after a break, connect it to something new I’ve read or try explaining it aloud. I wanted a way to think about development that leaves room for rest, changing interests and everyone’s own pace."
+            "es": "a veces dejo un tema aparcado semanas y vuelvo porque me lo cruzo en una conversación. otras veces necesito explicarlo en voz alta para darme cuenta de que me faltaba entender la mitad. eso era lo que quería incluir con CONTINUUM II: cómo una idea va agarrando forma cada vez que vuelvo a ella, con las pausas que hagan falta.",
+            "en": "Sometimes I leave a subject alone for weeks and come back because it pops up in conversation. Other times I have to explain it out loud before I realise I only understood half of it. That’s what I wanted to include with CONTINUUM II: how an idea comes together a little more every time I pick it back up, however long that takes."
           },
           {
             "es": "NOESIS es un experimento creativo que hice alrededor de estas ideas. Cuando quiero aprender algo de verdad, me toca leer, hacer preguntas y practicar. Ahí es donde compruebo cuánto entendí y qué me queda por averiguar.",
