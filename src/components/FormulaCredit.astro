@@ -1,7 +1,4 @@
 ---
-import Words from './Words.astro';
-import {archiveCopy} from '../lib/formulas';
+import Words from "./Words.astro";
 ---
-<aside class="archive-credit">
-  {archiveCopy.note.map(line => <p><Words {...line}/></p>)}
-</aside>
+<aside class="archive-credit"><Words es="Lo hice para mí y lo comparto con cariño. ♡" en="Made for myself, shared with love. ♡"/> — bbyeunha</aside>

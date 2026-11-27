@@ -9,7 +9,7 @@ import { withBase } from '../../lib/site';
 import '../../styles/formulas.css';
 const audios = await getCollection('audios');
 ---
-<BaseLayout title="The Formula Archives | The Diaries Library" description="Las fórmulas de bbyeunha y los audios que las utilizan. Explore the creative methods behind the audios.">
+<BaseLayout title="The Formula Archives | The Diaries Library" description="Cómo escribo mis audios. Inside my writing process.">
 <article class="shell archive">
 <a class="back-link" href={withBase('/')}><Words es="← Volver a la biblioteca" en="← Back to the library"/></a>
 <header class="archive-intro"><div><h1>The Formula Archives</h1><p class="motto">a closer look into the art of creating.</p></div><p><Words {...archiveCopy.intro}/></p></header>
@@ -20,4 +20,4 @@ return <article class="catalog-entry" style={{'--plate':f.colors[0],'--caption':
 <p class="classification"><Words {...f.category}/> {f.version && ' · '+f.version}</p>
 <p><Words {...f.philosophy[0]}/></p>
 <a href={formulaUrl(f.slug)}><Words es={'Explorar '+f.short} en={'Explore '+f.short}/> →</a> · {count} audio{count===1?'':'s'}</article>
-})}</div><FormulaCredit/></article></BaseLayout>
+})}</div><p class="essay"><Words {...archiveCopy.note[0]}/></p><FormulaCredit/></article></BaseLayout>
