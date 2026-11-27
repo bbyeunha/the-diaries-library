@@ -1101,7 +1101,6 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
           es: [
             'Español e inglés.',
             'Dos minutos de duración (02:00).',
-            'Música: New Person, Same Old Mistakes — Tame Impala (instrumental).',
             'Afirmaciones y contenido educativo.',
             'Booster integrado (CONTINUUM II).',
             'Visualización opcional.',
@@ -1113,7 +1112,6 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
           en: [
             'Spanish and English.',
             'Two minutes in duration (02:00).',
-            'Music: New Person, Same Old Mistakes — Tame Impala (instrumental).',
             'Affirmations and educational content.',
             'Integrated booster (CONTINUUM II).',
             'Visualization optional.',

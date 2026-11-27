@@ -11,6 +11,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { withBase } from '../../lib/site';
 import { VOLUMES_1_TO_2 } from '../../data/noesis/volumes1to2';
 import { VOLUMES_3_TO_5 } from '../../data/noesis/volumes3to5';
+import { DESK_INTERLUDES, FORMULA_RIBBON_ITEMS } from '../../data/noesis/interludes';
 import type { NoesisPlateKey } from '../../data/noesis/types';
 
 import coverImg from '../../assets/audios/noesis/cover.jpg';
@@ -37,6 +38,7 @@ const PLATES: Record<NoesisPlateKey, ImageMetadata> = {
 };
 
 const ALL_VOLUMES = [...VOLUMES_1_TO_2, ...VOLUMES_3_TO_5];
+const OPENING_INTERLUDE = DESK_INTERLUDES.find((i) => i.afterVolumeIndex === -1);
 
 // Set confirmed YouTube URL once published; button remains cleanly hidden while empty.
 const YOUTUBE_URL = '';
@@ -83,6 +85,63 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
   </div>
 
   <article class="noesis-universe" id="top">
+    <!-- Giant Etched Study Desk Backdrops & Vertical Margin Formulas -->
+    <div class="noesis-desk-layer" aria-hidden="true">
+      <!-- 1. Celestial 12-House Astrolabe Wheel behind Hero -->
+      <svg class="noesis-desk-glyph noesis-desk-glyph--wheel" viewBox="0 0 500 500" fill="none">
+        <circle cx="250" cy="250" r="235" stroke="currentColor" stroke-width="1.1" />
+        <circle cx="250" cy="250" r="205" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4 8" />
+        <circle cx="250" cy="250" r="150" stroke="currentColor" stroke-width="0.8" />
+        <polygon points="250,45 427,352 73,352" stroke="currentColor" stroke-width="0.85" />
+        <polygon points="250,455 427,148 73,148" stroke="currentColor" stroke-width="0.85" />
+        <line x1="15" y1="250" x2="485" y2="250" stroke="currentColor" stroke-width="0.6" />
+        <line x1="250" y1="15" x2="250" y2="485" stroke="currentColor" stroke-width="0.6" />
+      </svg>
+
+      <!-- 2. Golden Ratio Spiral & Compass behind Volume II -->
+      <svg class="noesis-desk-glyph noesis-desk-glyph--spiral" viewBox="0 0 420 420" fill="none">
+        <rect x="40" y="70" width="340" height="210" stroke="currentColor" stroke-width="0.9" />
+        <line x1="250" y1="70" x2="250" y2="280" stroke="currentColor" stroke-width="0.7" />
+        <line x1="250" y1="200" x2="380" y2="200" stroke="currentColor" stroke-width="0.7" />
+        <path d="M 40 280 A 210 210 0 0 1 250 70 A 130 130 0 0 1 380 200 A 80 80 0 0 1 300 280 A 50 50 0 0 1 250 230" stroke="currentColor" stroke-width="1.3" />
+        <circle cx="250" cy="200" r="165" stroke="currentColor" stroke-width="0.6" stroke-dasharray="3 7" />
+      </svg>
+
+      <!-- 3. Sacred Polyhedron / Platonic Geometry behind Volume III -->
+      <svg class="noesis-desk-glyph noesis-desk-glyph--polyhedron" viewBox="0 0 420 420" fill="none">
+        <circle cx="210" cy="210" r="188" stroke="currentColor" stroke-width="0.8" />
+        <polygon points="210,24 371,117 371,303 210,396 49,303 49,117" stroke="currentColor" stroke-width="1" />
+        <polygon points="210,24 371,303 49,303" stroke="currentColor" stroke-width="0.8" />
+        <polygon points="210,396 371,117 49,117" stroke="currentColor" stroke-width="0.8" />
+        <circle cx="210" cy="210" r="96" stroke="currentColor" stroke-width="0.7" stroke-dasharray="2 6" />
+      </svg>
+
+      <!-- 4. Orbital Harmonics behind Volume IV–V -->
+      <svg class="noesis-desk-glyph noesis-desk-glyph--orbits" viewBox="0 0 440 440" fill="none">
+        <ellipse cx="220" cy="220" rx="200" ry="86" stroke="currentColor" stroke-width="0.9" transform="rotate(-28 220 220)" />
+        <ellipse cx="220" cy="220" rx="200" ry="86" stroke="currentColor" stroke-width="0.9" transform="rotate(28 220 220)" />
+        <ellipse cx="220" cy="220" rx="200" ry="86" stroke="currentColor" stroke-width="0.9" transform="rotate(84 220 220)" />
+        <circle cx="220" cy="220" r="18" stroke="currentColor" stroke-width="1" />
+      </svg>
+    </div>
+
+    <!-- Vertical Margin Chalk / Manuscript Notes (Desktop Gutters) -->
+    <div class="noesis-gutter-note noesis-gutter-note--left-1" aria-hidden="true">
+      (iγ^μ ∂_μ − m)ψ = 0 · F = D_KL[q(θ) || p(θ|y)] − ln p(y) · EPISTEME
+    </div>
+    <div class="noesis-gutter-note noesis-gutter-note--right-1" aria-hidden="true">
+      ☉ ☌ ☿ · ♊︎ △ ♎︎ △ ♒︎ · HARMONICES MUNDI · SICUT SUPERIUS SIC INFERIUS
+    </div>
+    <div class="noesis-gutter-note noesis-gutter-note--left-2" aria-hidden="true">
+      R_μν − ½Rg_μν = 8πGT_μν · iħ ∂ψ/∂t = Ĥψ · ENCYCLOPAEDIA UNIVERSALIS
+    </div>
+    <div class="noesis-gutter-note noesis-gutter-note--right-2" aria-hidden="true">
+      L = ½ ρ v² S C_L · ∮ v · ds = Γ · ζ(s) = ∑ n^−s · POLYMATHEIA
+    </div>
+    <div class="noesis-gutter-note noesis-gutter-note--left-3" aria-hidden="true">
+      H(X) = −∑ p(x) log₂ p(x) · e^iπ + 1 = 0 · AURELIS 3.3 · CONTINUUM II
+    </div>
+
     <!-- Top Return Breadcrumb -->
     <div class="noesis-shell noesis-breadcrumb">
       <a href={withBase('/')}>
@@ -90,7 +149,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
         <span data-i18n-lang="es">Volver a The Diaries Library</span>
         <span data-i18n-lang="en">Return to The Diaries Library</span>
       </a>
-      <span>PROJECT 002 · AURELIS 3.3</span>
+      <span>PROJECT 002 · CODEX POLYMATHEIA · AURELIS 3.3</span>
     </div>
 
     <!-- ================================================================
@@ -101,7 +160,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
         <div class="noesis-hero__folio">
           <p class="noesis-hero__kicker">
             <span>THE DIARIES LIBRARY</span>
-            <span class="noesis-hero__kicker-dot" aria-hidden="true">✦</span>
+            <span aria-hidden="true">✦</span>
             <span>ARCHIVE NO. 002</span>
           </p>
 
@@ -113,7 +172,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
 
           <p class="noesis-hero__epigraph">
             <span data-i18n-lang="es">
-              Un archivo dedicado a la inteligencia humana, la memoria y la polimatía.
+              Un archivo dedicado a la inteligencia humana, la memoria multidimensional y el conocimiento enciclopédico.
             </span>
             <span data-i18n-lang="en">
               An archive of human intelligence and knowledge.
@@ -144,17 +203,17 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
             </div>
             <div class="noesis-hero__ledger-item">
               <dt class="noesis-hero__ledger-label">
-                <span data-i18n-lang="es">Música</span>
-                <span data-i18n-lang="en">Soundtrack</span>
+                <span data-i18n-lang="es">Estructura del Códice</span>
+                <span data-i18n-lang="en">Codex Scope</span>
               </dt>
-              <dd class="noesis-hero__ledger-value">New Person, Same Old Mistakes — Tame Impala (inst.)</dd>
+              <dd class="noesis-hero__ledger-value">5 Volumes · 54 Chapters · SKI</dd>
             </div>
           </dl>
 
           <div class="noesis-hero__actions">
             <a class="noesis-btn-primary" href="#index-of-knowledge">
-              <span data-i18n-lang="es">Explorar los 54 capítulos</span>
-              <span data-i18n-lang="en">Explore all 54 chapters</span>
+              <span data-i18n-lang="es">Abrir los 54 capítulos</span>
+              <span data-i18n-lang="en">Open all 54 chapters</span>
               <span aria-hidden="true">↓</span>
             </a>
 
@@ -178,28 +237,14 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
           </div>
         </div>
 
-        <!-- Archival Visual Diptych (Original NOESIS Desk + Historical Plates) -->
+        <!-- Rich 4-Plate Polymath Desk Collage -->
         <div class="noesis-hero__plates">
-          <svg
-            class="noesis-hero__astrolabe"
-            viewBox="0 0 420 420"
-            fill="none"
-            aria-hidden="true"
-          >
-            <circle cx="210" cy="210" r="196" stroke="currentColor" stroke-width="0.9" />
-            <circle cx="210" cy="210" r="168" stroke="currentColor" stroke-width="0.7" stroke-dasharray="3 6" />
-            <ellipse cx="210" cy="210" rx="196" ry="92" stroke="currentColor" stroke-width="0.7" transform="rotate(-24 210 210)" />
-            <ellipse cx="210" cy="210" rx="196" ry="92" stroke="currentColor" stroke-width="0.7" transform="rotate(24 210 210)" />
-            <line x1="14" y1="210" x2="406" y2="210" stroke="currentColor" stroke-width="0.6" />
-            <line x1="210" y1="14" x2="210" y2="406" stroke="currentColor" stroke-width="0.6" />
-          </svg>
-
           <figure class="noesis-hero__main-frame">
             <Image
               src={coverImg}
-              alt="Fotograma editorial de NOESIS — mesa de estudio cuántica, mapas celestes y diagramas matemáticos"
+              alt="Mesa de estudio de NOESIS — ecuaciones matemáticas, mapas celestes y diagramas científicos"
               widths={[480, 800, 1200]}
-              sizes="(max-width: 980px) calc(100vw - 2rem), 540px"
+              sizes="(max-width: 980px) calc(100vw - 2rem), 560px"
               format="webp"
               quality={86}
               loading="eager"
@@ -207,96 +252,151 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
               decoding="sync"
             />
             <figcaption class="noesis-hero__main-caption">
-              <span>FIG. 00 · THE NOESIS DESK</span>
+              <span>FIG. 00 · THE NOESIS WORKBENCH</span>
               <span>SEMANTIC KNOWLEDGE INTEGRATION</span>
             </figcaption>
           </figure>
 
-          <div class="noesis-hero__inset-row">
+          <div class="noesis-hero__triptych">
             <figure class="noesis-hero__mini-plate">
               <Image
                 src={eulerImg}
-                alt="Manuscrito histórico de cálculo y trigonometría esférica de Leonhard Euler"
-                widths={[320, 520]}
-                sizes="(max-width: 980px) 45vw, 250px"
+                alt="Manuscrito histórico de cálculo de Leonhard Euler"
+                widths={[260, 420]}
+                sizes="(max-width: 980px) 42vw, 180px"
                 format="webp"
                 quality={82}
                 loading="eager"
               />
-              <figcaption>Euler · Spherical Analysis</figcaption>
+              <figcaption>Euler · Calculus</figcaption>
             </figure>
 
             <figure class="noesis-hero__mini-plate">
               <Image
-                src={harmoniaImg}
-                alt="Atlas celeste Harmonia Macrocosmica de Andreas Cellarius, 1660"
-                widths={[320, 520]}
-                sizes="(max-width: 980px) 45vw, 250px"
+                src={ephemerisImg}
+                alt="Rueda celeste y efemérides astrológicas de 12 casas"
+                widths={[260, 420]}
+                sizes="(max-width: 980px) 42vw, 180px"
                 format="webp"
                 quality={82}
                 loading="eager"
               />
-              <figcaption>Cellarius · Harmonia (1660)</figcaption>
+              <figcaption>Ephemeris · XII</figcaption>
+            </figure>
+
+            <figure class="noesis-hero__mini-plate">
+              <Image
+                src={vesaliusImg}
+                alt="Grabado anatómico cerebral de Andreas Vesalius, 1543"
+                widths={[260, 420]}
+                sizes="(max-width: 980px) 84vw, 180px"
+                format="webp"
+                quality={82}
+                loading="eager"
+              />
+              <figcaption>Vesalius · 1543</figcaption>
             </figure>
           </div>
         </div>
       </div>
     </header>
 
+    <!-- Full-Width Formula & Axiom Desk Strip -->
+    <div class="noesis-formula-strip" aria-label="Fórmulas y axiomas de la mesa de trabajo">
+      <div class="noesis-shell noesis-formula-strip__grid">
+        {FORMULA_RIBBON_ITEMS.map((item) => (
+          <span class="noesis-formula-chip">
+            <span class="noesis-formula-chip__tag">{item.label}</span>
+            <span class="noesis-formula-chip__eq" set:html={item.html} />
+          </span>
+        ))}
+      </div>
+    </div>
+
     <!-- ================================================================
-         AUTHOR'S NOTE
+         AUTHOR'S NOTE + DESK COMPASS FOLIO
          ================================================================ -->
     <section class="noesis-shell noesis-note-section" id="authors-note" aria-labelledby="authors-note-heading">
-      <div class="noesis-note-card">
-        <h2 id="authors-note-heading" class="noesis-section-eyebrow">
-          <span data-i18n-lang="es">Nota de la autora · bbyeunha</span>
-          <span data-i18n-lang="en">Author’s Note · bbyeunha</span>
-        </h2>
+      <div class="noesis-note-spread">
+        <div class="noesis-note-card">
+          <h2 id="authors-note-heading" class="noesis-section-eyebrow">
+            <span data-i18n-lang="es">Nota de la autora · bbyeunha</span>
+            <span data-i18n-lang="en">Author’s Note · bbyeunha</span>
+          </h2>
 
-        <div class="noesis-note__body" data-i18n-lang="es" lang="es">
-          <p>holiii, probablemente este sea uno de los audios que más ilusión me ha hecho crear.</p>
-          <p>
-            siempre he querido ser esa persona que sabe un poquito de absolutamente todo, que puede participar en cualquier conversación y que encuentra interesante hasta el tema más inesperado JAJAJA.
-          </p>
-          <p>así que decidí hacer un audio para eso.</p>
-          <p>
-            noesis nació de mi fascinación por la inteligencia, la memoria, la curiosidad y la polimatía. quería explorar diferentes formas de inteligencia y reunir la mayor cantidad posible de disciplinas dentro de un mismo audio.
-          </p>
-          <p>
-            además de las afirmaciones habituales, incluí pequeñas definiciones y conocimientos reales de diferentes áreas, desde filosofía y matemáticas hasta neurociencia, astronomía, economía, arte y aviación.
-          </p>
-          <p>
-            este es también el primer audio desarrollado con AURELIS 3.3, una fórmula experimental que he creado para mis propios audios, con afirmaciones absurdamente detalladas y refuerzos integrados.
-          </p>
-          <p>
-            como siempre, lo hice principalmente para mí y decidí compartirlo por amor al arte. espero que disfruten explorando este pequeño archivo de conocimiento tanto como yo disfruté creándolo. ♡
-          </p>
+          <div class="noesis-note__body" data-i18n-lang="es" lang="es">
+            <p>holiii, probablemente este sea uno de los audios que más ilusión me ha hecho crear.</p>
+            <p>
+              siempre he querido ser esa persona que sabe un poquito de absolutamente todo, que puede participar en cualquier conversación y que encuentra interesante hasta el tema más inesperado JAJAJA.
+            </p>
+            <p>así que decidí hacer un audio para eso.</p>
+            <p>
+              noesis nació de mi fascinación por la inteligencia, la memoria, la curiosidad y la polimatía. quería explorar diferentes formas de inteligencia y reunir la mayor cantidad posible de disciplinas dentro de un mismo audio.
+            </p>
+            <p>
+              además de las afirmaciones habituales, incluí pequeñas definiciones y conocimientos reales de diferentes áreas, desde filosofía y matemáticas hasta neurociencia, astronomía, economía, arte y aviación.
+            </p>
+            <p>
+              este es también el primer audio desarrollado con AURELIS 3.3, una fórmula experimental que he creado para mis propios audios, con afirmaciones absurdamente detalladas y refuerzos integrados.
+            </p>
+            <p>
+              como siempre, lo hice principalmente para mí y decidí compartirlo por amor al arte. espero que disfruten explorando este pequeño archivo de conocimiento tanto como yo disfruté creándolo. ♡
+            </p>
+          </div>
+
+          <div class="noesis-note__body" data-i18n-lang="en" lang="en">
+            <p>hiii, this is probably one of the audios i've been most excited to create.</p>
+            <p>
+              i've always wanted to be the kind of person who knows a little bit about absolutely everything, who can participate in any conversation and find even the most unexpected subjects fascinating.
+            </p>
+            <p>so i decided to make an audio for exactly that.</p>
+            <p>
+              noesis was born from my fascination with intelligence, memory, curiosity and polymathy. i wanted to explore different forms of intelligence and bring as many disciplines as possible together within a single audio.
+            </p>
+            <p>
+              alongside traditional affirmations, i've included small definitions and actual foundational knowledge from different fields, ranging from philosophy and mathematics to neuroscience, astronomy, economics, art and aviation.
+            </p>
+            <p>
+              this is also the first audio developed with AURELIS 3.3, an experimental formula i've created for my own audios, featuring ridiculously detailed affirmations and integrated boosters.
+            </p>
+            <p>
+              as always, i made it primarily for myself and decided to share it simply because i love doing this. i hope you enjoy exploring this little archive of knowledge as much as i enjoyed creating it. ♡
+            </p>
+          </div>
         </div>
 
-        <div class="noesis-note__body" data-i18n-lang="en" lang="en">
-          <p>hiii, this is probably one of the audios i've been most excited to create.</p>
-          <p>
-            i've always wanted to be the kind of person who knows a little bit about absolutely everything, who can participate in any conversation and find even the most unexpected subjects fascinating.
-          </p>
-          <p>so i decided to make an audio for exactly that.</p>
-          <p>
-            noesis was born from my fascination with intelligence, memory, curiosity and polymathy. i wanted to explore different forms of intelligence and bring as many disciplines as possible together within a single audio.
-          </p>
-          <p>
-            alongside traditional affirmations, i've included small definitions and actual foundational knowledge from different fields, ranging from philosophy and mathematics to neuroscience, astronomy, economics, art and aviation.
-          </p>
-          <p>
-            this is also the first audio developed with AURELIS 3.3, an experimental formula i've created for my own audios, featuring ridiculously detailed affirmations and integrated boosters.
-          </p>
-          <p>
-            as always, i made it primarily for myself and decided to share it simply because i love doing this. i hope you enjoy exploring this little archive of knowledge as much as i enjoyed creating it. ♡
-          </p>
-        </div>
+        <!-- Companion Archival Dossier Summary -->
+        <aside class="noesis-note-aside" aria-label="Ficha del códice NOESIS">
+          <div>
+            <p class="noesis-section-eyebrow">
+              <span>EX LIBRIS · 002</span>
+            </p>
+            <svg class="noesis-note-aside__seal" viewBox="0 0 180 180" fill="none" aria-hidden="true">
+              <circle cx="90" cy="90" r="82" stroke="currentColor" stroke-width="1" />
+              <circle cx="90" cy="90" r="68" stroke="currentColor" stroke-width="0.7" stroke-dasharray="3 5" />
+              <polygon points="90,14 156,128 24,128" stroke="currentColor" stroke-width="0.9" />
+              <polygon points="90,166 156,52 24,52" stroke="currentColor" stroke-width="0.9" />
+              <circle cx="90" cy="90" r="22" stroke="currentColor" stroke-width="0.9" />
+              <text x="90" y="94" text-anchor="middle" fill="currentColor" font-size="11" font-family="Cinzel, serif" letter-spacing="3">
+                NOESIS
+              </text>
+            </svg>
+          </div>
+
+          <ul class="noesis-note-aside__list">
+            <li><strong>VOLUMES</strong><span>V (I – V)</span></li>
+            <li><strong>CHAPTERS</strong><span>54 Folios</span></li>
+            <li><strong>SYSTEM</strong><span>AURELIS 3.3</span></li>
+            <li><strong>BOOSTER</strong><span>CONTINUUM II</span></li>
+            <li><strong>LAYER</strong><span>Semantic Knowledge</span></li>
+            <li><strong>LANGUAGES</strong><span>Español + English</span></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
     <!-- ================================================================
-         INDEX OF KNOWLEDGE + 5 VOLUMES (54 CHAPTERS)
+         INDEX OF KNOWLEDGE + 5 VOLUMES (54 CHAPTERS) + SCROLL INTERLUDES
          ================================================================ -->
     <div class="noesis-shell noesis-workspace" id="index-of-knowledge">
       <!-- Sticky Desktop Sidebar Index -->
@@ -304,7 +404,12 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
         <h2 class="noesis-sidebar__title">
           <span data-i18n-lang="es">Índice del Conocimiento</span>
           <span data-i18n-lang="en">Index of Knowledge</span>
+          <span>54</span>
         </h2>
+
+        <p class="noesis-sidebar__formula">
+          |ψ⟩ = α|0⟩ + βe<sup>iφ</sup>|1⟩ · ☉ △ ♃
+        </p>
 
         {ALL_VOLUMES.map((vol, vIdx) => (
           <details class="noesis-index-vol" open={vIdx === 0}>
@@ -414,159 +519,272 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
           </div>
         </div>
 
-        <!-- 5 Volumes & 54 Chapters -->
-        {ALL_VOLUMES.map((vol) => (
-          <section class="noesis-volume" id={vol.id} data-noesis-volume aria-labelledby={`${vol.id}-heading`}>
-            <header class="noesis-volume__header">
-              <span class="noesis-volume__roman">VOLUME {vol.roman}</span>
-              <div class="noesis-volume__title-row">
-                <h2 id={`${vol.id}-heading`} class="noesis-volume__title">
-                  <span data-i18n-lang="es">{vol.title.es.replace(/^Volume [IVX]+ — /, '')}</span>
-                  <span data-i18n-lang="en">{vol.title.en.replace(/^Volume [IVX]+ — /, '')}</span>
-                </h2>
-                <button
-                  type="button"
-                  class="noesis-anchor-btn"
-                  data-copy-anchor={`#${vol.id}`}
-                  aria-label={`Copiar enlace a Volume ${vol.roman}`}
-                >
-                  #
-                </button>
+        <!-- Opening Desk Interlude before Volume I -->
+        {OPENING_INTERLUDE && (
+          <aside class="noesis-interlude" data-noesis-interlude aria-label={OPENING_INTERLUDE.tag}>
+            <div class="noesis-interlude__art" aria-hidden="true">
+              <svg viewBox="0 0 150 150" fill="none">
+                <circle cx="75" cy="75" r="62" stroke="currentColor" stroke-width="0.9" stroke-dasharray="3 5" />
+                <circle cx="75" cy="75" r="36" stroke="currentColor" stroke-width="0.9" />
+                <line x1="25" y1="55" x2="75" y2="39" stroke="currentColor" stroke-width="1" />
+                <line x1="75" y1="39" x2="124" y2="58" stroke="currentColor" stroke-width="1" />
+                <line x1="124" y1="58" x2="108" y2="112" stroke="currentColor" stroke-width="1" />
+                <line x1="108" y1="112" x2="42" y2="112" stroke="currentColor" stroke-width="1" />
+                <line x1="42" y1="112" x2="25" y2="55" stroke="currentColor" stroke-width="1" />
+                <line x1="25" y1="55" x2="108" y2="112" stroke="currentColor" stroke-width="0.7" opacity="0.65" />
+                <line x1="124" y1="58" x2="42" y2="112" stroke="currentColor" stroke-width="0.7" opacity="0.65" />
+                <circle cx="25" cy="55" r="3.5" fill="currentColor" />
+                <circle cx="75" cy="39" r="3.5" fill="currentColor" />
+                <circle cx="124" cy="58" r="3.5" fill="currentColor" />
+                <circle cx="108" cy="112" r="3.5" fill="currentColor" />
+                <circle cx="42" cy="112" r="3.5" fill="currentColor" />
+                <circle cx="75" cy="75" r="4.5" fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <p class="noesis-interlude__tag">{OPENING_INTERLUDE.tag}</p>
+              <blockquote class="noesis-interlude__quote">
+                <span data-i18n-lang="es">{OPENING_INTERLUDE.quote.es}</span>
+                <span data-i18n-lang="en">{OPENING_INTERLUDE.quote.en}</span>
+              </blockquote>
+              <p class="noesis-interlude__author">— {OPENING_INTERLUDE.author}</p>
+              <div class="noesis-interlude__formula-box">
+                <span class="noesis-interlude__formula-label">{OPENING_INTERLUDE.formulaLabel}</span>
+                <span class="noesis-interlude__formula-eq" set:html={OPENING_INTERLUDE.formulaHtml} />
               </div>
-              <p class="noesis-volume__subtitle">
-                <span data-i18n-lang="es">{vol.subtitle.es}</span>
-                <span data-i18n-lang="en">{vol.subtitle.en}</span>
+              <p class="noesis-interlude__marginalia">
+                <span data-i18n-lang="es">{OPENING_INTERLUDE.marginalia.es}</span>
+                <span data-i18n-lang="en">{OPENING_INTERLUDE.marginalia.en}</span>
               </p>
-              {vol.epigraph && (
-                <p class="noesis-volume__disclaimer">
-                  <span data-i18n-lang="es">{vol.epigraph.es}</span>
-                  <span data-i18n-lang="en">{vol.epigraph.en}</span>
-                </p>
-              )}
-              {vol.disclaimer && (
-                <p class="noesis-volume__disclaimer">
-                  <span data-i18n-lang="es">{vol.disclaimer.es}</span>
-                  <span data-i18n-lang="en">{vol.disclaimer.en}</span>
-                </p>
-              )}
-            </header>
+            </div>
+          </aside>
+        )}
 
-            <div class="noesis-chapters">
-              {vol.chapters.map((ch) => {
-                const searchCorpus = buildChapterSearchText(ch);
-                const plateImage = ch.plate ? PLATES[ch.plate.key] : undefined;
+        <!-- 5 Volumes & 54 Chapters + Interleaved Intellectual Desk Folios -->
+        {ALL_VOLUMES.map((vol, volIdx) => {
+          const nextInterlude = DESK_INTERLUDES.find((i) => i.afterVolumeIndex === volIdx);
 
-                return (
-                  <details
-                    class="noesis-chapter"
-                    id={ch.id}
-                    data-noesis-chapter
-                    data-search={searchCorpus}
-                    open
-                  >
-                    <summary class="noesis-chapter__summary">
-                      <div class="noesis-chapter__heading">
-                        <span class="noesis-chapter__num">CH. {ch.number}</span>
-                        <h3 class="noesis-chapter__title">
-                          <span data-i18n-lang="es">{ch.title.es}</span>
-                          <span data-i18n-lang="en">{ch.title.en}</span>
-                        </h3>
-                      </div>
+          return (
+            <>
+              <section class="noesis-volume" id={vol.id} data-noesis-volume aria-labelledby={`${vol.id}-heading`}>
+                <header class="noesis-volume__header">
+                  <span class="noesis-volume__roman">VOLUME {vol.roman} · CODEX NOESIS</span>
+                  <div class="noesis-volume__title-row">
+                    <h2 id={`${vol.id}-heading`} class="noesis-volume__title">
+                      <span data-i18n-lang="es">{vol.title.es.replace(/^Volume [IVX]+ — /, '')}</span>
+                      <span data-i18n-lang="en">{vol.title.en.replace(/^Volume [IVX]+ — /, '')}</span>
+                    </h2>
+                    <button
+                      type="button"
+                      class="noesis-anchor-btn"
+                      data-copy-anchor={`#${vol.id}`}
+                      aria-label={`Copiar enlace a Volume ${vol.roman}`}
+                    >
+                      #
+                    </button>
+                  </div>
+                  <p class="noesis-volume__subtitle">
+                    <span data-i18n-lang="es">{vol.subtitle.es}</span>
+                    <span data-i18n-lang="en">{vol.subtitle.en}</span>
+                  </p>
+                  {vol.epigraph && (
+                    <p class="noesis-volume__disclaimer">
+                      <span data-i18n-lang="es">{vol.epigraph.es}</span>
+                      <span data-i18n-lang="en">{vol.epigraph.en}</span>
+                    </p>
+                  )}
+                  {vol.disclaimer && (
+                    <p class="noesis-volume__disclaimer">
+                      <span data-i18n-lang="es">{vol.disclaimer.es}</span>
+                      <span data-i18n-lang="en">{vol.disclaimer.en}</span>
+                    </p>
+                  )}
+                </header>
 
-                      <div class="noesis-chapter__meta-actions">
-                        <button
-                          type="button"
-                          class="noesis-anchor-btn"
-                          data-copy-anchor={`#${ch.id}`}
-                          aria-label={`Copiar enlace al capítulo ${ch.number}`}
-                        >
-                          #
-                        </button>
-                        <span class="noesis-chapter__chevron" aria-hidden="true"></span>
-                      </div>
-                    </summary>
+                <div class="noesis-chapters">
+                  {vol.chapters.map((ch) => {
+                    const searchCorpus = buildChapterSearchText(ch);
+                    const plateImage = ch.plate ? PLATES[ch.plate.key] : undefined;
 
-                    <div class="noesis-chapter__body">
-                      {ch.intro && (
-                        <p class="noesis-chapter__intro">
-                          <span data-i18n-lang="es">{ch.intro.es}</span>
-                          <span data-i18n-lang="en">{ch.intro.en}</span>
-                        </p>
-                      )}
+                    return (
+                      <details
+                        class="noesis-chapter"
+                        id={ch.id}
+                        data-noesis-chapter
+                        data-search={searchCorpus}
+                        open
+                      >
+                        <summary class="noesis-chapter__summary">
+                          <div class="noesis-chapter__heading">
+                            <span class="noesis-chapter__num">CH. {ch.number}</span>
+                            <h3 class="noesis-chapter__title">
+                              <span data-i18n-lang="es">{ch.title.es}</span>
+                              <span data-i18n-lang="en">{ch.title.en}</span>
+                            </h3>
+                          </div>
 
-                      {ch.items && (
-                        <>
-                          <ul class="noesis-chapter__list" data-i18n-lang="es" lang="es">
-                            {ch.items.es.map((item) => (
-                              <li>{item}</li>
-                            ))}
-                          </ul>
-                          <ul class="noesis-chapter__list" data-i18n-lang="en" lang="en">
-                            {ch.items.en.map((item) => (
-                              <li>{item}</li>
-                            ))}
-                          </ul>
-                        </>
-                      )}
+                          <div class="noesis-chapter__meta-actions">
+                            <button
+                              type="button"
+                              class="noesis-anchor-btn"
+                              data-copy-anchor={`#${ch.id}`}
+                              aria-label={`Copiar enlace al capítulo ${ch.number}`}
+                            >
+                              #
+                            </button>
+                            <span class="noesis-chapter__chevron" aria-hidden="true"></span>
+                          </div>
+                        </summary>
 
-                      {ch.subsections && (
-                        <div class="noesis-subsections">
-                          {ch.subsections.map((sub) => (
-                            <div class="noesis-subsection">
-                              <h4 class="noesis-subsection__title">
-                                <span data-i18n-lang="es">{sub.title.es}</span>
-                                <span data-i18n-lang="en">{sub.title.en}</span>
-                              </h4>
+                        <div class="noesis-chapter__body">
+                          {ch.intro && (
+                            <p class="noesis-chapter__intro">
+                              <span data-i18n-lang="es">{ch.intro.es}</span>
+                              <span data-i18n-lang="en">{ch.intro.en}</span>
+                            </p>
+                          )}
+
+                          {ch.items && (
+                            <>
                               <ul class="noesis-chapter__list" data-i18n-lang="es" lang="es">
-                                {sub.items.es.map((item) => (
+                                {ch.items.es.map((item) => (
                                   <li>{item}</li>
                                 ))}
                               </ul>
                               <ul class="noesis-chapter__list" data-i18n-lang="en" lang="en">
-                                {sub.items.en.map((item) => (
+                                {ch.items.en.map((item) => (
                                   <li>{item}</li>
                                 ))}
                               </ul>
+                            </>
+                          )}
+
+                          {ch.subsections && (
+                            <div class="noesis-subsections">
+                              {ch.subsections.map((sub) => (
+                                <div class="noesis-subsection">
+                                  <h4 class="noesis-subsection__title">
+                                    <span data-i18n-lang="es">{sub.title.es}</span>
+                                    <span data-i18n-lang="en">{sub.title.en}</span>
+                                  </h4>
+                                  <ul class="noesis-chapter__list" data-i18n-lang="es" lang="es">
+                                    {sub.items.es.map((item) => (
+                                      <li>{item}</li>
+                                    ))}
+                                  </ul>
+                                  <ul class="noesis-chapter__list" data-i18n-lang="en" lang="en">
+                                    {sub.items.en.map((item) => (
+                                      <li>{item}</li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
                             </div>
-                          ))}
-                        </div>
-                      )}
+                          )}
 
-                      {ch.note && (
-                        <p class="noesis-chapter__note">
-                          <span data-i18n-lang="es">{ch.note.es}</span>
-                          <span data-i18n-lang="en">{ch.note.en}</span>
-                        </p>
-                      )}
-
-                      {ch.plate && plateImage && (
-                        <figure class="noesis-plate">
-                          <Image
-                            src={plateImage}
-                            alt={ch.plate.alt.es}
-                            widths={[360, 640]}
-                            sizes="(max-width: 680px) calc(100vw - 4rem), 320px"
-                            format="webp"
-                            quality={82}
-                            loading="lazy"
-                            decoding="async"
-                          />
-                          <figcaption class="noesis-plate__meta">
-                            <span class="noesis-plate__fig">{ch.plate.figure}</span>
-                            <p class="noesis-plate__caption">
-                              <span data-i18n-lang="es">{ch.plate.caption.es}</span>
-                              <span data-i18n-lang="en">{ch.plate.caption.en}</span>
+                          {ch.note && (
+                            <p class="noesis-chapter__note">
+                              <span data-i18n-lang="es">{ch.note.es}</span>
+                              <span data-i18n-lang="en">{ch.note.en}</span>
                             </p>
-                          </figcaption>
-                        </figure>
-                      )}
+                          )}
+
+                          {ch.plate && plateImage && (
+                            <figure class="noesis-plate">
+                              <Image
+                                src={plateImage}
+                                alt={ch.plate.alt.es}
+                                widths={[360, 640]}
+                                sizes="(max-width: 680px) calc(100vw - 4rem), 320px"
+                                format="webp"
+                                quality={82}
+                                loading="lazy"
+                                decoding="async"
+                              />
+                              <figcaption class="noesis-plate__meta">
+                                <span class="noesis-plate__fig">{ch.plate.figure}</span>
+                                <p class="noesis-plate__caption">
+                                  <span data-i18n-lang="es">{ch.plate.caption.es}</span>
+                                  <span data-i18n-lang="en">{ch.plate.caption.en}</span>
+                                </p>
+                              </figcaption>
+                            </figure>
+                          )}
+                        </div>
+                      </details>
+                    );
+                  })}
+                </div>
+              </section>
+
+              {nextInterlude && (
+                <aside class="noesis-interlude" data-noesis-interlude aria-label={nextInterlude.tag}>
+                  <div class="noesis-interlude__art" aria-hidden="true">
+                    {nextInterlude.svgKind === 'feynman' && (
+                      <svg viewBox="0 0 150 150" fill="none">
+                        <line x1="14" y1="30" x2="46" y2="75" stroke="currentColor" stroke-width="1.5" />
+                        <line x1="14" y1="120" x2="46" y2="75" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M 46 75 Q 52 63, 58 75 T 70 75" stroke="currentColor" stroke-width="1.5" />
+                        <circle cx="82" cy="75" r="12" stroke="currentColor" stroke-width="1.4" />
+                        <path d="M 94 75 Q 100 63, 106 75 T 118 75" stroke="currentColor" stroke-width="1.5" />
+                        <line x1="118" y1="75" x2="138" y2="30" stroke="currentColor" stroke-width="1.5" />
+                        <line x1="118" y1="75" x2="138" y2="120" stroke="currentColor" stroke-width="1.5" />
+                        <circle cx="46" cy="75" r="3" fill="currentColor" />
+                        <circle cx="118" cy="75" r="3" fill="currentColor" />
+                        <text x="66" y="45" fill="currentColor" font-size="11" font-style="italic">γ* / Z⁰</text>
+                      </svg>
+                    )}
+                    {nextInterlude.svgKind === 'astrolabe' && (
+                      <svg viewBox="0 0 150 150" fill="none">
+                        <circle cx="75" cy="75" r="64" stroke="currentColor" stroke-width="1.1" />
+                        <circle cx="75" cy="75" r="50" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 4" />
+                        <circle cx="75" cy="75" r="24" stroke="currentColor" stroke-width="0.8" />
+                        <polygon points="75,18 124,103 26,103" stroke="currentColor" stroke-width="1.1" />
+                        <polygon points="75,132 124,47 26,47" stroke="currentColor" stroke-width="0.9" opacity="0.7" />
+                        <circle cx="75" cy="18" r="3" fill="currentColor" />
+                        <circle cx="124" cy="103" r="3" fill="currentColor" />
+                        <circle cx="26" cy="103" r="3" fill="currentColor" />
+                      </svg>
+                    )}
+                    {nextInterlude.svgKind === 'golden' && (
+                      <svg viewBox="0 0 150 150" fill="none">
+                        <rect x="14" y="34" width="122" height="76" stroke="currentColor" stroke-width="1" />
+                        <line x1="90" y1="34" x2="90" y2="110" stroke="currentColor" stroke-width="0.8" />
+                        <line x1="90" y1="80" x2="136" y2="80" stroke="currentColor" stroke-width="0.8" />
+                        <path d="M 14 110 A 76 76 0 0 1 90 34 A 46 46 0 0 1 136 80 A 30 30 0 0 1 106 110" stroke="currentColor" stroke-width="1.5" />
+                        <text x="64" y="136" fill="currentColor" font-size="11" font-style="italic">φ = 1.618</text>
+                      </svg>
+                    )}
+                    {nextInterlude.svgKind === 'wavepacket' && (
+                      <svg viewBox="0 0 150 150" fill="none">
+                        <line x1="10" y1="75" x2="140" y2="75" stroke="currentColor" stroke-width="0.7" opacity="0.5" />
+                        <path d="M 12 75 Q 24 72, 32 75 T 48 64 T 62 96 T 75 34 T 88 116 T 102 58 T 118 82 T 138 75" stroke="currentColor" stroke-width="1.6" />
+                        <circle cx="75" cy="75" r="56" stroke="currentColor" stroke-width="0.7" stroke-dasharray="2 5" />
+                        <text x="48" y="138" fill="currentColor" font-size="10" font-style="italic">|ψ(x,t)|²</text>
+                      </svg>
+                    )}
+                  </div>
+                  <div>
+                    <p class="noesis-interlude__tag">{nextInterlude.tag}</p>
+                    <blockquote class="noesis-interlude__quote">
+                      <span data-i18n-lang="es">{nextInterlude.quote.es}</span>
+                      <span data-i18n-lang="en">{nextInterlude.quote.en}</span>
+                    </blockquote>
+                    <p class="noesis-interlude__author">— {nextInterlude.author}</p>
+                    <div class="noesis-interlude__formula-box">
+                      <span class="noesis-interlude__formula-label">{nextInterlude.formulaLabel}</span>
+                      <span class="noesis-interlude__formula-eq" set:html={nextInterlude.formulaHtml} />
                     </div>
-                  </details>
-                );
-              })}
-            </div>
-          </section>
-        ))}
+                    <p class="noesis-interlude__marginalia">
+                      <span data-i18n-lang="es">{nextInterlude.marginalia.es}</span>
+                      <span data-i18n-lang="en">{nextInterlude.marginalia.en}</span>
+                    </p>
+                  </div>
+                </aside>
+              )}
+            </>
+          );
+        })}
 
         <p class="noesis-empty-search" id="noesis-empty-search" hidden>
           <span data-i18n-lang="es">No se encontraron capítulos que coincidan con tu búsqueda.</span>
@@ -611,8 +829,8 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
 
       const chapters = Array.from(document.querySelectorAll('[data-noesis-chapter]'));
       const volumes = Array.from(document.querySelectorAll('[data-noesis-volume]'));
+      const interludes = Array.from(document.querySelectorAll('[data-noesis-interlude]'));
 
-      // 1. Reading progress hairline
       function updateProgress() {
         if (!progressBar) return;
         const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
@@ -622,7 +840,6 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
       window.addEventListener('scroll', updateProgress, { passive: true });
       updateProgress();
 
-      // 2. Local instant chapter search
       function normalize(str) {
         return (str || '')
           .toLowerCase()
@@ -654,6 +871,10 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
           vol.hidden = !anyVisible;
         });
 
+        interludes.forEach((el) => {
+          el.hidden = q.length > 0;
+        });
+
         if (emptyEl) emptyEl.hidden = visibleChapters > 0;
         if (statusEl) {
           const esSpan = statusEl.querySelector('[data-i18n-lang="es"]');
@@ -675,7 +896,6 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
         });
       }
 
-      // 3. Expand / Collapse all chapters
       if (expandAllBtn) {
         expandAllBtn.addEventListener('click', () => {
           chapters.forEach((ch) => {
@@ -691,7 +911,6 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
         });
       }
 
-      // 4. Close mobile index upon anchor click & ensure target chapter is opened
       document.querySelectorAll('[data-mobile-nav-link]').forEach((link) => {
         link.addEventListener('click', () => {
           if (mobileIndex) mobileIndex.open = false;
@@ -703,13 +922,11 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
         });
       });
 
-      // Also open target chapter if navigated via URL hash
       if (window.location.hash) {
         const hashTarget = document.getElementById(window.location.hash.slice(1));
         if (hashTarget && hashTarget.tagName === 'DETAILS') hashTarget.open = true;
       }
 
-      // 5. Direct anchor share buttons (#)
       document.querySelectorAll('[data-copy-anchor]').forEach((btn) => {
         btn.addEventListener('click', async (ev) => {
           ev.preventDefault();
