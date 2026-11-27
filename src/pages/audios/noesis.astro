@@ -1,0 +1,733 @@
+---
+import '@fontsource/eb-garamond/latin-400.css';
+import '@fontsource/eb-garamond/latin-500.css';
+import '@fontsource/eb-garamond/latin-400-italic.css';
+import '@fontsource/cinzel/latin-400.css';
+import '@fontsource/cinzel/latin-600.css';
+import '../../styles/noesis.css';
+
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/site';
+import { VOLUMES_1_TO_2 } from '../../data/noesis/volumes1to2';
+import { VOLUMES_3_TO_5 } from '../../data/noesis/volumes3to5';
+import type { NoesisPlateKey } from '../../data/noesis/types';
+
+import coverImg from '../../assets/audios/noesis/cover.jpg';
+import eulerImg from '../../assets/audios/noesis/euler.jpg';
+import vesaliusImg from '../../assets/audios/noesis/vesalius.jpg';
+import harmoniaImg from '../../assets/audios/noesis/harmonia.jpg';
+import connectomeImg from '../../assets/audios/noesis/connectome.jpg';
+import aerodynamicsImg from '../../assets/audios/noesis/aerodynamics.jpg';
+import lorenzImg from '../../assets/audios/noesis/lorenz.jpg';
+import ephemerisImg from '../../assets/audios/noesis/ephemeris.jpg';
+import psycheImg from '../../assets/audios/noesis/psyche.jpg';
+import quantumImg from '../../assets/audios/noesis/quantum.jpg';
+
+const PLATES: Record<NoesisPlateKey, ImageMetadata> = {
+  euler: eulerImg,
+  vesalius: vesaliusImg,
+  harmonia: harmoniaImg,
+  connectome: connectomeImg,
+  aerodynamics: aerodynamicsImg,
+  lorenz: lorenzImg,
+  ephemeris: ephemerisImg,
+  psyche: psycheImg,
+  quantum: quantumImg,
+};
+
+const ALL_VOLUMES = [...VOLUMES_1_TO_2, ...VOLUMES_3_TO_5];
+
+// Set confirmed YouTube URL once published; button remains cleanly hidden while empty.
+const YOUTUBE_URL = '';
+
+const pageTitle = 'NOESIS — academically insufferable. | The Diaries Library';
+const pageDescription =
+  'Explore the complete benefits archive of NOESIS, a bilingual affirmation audio focused on multidimensional intelligence, memory, polymathy, intellectual curiosity and foundational knowledge.';
+const ogImageUrl = Astro.site ? new URL(coverImg.src, Astro.site).toString() : coverImg.src;
+
+function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][number]): string {
+  const parts: string[] = [
+    ch.number,
+    ch.title.es,
+    ch.title.en,
+    ch.intro?.es || '',
+    ch.intro?.en || '',
+    ch.note?.es || '',
+    ch.note?.en || '',
+    ...(ch.items?.es || []),
+    ...(ch.items?.en || []),
+  ];
+  if (ch.subsections) {
+    for (const sub of ch.subsections) {
+      parts.push(sub.title.es, sub.title.en, ...sub.items.es, ...sub.items.en);
+    }
+  }
+  return parts
+    .join(' ')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={ogImageUrl}
+  bodyClass="page-noesis"
+  defaultTheme="dark"
+>
+  <div class="noesis-progress" aria-hidden="true">
+    <div class="noesis-progress__bar" id="noesis-progress-bar"></div>
+  </div>
+
+  <article class="noesis-universe" id="top">
+    <!-- Top Return Breadcrumb -->
+    <div class="noesis-shell noesis-breadcrumb">
+      <a href={withBase('/')}>
+        <span aria-hidden="true">←</span>
+        <span data-i18n-lang="es">Volver a The Diaries Library</span>
+        <span data-i18n-lang="en">Return to The Diaries Library</span>
+      </a>
+      <span>PROJECT 002 · AURELIS 3.3</span>
+    </div>
+
+    <!-- ================================================================
+         HERO — THE NOESIS ARCHIVE
+         ================================================================ -->
+    <header class="noesis-shell noesis-hero" aria-labelledby="noesis-title">
+      <div class="noesis-hero__grid">
+        <div class="noesis-hero__folio">
+          <p class="noesis-hero__kicker">
+            <span>THE DIARIES LIBRARY</span>
+            <span class="noesis-hero__kicker-dot" aria-hidden="true">✦</span>
+            <span>ARCHIVE NO. 002</span>
+          </p>
+
+          <h1 id="noesis-title" class="noesis-hero__title">NOESIS</h1>
+          <p class="noesis-hero__subtitle">the art of knowing everything.</p>
+          <p class="noesis-hero__public-title">
+            academically insufferable. ୨ৎ intelligence, memory &amp; polymath
+          </p>
+
+          <p class="noesis-hero__epigraph">
+            <span data-i18n-lang="es">
+              Un archivo dedicado a la inteligencia humana, la memoria y la polimatía.
+            </span>
+            <span data-i18n-lang="en">
+              An archive of human intelligence and knowledge.
+            </span>
+          </p>
+
+          <dl class="noesis-hero__ledger">
+            <div class="noesis-hero__ledger-item">
+              <dt class="noesis-hero__ledger-label">
+                <span data-i18n-lang="es">Categorías</span>
+                <span data-i18n-lang="en">Disciplines</span>
+              </dt>
+              <dd class="noesis-hero__ledger-value">Intelligence · Memory · Polymathy</dd>
+            </div>
+            <div class="noesis-hero__ledger-item">
+              <dt class="noesis-hero__ledger-label">
+                <span data-i18n-lang="es">Arquitectura</span>
+                <span data-i18n-lang="en">Architecture</span>
+              </dt>
+              <dd class="noesis-hero__ledger-value">AURELIS 3.3 — CONTINUUM II</dd>
+            </div>
+            <div class="noesis-hero__ledger-item">
+              <dt class="noesis-hero__ledger-label">
+                <span data-i18n-lang="es">Idiomas y Duración</span>
+                <span data-i18n-lang="en">Languages &amp; Duration</span>
+              </dt>
+              <dd class="noesis-hero__ledger-value">Español + English · 02:00</dd>
+            </div>
+            <div class="noesis-hero__ledger-item">
+              <dt class="noesis-hero__ledger-label">
+                <span data-i18n-lang="es">Música</span>
+                <span data-i18n-lang="en">Soundtrack</span>
+              </dt>
+              <dd class="noesis-hero__ledger-value">New Person, Same Old Mistakes — Tame Impala (inst.)</dd>
+            </div>
+          </dl>
+
+          <div class="noesis-hero__actions">
+            <a class="noesis-btn-primary" href="#index-of-knowledge">
+              <span data-i18n-lang="es">Explorar los 54 capítulos</span>
+              <span data-i18n-lang="en">Explore all 54 chapters</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+
+            <a class="noesis-btn-ghost" href="#authors-note">
+              <span data-i18n-lang="es">Nota de la autora</span>
+              <span data-i18n-lang="en">Author’s note</span>
+            </a>
+
+            {YOUTUBE_URL && (
+              <a
+                class="noesis-btn-ghost"
+                href={YOUTUBE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span data-i18n-lang="es">Escuchar en YouTube</span>
+                <span data-i18n-lang="en">Listen on YouTube</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
+        </div>
+
+        <!-- Archival Visual Diptych (Original NOESIS Desk + Historical Plates) -->
+        <div class="noesis-hero__plates">
+          <svg
+            class="noesis-hero__astrolabe"
+            viewBox="0 0 420 420"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle cx="210" cy="210" r="196" stroke="currentColor" stroke-width="0.9" />
+            <circle cx="210" cy="210" r="168" stroke="currentColor" stroke-width="0.7" stroke-dasharray="3 6" />
+            <ellipse cx="210" cy="210" rx="196" ry="92" stroke="currentColor" stroke-width="0.7" transform="rotate(-24 210 210)" />
+            <ellipse cx="210" cy="210" rx="196" ry="92" stroke="currentColor" stroke-width="0.7" transform="rotate(24 210 210)" />
+            <line x1="14" y1="210" x2="406" y2="210" stroke="currentColor" stroke-width="0.6" />
+            <line x1="210" y1="14" x2="210" y2="406" stroke="currentColor" stroke-width="0.6" />
+          </svg>
+
+          <figure class="noesis-hero__main-frame">
+            <Image
+              src={coverImg}
+              alt="Fotograma editorial de NOESIS — mesa de estudio cuántica, mapas celestes y diagramas matemáticos"
+              widths={[480, 800, 1200]}
+              sizes="(max-width: 980px) calc(100vw - 2rem), 540px"
+              format="webp"
+              quality={86}
+              loading="eager"
+              fetchpriority="high"
+              decoding="sync"
+            />
+            <figcaption class="noesis-hero__main-caption">
+              <span>FIG. 00 · THE NOESIS DESK</span>
+              <span>SEMANTIC KNOWLEDGE INTEGRATION</span>
+            </figcaption>
+          </figure>
+
+          <div class="noesis-hero__inset-row">
+            <figure class="noesis-hero__mini-plate">
+              <Image
+                src={eulerImg}
+                alt="Manuscrito histórico de cálculo y trigonometría esférica de Leonhard Euler"
+                widths={[320, 520]}
+                sizes="(max-width: 980px) 45vw, 250px"
+                format="webp"
+                quality={82}
+                loading="eager"
+              />
+              <figcaption>Euler · Spherical Analysis</figcaption>
+            </figure>
+
+            <figure class="noesis-hero__mini-plate">
+              <Image
+                src={harmoniaImg}
+                alt="Atlas celeste Harmonia Macrocosmica de Andreas Cellarius, 1660"
+                widths={[320, 520]}
+                sizes="(max-width: 980px) 45vw, 250px"
+                format="webp"
+                quality={82}
+                loading="eager"
+              />
+              <figcaption>Cellarius · Harmonia (1660)</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================================================================
+         AUTHOR'S NOTE
+         ================================================================ -->
+    <section class="noesis-shell noesis-note-section" id="authors-note" aria-labelledby="authors-note-heading">
+      <div class="noesis-note-card">
+        <h2 id="authors-note-heading" class="noesis-section-eyebrow">
+          <span data-i18n-lang="es">Nota de la autora · bbyeunha</span>
+          <span data-i18n-lang="en">Author’s Note · bbyeunha</span>
+        </h2>
+
+        <div class="noesis-note__body" data-i18n-lang="es" lang="es">
+          <p>holiii, probablemente este sea uno de los audios que más ilusión me ha hecho crear.</p>
+          <p>
+            siempre he querido ser esa persona que sabe un poquito de absolutamente todo, que puede participar en cualquier conversación y que encuentra interesante hasta el tema más inesperado JAJAJA.
+          </p>
+          <p>así que decidí hacer un audio para eso.</p>
+          <p>
+            noesis nació de mi fascinación por la inteligencia, la memoria, la curiosidad y la polimatía. quería explorar diferentes formas de inteligencia y reunir la mayor cantidad posible de disciplinas dentro de un mismo audio.
+          </p>
+          <p>
+            además de las afirmaciones habituales, incluí pequeñas definiciones y conocimientos reales de diferentes áreas, desde filosofía y matemáticas hasta neurociencia, astronomía, economía, arte y aviación.
+          </p>
+          <p>
+            este es también el primer audio desarrollado con AURELIS 3.3, una fórmula experimental que he creado para mis propios audios, con afirmaciones absurdamente detalladas y refuerzos integrados.
+          </p>
+          <p>
+            como siempre, lo hice principalmente para mí y decidí compartirlo por amor al arte. espero que disfruten explorando este pequeño archivo de conocimiento tanto como yo disfruté creándolo. ♡
+          </p>
+        </div>
+
+        <div class="noesis-note__body" data-i18n-lang="en" lang="en">
+          <p>hiii, this is probably one of the audios i've been most excited to create.</p>
+          <p>
+            i've always wanted to be the kind of person who knows a little bit about absolutely everything, who can participate in any conversation and find even the most unexpected subjects fascinating.
+          </p>
+          <p>so i decided to make an audio for exactly that.</p>
+          <p>
+            noesis was born from my fascination with intelligence, memory, curiosity and polymathy. i wanted to explore different forms of intelligence and bring as many disciplines as possible together within a single audio.
+          </p>
+          <p>
+            alongside traditional affirmations, i've included small definitions and actual foundational knowledge from different fields, ranging from philosophy and mathematics to neuroscience, astronomy, economics, art and aviation.
+          </p>
+          <p>
+            this is also the first audio developed with AURELIS 3.3, an experimental formula i've created for my own audios, featuring ridiculously detailed affirmations and integrated boosters.
+          </p>
+          <p>
+            as always, i made it primarily for myself and decided to share it simply because i love doing this. i hope you enjoy exploring this little archive of knowledge as much as i enjoyed creating it. ♡
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         INDEX OF KNOWLEDGE + 5 VOLUMES (54 CHAPTERS)
+         ================================================================ -->
+    <div class="noesis-shell noesis-workspace" id="index-of-knowledge">
+      <!-- Sticky Desktop Sidebar Index -->
+      <aside class="noesis-sidebar" aria-label="Index of Knowledge">
+        <h2 class="noesis-sidebar__title">
+          <span data-i18n-lang="es">Índice del Conocimiento</span>
+          <span data-i18n-lang="en">Index of Knowledge</span>
+        </h2>
+
+        {ALL_VOLUMES.map((vol, vIdx) => (
+          <details class="noesis-index-vol" open={vIdx === 0}>
+            <summary>
+              <span>VOL. {vol.roman} ({vol.chapters.length})</span>
+            </summary>
+            <ol class="noesis-index-list">
+              <li>
+                <a href={`#${vol.id}`}>
+                  <span class="noesis-index-num">{vol.roman}</span>
+                  <span data-i18n-lang="es">{vol.title.es.replace(/^Volume [IVX]+ — /, '')}</span>
+                  <span data-i18n-lang="en">{vol.title.en.replace(/^Volume [IVX]+ — /, '')}</span>
+                </a>
+              </li>
+              {vol.chapters.map((ch) => (
+                <li>
+                  <a href={`#${ch.id}`}>
+                    <span class="noesis-index-num">{ch.number}</span>
+                    <span data-i18n-lang="es">{ch.title.es}</span>
+                    <span data-i18n-lang="en">{ch.title.en}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </details>
+        ))}
+      </aside>
+
+      <!-- Main Encyclopedia Content Column -->
+      <div class="noesis-content">
+        <!-- Mobile Collapsible Index -->
+        <details class="noesis-mobile-index" id="noesis-mobile-index">
+          <summary>
+            <span data-i18n-lang="es">Índice del Conocimiento · 5 Volúmenes · 54 Capítulos</span>
+            <span data-i18n-lang="en">Index of Knowledge · 5 Volumes · 54 Chapters</span>
+          </summary>
+          <div class="noesis-mobile-index__body">
+            {ALL_VOLUMES.map((vol) => (
+              <details class="noesis-index-vol">
+                <summary>
+                  <span>VOL. {vol.roman} — {vol.chapters.length}</span>
+                </summary>
+                <ol class="noesis-index-list">
+                  <li>
+                    <a href={`#${vol.id}`} data-mobile-nav-link>
+                      <span class="noesis-index-num">{vol.roman}</span>
+                      <span data-i18n-lang="es">{vol.title.es.replace(/^Volume [IVX]+ — /, '')}</span>
+                      <span data-i18n-lang="en">{vol.title.en.replace(/^Volume [IVX]+ — /, '')}</span>
+                    </a>
+                  </li>
+                  {vol.chapters.map((ch) => (
+                    <li>
+                      <a href={`#${ch.id}`} data-mobile-nav-link>
+                        <span class="noesis-index-num">{ch.number}</span>
+                        <span data-i18n-lang="es">{ch.title.es}</span>
+                        <span data-i18n-lang="en">{ch.title.en}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </details>
+            ))}
+          </div>
+        </details>
+
+        <!-- Sticky Search + Expand / Collapse Controls -->
+        <div class="noesis-controls" role="region" aria-label="Herramientas de lectura">
+          <div class="noesis-search-wrap">
+            <label class="sr-only" for="noesis-search">
+              <span data-i18n-lang="es">Buscar beneficios, capítulos o disciplinas</span>
+              <span data-i18n-lang="en">Search benefits, chapters or disciplines</span>
+            </label>
+            <input
+              id="noesis-search"
+              type="search"
+              class="noesis-search-input"
+              placeholder="Buscar capítulo, disciplina o concepto..."
+              data-placeholder-es="Buscar capítulo, disciplina o concepto..."
+              data-placeholder-en="Search chapter, discipline or concept..."
+              autocomplete="off"
+            />
+            <button
+              type="button"
+              id="noesis-search-clear"
+              class="noesis-search-clear"
+              aria-label="Limpiar búsqueda"
+              hidden
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+
+          <span class="noesis-search-status" id="noesis-search-status" aria-live="polite">
+            <span data-i18n-lang="es">54 capítulos</span>
+            <span data-i18n-lang="en">54 chapters</span>
+          </span>
+
+          <div class="noesis-control-btns">
+            <button type="button" class="noesis-ctrl-btn" id="noesis-expand-all">
+              <span data-i18n-lang="es">Expandir todo</span>
+              <span data-i18n-lang="en">Expand all</span>
+            </button>
+            <button type="button" class="noesis-ctrl-btn" id="noesis-collapse-all">
+              <span data-i18n-lang="es">Contraer todo</span>
+              <span data-i18n-lang="en">Collapse all</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5 Volumes & 54 Chapters -->
+        {ALL_VOLUMES.map((vol) => (
+          <section class="noesis-volume" id={vol.id} data-noesis-volume aria-labelledby={`${vol.id}-heading`}>
+            <header class="noesis-volume__header">
+              <span class="noesis-volume__roman">VOLUME {vol.roman}</span>
+              <div class="noesis-volume__title-row">
+                <h2 id={`${vol.id}-heading`} class="noesis-volume__title">
+                  <span data-i18n-lang="es">{vol.title.es.replace(/^Volume [IVX]+ — /, '')}</span>
+                  <span data-i18n-lang="en">{vol.title.en.replace(/^Volume [IVX]+ — /, '')}</span>
+                </h2>
+                <button
+                  type="button"
+                  class="noesis-anchor-btn"
+                  data-copy-anchor={`#${vol.id}`}
+                  aria-label={`Copiar enlace a Volume ${vol.roman}`}
+                >
+                  #
+                </button>
+              </div>
+              <p class="noesis-volume__subtitle">
+                <span data-i18n-lang="es">{vol.subtitle.es}</span>
+                <span data-i18n-lang="en">{vol.subtitle.en}</span>
+              </p>
+              {vol.epigraph && (
+                <p class="noesis-volume__disclaimer">
+                  <span data-i18n-lang="es">{vol.epigraph.es}</span>
+                  <span data-i18n-lang="en">{vol.epigraph.en}</span>
+                </p>
+              )}
+              {vol.disclaimer && (
+                <p class="noesis-volume__disclaimer">
+                  <span data-i18n-lang="es">{vol.disclaimer.es}</span>
+                  <span data-i18n-lang="en">{vol.disclaimer.en}</span>
+                </p>
+              )}
+            </header>
+
+            <div class="noesis-chapters">
+              {vol.chapters.map((ch) => {
+                const searchCorpus = buildChapterSearchText(ch);
+                const plateImage = ch.plate ? PLATES[ch.plate.key] : undefined;
+
+                return (
+                  <details
+                    class="noesis-chapter"
+                    id={ch.id}
+                    data-noesis-chapter
+                    data-search={searchCorpus}
+                    open
+                  >
+                    <summary class="noesis-chapter__summary">
+                      <div class="noesis-chapter__heading">
+                        <span class="noesis-chapter__num">CH. {ch.number}</span>
+                        <h3 class="noesis-chapter__title">
+                          <span data-i18n-lang="es">{ch.title.es}</span>
+                          <span data-i18n-lang="en">{ch.title.en}</span>
+                        </h3>
+                      </div>
+
+                      <div class="noesis-chapter__meta-actions">
+                        <button
+                          type="button"
+                          class="noesis-anchor-btn"
+                          data-copy-anchor={`#${ch.id}`}
+                          aria-label={`Copiar enlace al capítulo ${ch.number}`}
+                        >
+                          #
+                        </button>
+                        <span class="noesis-chapter__chevron" aria-hidden="true"></span>
+                      </div>
+                    </summary>
+
+                    <div class="noesis-chapter__body">
+                      {ch.intro && (
+                        <p class="noesis-chapter__intro">
+                          <span data-i18n-lang="es">{ch.intro.es}</span>
+                          <span data-i18n-lang="en">{ch.intro.en}</span>
+                        </p>
+                      )}
+
+                      {ch.items && (
+                        <>
+                          <ul class="noesis-chapter__list" data-i18n-lang="es" lang="es">
+                            {ch.items.es.map((item) => (
+                              <li>{item}</li>
+                            ))}
+                          </ul>
+                          <ul class="noesis-chapter__list" data-i18n-lang="en" lang="en">
+                            {ch.items.en.map((item) => (
+                              <li>{item}</li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+
+                      {ch.subsections && (
+                        <div class="noesis-subsections">
+                          {ch.subsections.map((sub) => (
+                            <div class="noesis-subsection">
+                              <h4 class="noesis-subsection__title">
+                                <span data-i18n-lang="es">{sub.title.es}</span>
+                                <span data-i18n-lang="en">{sub.title.en}</span>
+                              </h4>
+                              <ul class="noesis-chapter__list" data-i18n-lang="es" lang="es">
+                                {sub.items.es.map((item) => (
+                                  <li>{item}</li>
+                                ))}
+                              </ul>
+                              <ul class="noesis-chapter__list" data-i18n-lang="en" lang="en">
+                                {sub.items.en.map((item) => (
+                                  <li>{item}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {ch.note && (
+                        <p class="noesis-chapter__note">
+                          <span data-i18n-lang="es">{ch.note.es}</span>
+                          <span data-i18n-lang="en">{ch.note.en}</span>
+                        </p>
+                      )}
+
+                      {ch.plate && plateImage && (
+                        <figure class="noesis-plate">
+                          <Image
+                            src={plateImage}
+                            alt={ch.plate.alt.es}
+                            widths={[360, 640]}
+                            sizes="(max-width: 680px) calc(100vw - 4rem), 320px"
+                            format="webp"
+                            quality={82}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <figcaption class="noesis-plate__meta">
+                            <span class="noesis-plate__fig">{ch.plate.figure}</span>
+                            <p class="noesis-plate__caption">
+                              <span data-i18n-lang="es">{ch.plate.caption.es}</span>
+                              <span data-i18n-lang="en">{ch.plate.caption.en}</span>
+                            </p>
+                          </figcaption>
+                        </figure>
+                      )}
+                    </div>
+                  </details>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+
+        <p class="noesis-empty-search" id="noesis-empty-search" hidden>
+          <span data-i18n-lang="es">No se encontraron capítulos que coincidan con tu búsqueda.</span>
+          <span data-i18n-lang="en">No chapters match your search.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         CLOSING PAGE — Classical Colophon
+         ================================================================ -->
+    <footer class="noesis-shell noesis-colophon">
+      <div class="noesis-colophon__ornament" aria-hidden="true">✦ · ✦ · ✦</div>
+      <p class="noesis-colophon__quote">made for myself, shared with love.</p>
+      <p class="noesis-colophon__author">— bbyeunha</p>
+
+      <div class="noesis-colophon__links">
+        <a class="noesis-btn-primary" href={withBase('/')}>
+          <span aria-hidden="true">←</span>
+          <span data-i18n-lang="es">Volver a The Diaries Library</span>
+          <span data-i18n-lang="en">Back to The Diaries Library</span>
+        </a>
+        <a class="noesis-btn-ghost" href="#index-of-knowledge">
+          <span data-i18n-lang="es">Regresar al índice</span>
+          <span data-i18n-lang="en">Back to index</span>
+          <span aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </footer>
+  </article>
+
+  <script is:inline>
+    (() => {
+      const progressBar = document.getElementById('noesis-progress-bar');
+      const searchInput = document.getElementById('noesis-search');
+      const clearBtn = document.getElementById('noesis-search-clear');
+      const statusEl = document.getElementById('noesis-search-status');
+      const emptyEl = document.getElementById('noesis-empty-search');
+      const expandAllBtn = document.getElementById('noesis-expand-all');
+      const collapseAllBtn = document.getElementById('noesis-collapse-all');
+      const mobileIndex = document.getElementById('noesis-mobile-index');
+
+      const chapters = Array.from(document.querySelectorAll('[data-noesis-chapter]'));
+      const volumes = Array.from(document.querySelectorAll('[data-noesis-volume]'));
+
+      // 1. Reading progress hairline
+      function updateProgress() {
+        if (!progressBar) return;
+        const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+        progressBar.style.width = `${pct.toFixed(2)}%`;
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      // 2. Local instant chapter search
+      function normalize(str) {
+        return (str || '')
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .trim();
+      }
+
+      function updateSearch() {
+        if (!searchInput) return;
+        const q = normalize(searchInput.value);
+        if (clearBtn) clearBtn.hidden = q.length === 0;
+
+        let visibleChapters = 0;
+        chapters.forEach((ch) => {
+          const corpus = ch.getAttribute('data-search') || '';
+          const match = !q || corpus.includes(q);
+          ch.hidden = !match;
+          if (match) {
+            visibleChapters += 1;
+            if (q) ch.open = true;
+          }
+        });
+
+        volumes.forEach((vol) => {
+          const anyVisible = Array.from(vol.querySelectorAll('[data-noesis-chapter]')).some(
+            (c) => !c.hidden
+          );
+          vol.hidden = !anyVisible;
+        });
+
+        if (emptyEl) emptyEl.hidden = visibleChapters > 0;
+        if (statusEl) {
+          const esSpan = statusEl.querySelector('[data-i18n-lang="es"]');
+          const enSpan = statusEl.querySelector('[data-i18n-lang="en"]');
+          if (esSpan) esSpan.textContent = `${visibleChapters} ${visibleChapters === 1 ? 'capítulo' : 'capítulos'}`;
+          if (enSpan) enSpan.textContent = `${visibleChapters} ${visibleChapters === 1 ? 'chapter' : 'chapters'}`;
+        }
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', updateSearch);
+      }
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          if (!searchInput) return;
+          searchInput.value = '';
+          searchInput.focus();
+          updateSearch();
+        });
+      }
+
+      // 3. Expand / Collapse all chapters
+      if (expandAllBtn) {
+        expandAllBtn.addEventListener('click', () => {
+          chapters.forEach((ch) => {
+            if (!ch.hidden) ch.open = true;
+          });
+        });
+      }
+      if (collapseAllBtn) {
+        collapseAllBtn.addEventListener('click', () => {
+          chapters.forEach((ch) => {
+            if (!ch.hidden) ch.open = false;
+          });
+        });
+      }
+
+      // 4. Close mobile index upon anchor click & ensure target chapter is opened
+      document.querySelectorAll('[data-mobile-nav-link]').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (mobileIndex) mobileIndex.open = false;
+          const href = link.getAttribute('href') || '';
+          if (href.startsWith('#')) {
+            const target = document.getElementById(href.slice(1));
+            if (target && target.tagName === 'DETAILS') target.open = true;
+          }
+        });
+      });
+
+      // Also open target chapter if navigated via URL hash
+      if (window.location.hash) {
+        const hashTarget = document.getElementById(window.location.hash.slice(1));
+        if (hashTarget && hashTarget.tagName === 'DETAILS') hashTarget.open = true;
+      }
+
+      // 5. Direct anchor share buttons (#)
+      document.querySelectorAll('[data-copy-anchor]').forEach((btn) => {
+        btn.addEventListener('click', async (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          const hash = btn.getAttribute('data-copy-anchor') || '';
+          const url = `${window.location.origin}${window.location.pathname}${hash}`;
+          try {
+            await navigator.clipboard.writeText(url);
+          } catch {
+            window.location.hash = hash;
+          }
+          const orig = btn.textContent;
+          btn.textContent = '✓';
+          setTimeout(() => {
+            btn.textContent = orig;
+          }, 1200);
+        });
+      });
+    })();
+  </script>
+</BaseLayout>
