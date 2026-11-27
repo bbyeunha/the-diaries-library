@@ -21,6 +21,7 @@ cover: "../../assets/audios/noesis/cover.jpg"
 coverAlt:
   es: "NOESIS — Archivo de inteligencia, memoria y polimatía (Project 002)"
   en: "NOESIS — Archive of intelligence, memory and polymathy (Project 002)"
+youtubeUrl: "https://www.youtube.com/watch?v=8Vh0cCdNKl0"
 mode: "full"
 listeningNotes:
   es:
