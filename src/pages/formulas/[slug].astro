@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Words from '../../components/Words.astro';
 import FormulaCredit from '../../components/FormulaCredit.astro';
-import { formulas, formulaUrl, artwork, relatedAudios } from '../../lib/formulas';
+import { formulas, formulaUrl, artwork, relatedAudios, appliedArchitectures } from '../../lib/formulas';
 import { withBase } from '../../lib/site';
 import '../../styles/formulas.css';
 export function getStaticPaths(){return formulas.map(f => ({ params:{slug:f.slug}, props:{f} }));}
@@ -14,6 +14,7 @@ const [ink,shadow,rule,accent,pale,paper]=f.colors;
 const light={bg:paper,surface:pale,text:ink,muted:shadow,accent:shadow,accentSoft:shadow,border:rule};
 const dark={bg:ink,surface:shadow,text:paper,muted:pale,accent:pale,accentSoft:accent,border:rule};
 const image=artwork(f.slug);
+const appliedProjects = Object.entries(appliedArchitectures).filter(([, project]) => Object.hasOwn(project.parts, f.slug));
 const subjects = [
   ['Lógica y epistemología','Logic and epistemology'],['Filosofía','Philosophy'],['Matemáticas','Mathematics'],['Física','Physics'],['Química','Chemistry'],['Biología','Biology'],['Anatomía y fisiología','Anatomy and physiology'],['Neurociencia','Neuroscience'],['Psicología','Psychology'],['Economía y finanzas','Economics and finance'],['Historia','History'],['Geografía y geopolítica','Geography and geopolitics'],['Ciencia política','Political science'],['Derecho','Law'],['Astronomía','Astronomy'],['Ingeniería','Engineering'],['Informática','Computer science'],['Lingüística','Linguistics'],['Arte','Art'],['Música','Music'],['Literatura','Literature'],['Aviación','Aviation']
 ];
@@ -39,4 +40,8 @@ const subjects = [
 <section><h2><Words es="En mis audios" en="In my audios"/></h2>
 {audios.map(audio=><a class="audio-ref" href={withBase('/audios/'+audio.id+'/')}><Image src={audio.data.cover} alt="" width={240} format="webp"/><span><small>{audio.data.series==='NOESIS'?'NOESIS':audio.data.code} · <Words {...audio.data.category}/></small><strong>{audio.data.title} ↗</strong>{audio.data.formulaRefs.find(ref=>ref.slug===f.slug)?.version}</span></a>)}</section>
 {f.related.length>0 && <section><h2><Words es="Arquitecturas y técnicas relacionadas" en="Related architectures and techniques"/></h2>{f.related.map(slug=><p><a href={formulaUrl(slug)}>{formulas.find(item=>item.slug===slug)?.name} →</a></p>)}</section>}
+{appliedProjects.length > 0 && <section>
+  <h2><Words es="Dónde lo apliqué" en="Where I used it" /></h2>
+  {appliedProjects.map(([slug, project]) => <p><a href={formulaUrl(slug)}>{project.name} · <Words {...project.category} /> →</a></p>)}
+</section>}
 <FormulaCredit/><a class="back-link" href={withBase('/')}><Words es="← Volver a la biblioteca" en="← Back to the library"/></a></article></BaseLayout>
