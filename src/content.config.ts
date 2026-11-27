@@ -40,13 +40,15 @@ const audios = defineCollection({
         en: z.string(),
       }),
       publishedAt: z.coerce.date(),
+      duration: z.string().optional(),
+      formula: z.string().optional(),
       languages: z.array(z.enum(['es', 'en'])).default(['es', 'en']),
       cover: image(),
       coverAlt: z.object({
         es: z.string(),
         en: z.string(),
       }),
-      youtubeUrl: publicationUrl,
+      youtubeUrl: publicationUrl.optional(),
       externalUrl: publicationUrl.optional(),
       externalLabel: z
         .object({

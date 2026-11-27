@@ -20,10 +20,12 @@ interface Props {
   description: string;
   ogImage?: string;
   pageTheme?: PublicationTheme;
+  bodyClass?: string;
+  defaultTheme?: 'light' | 'dark';
 }
 
-const { title, description, ogImage, pageTheme } = Astro.props;
-const defaultMode = pageTheme?.defaultMode || '';
+const { title, description, ogImage, pageTheme, bodyClass, defaultTheme } = Astro.props;
+const defaultMode = defaultTheme || pageTheme?.defaultMode || '';
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 
 const displayFonts = {
@@ -100,7 +102,7 @@ const themeStyle = pageTheme && {
       })();
     </script>
   </head>
-  <body>
+  <body class={bodyClass}>
     <a class="skip-link" href="#main-content">
       <span data-i18n-lang="es">Saltar al contenido</span>
       <span data-i18n-lang="en">Skip to content</span>

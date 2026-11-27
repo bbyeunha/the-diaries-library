@@ -7,10 +7,12 @@ import { UI } from '../../lib/i18n';
 
 export async function getStaticPaths() {
   const audios = await getCollection('audios');
-  return audios.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+  return audios
+    .filter((entry) => entry.id !== 'noesis')
+    .map((entry) => ({
+      params: { slug: entry.id },
+      props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;

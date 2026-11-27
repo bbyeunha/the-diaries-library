@@ -193,7 +193,23 @@ function buildSearchCorpus(entry: (typeof allAudios)[number]): string {
                   <a href={internalHref}>{entry.data.title}</a>
                 </h3>
 
-                <p class="pub-spread__code">{entry.data.code.toLowerCase()}</p>
+                <p class="pub-spread__code">
+                  {entry.data.code.toLowerCase()}
+                  {entry.data.duration && (
+                    <>
+                      {' · '}
+                      {entry.data.languages.map((l) => l.toUpperCase()).join(' + ')}
+                      {' · '}
+                      {entry.data.duration}
+                    </>
+                  )}
+                  {entry.data.formula && (
+                    <>
+                      {' · '}
+                      {entry.data.formula}
+                    </>
+                  )}
+                </p>
 
                 <p class="pub-spread__desc">
                   <span data-i18n-lang="es">{entry.data.description.es}</span>
@@ -207,16 +223,18 @@ function buildSearchCorpus(entry: (typeof allAudios)[number]): string {
                     <span class="arrow" aria-hidden="true">→</span>
                   </a>
 
-                  <a
-                    class="editorial-secondary-link"
-                    href={entry.data.youtubeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span data-i18n-lang="es">{UI.es.listenYoutube}</span>
-                    <span data-i18n-lang="en">{UI.en.listenYoutube}</span>
-                    <span class="link-arrow" aria-hidden="true">↗</span>
-                  </a>
+                  {entry.data.youtubeUrl && (
+                    <a
+                      class="editorial-secondary-link"
+                      href={entry.data.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span data-i18n-lang="es">{UI.es.listenYoutube}</span>
+                      <span data-i18n-lang="en">{UI.en.listenYoutube}</span>
+                      <span class="link-arrow" aria-hidden="true">↗</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
