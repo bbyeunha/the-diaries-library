@@ -9,7 +9,7 @@
 body.page-noesis {
   --noesis-bg: #F1E8D6;
   --noesis-bg-alt: #E6DAC2;
-  --noesis-surface: rgba(250, 245, 233, 0.94);
+  --noesis-surface: rgba(250, 245, 233, 0.88);
   --noesis-surface-solid: #FAF5E9;
   --noesis-surface-strong: #DFCFAF;
   --noesis-parchment: #D1C0A0;
@@ -43,7 +43,7 @@ body.page-noesis {
 html[data-theme='dark'] body.page-noesis {
   --noesis-bg: #211F1A;
   --noesis-bg-alt: #2B2720;
-  --noesis-surface: rgba(40, 36, 30, 0.93);
+  --noesis-surface: rgba(40, 36, 30, 0.86);
   --noesis-surface-solid: #28241E;
   --noesis-surface-strong: #443B2E;
   --noesis-parchment: #443B2E;
@@ -132,6 +132,45 @@ html[data-theme='dark'] body.page-noesis {
   z-index: 2;
   width: min(100% - 2.5rem, 1180px);
   margin-inline: auto;
+}
+
+/* ==========================================================================
+   FULL-HEIGHT NON-REPEATING DESK BACKDROP (28 Unique Background Visuals)
+   ========================================================================== */
+.noesis-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.noesis-bg-piece {
+  position: absolute;
+  top: var(--y, 2%);
+  width: var(--w, 280px);
+  color: var(--noesis-gold);
+  opacity: 0.3;
+  transform: rotate(var(--rot, 0deg));
+}
+
+html[data-theme='dark'] .noesis-bg-piece {
+  opacity: 0.34;
+}
+
+.noesis-bg-piece.is-left {
+  left: clamp(0.6rem, 1.8vw, 3rem);
+}
+
+.noesis-bg-piece.is-right {
+  right: clamp(0.6rem, 1.8vw, 3rem);
+}
+
+.noesis-bg-piece svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Top Return Breadcrumb */
@@ -1347,6 +1386,15 @@ html[data-theme='dark'] body.page-noesis {
 
   .noesis-mobile-index {
     display: block;
+  }
+
+  .noesis-bg-piece {
+    width: min(var(--w, 240px), 44vw);
+    opacity: 0.22;
+  }
+
+  html[data-theme='dark'] .noesis-bg-piece {
+    opacity: 0.24;
   }
 }
 

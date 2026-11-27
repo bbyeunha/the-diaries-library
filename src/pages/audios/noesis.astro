@@ -8,6 +8,7 @@ import '../../styles/noesis.css';
 
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import NoesisBackdrop from '../../components/NoesisBackdrop.astro';
 import NoesisExhibit, { type ExhibitId } from '../../components/NoesisExhibit.astro';
 import { withBase } from '../../lib/site';
 import { VOLUMES_1_TO_2 } from '../../data/noesis/volumes1to2';
@@ -115,6 +116,8 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
   </div>
 
   <article class="noesis-universe" id="top">
+    <NoesisBackdrop />
+
     <!-- Top Return Breadcrumb -->
     <div class="noesis-shell noesis-breadcrumb">
       <a href={withBase('/')}>
