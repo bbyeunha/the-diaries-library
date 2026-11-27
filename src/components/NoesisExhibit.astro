@@ -1,0 +1,370 @@
+---
+export type ExhibitId =
+  | 'logic-matrix'
+  | 'memory-palace'
+  | 'executive-signal'
+  | 'syntax-tree'
+  | 'tesseract'
+  | 'circle-of-fifths'
+  | 'gaussian-curve'
+  | 'game-theory'
+  | 'dialectic'
+  | 'modal-venn'
+  | 'maxwell'
+  | 'chemistry-orbitals'
+  | 'dna-helix'
+  | 'action-potential'
+  | 'compound-curve'
+  | 'compass-rose'
+  | 'big-o-tree'
+  | 'perspective-grid'
+  | 'polymath-star'
+  | 'forgetting-curve'
+  | 'lissajous';
+
+interface Props {
+  kind: ExhibitId;
+}
+
+const { kind } = Astro.props;
+---
+
+<figure class="noesis-exhibit" data-noesis-exhibit aria-hidden="true">
+  {kind === 'logic-matrix' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 395 110" fill="none">
+        <rect x="18" y="14" width="82" height="82" stroke="currentColor" stroke-width="0.9" />
+        <line x1="45" y1="14" x2="45" y2="96" stroke="currentColor" stroke-width="0.6" opacity="0.55" />
+        <line x1="72" y1="14" x2="72" y2="96" stroke="currentColor" stroke-width="0.6" opacity="0.55" />
+        <line x1="18" y1="41" x2="100" y2="41" stroke="currentColor" stroke-width="0.6" opacity="0.55" />
+        <line x1="18" y1="68" x2="100" y2="68" stroke="currentColor" stroke-width="0.6" opacity="0.55" />
+        <circle cx="31" cy="27" r="6" stroke="currentColor" stroke-width="1" />
+        <polygon points="58,21 65,34 51,34" stroke="currentColor" stroke-width="1" />
+        <rect x="80" y="21" width="12" height="12" stroke="currentColor" stroke-width="1" />
+        <polygon points="31,48 38,61 24,61" fill="currentColor" opacity="0.35" stroke="currentColor" stroke-width="1" />
+        <rect x="52" y="48" width="12" height="12" fill="currentColor" opacity="0.35" stroke="currentColor" stroke-width="1" />
+        <circle cx="86" cy="54" r="6" fill="currentColor" opacity="0.35" stroke="currentColor" stroke-width="1" />
+        <rect x="25" y="75" width="12" height="12" stroke="currentColor" stroke-width="1" />
+        <circle cx="58" cy="81" r="6" stroke="currentColor" stroke-width="1" />
+        <text x="86" y="86" text-anchor="middle" fill="currentColor" font-size="14" font-family="Cinzel, serif">?</text>
+        <line x1="118" y1="55" x2="152" y2="55" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 4" />
+        <text x="166" y="42" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">(P → Q) ∧ ¬Q  ⊢  ¬P</text>
+        <text x="166" y="68" fill="currentColor" font-size="14" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">P(H|E) = P(E|H)P(H) / P(E)</text>
+        <text x="166" y="88" fill="currentColor" font-size="8.6" font-family="Cinzel, serif" letter-spacing="1.4" opacity="0.72">FLUID PATTERN &amp; MODUS TOLLENS</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'memory-palace' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 116" fill="none">
+        <path d="M24 96 V42 L68 18 L112 42 V96 Z" stroke="currentColor" stroke-width="1" />
+        <line x1="42" y1="42" x2="42" y2="96" stroke="currentColor" stroke-width="0.8" />
+        <line x1="68" y1="42" x2="68" y2="96" stroke="currentColor" stroke-width="0.8" />
+        <line x1="94" y1="42" x2="94" y2="96" stroke="currentColor" stroke-width="0.8" />
+        <line x1="18" y1="42" x2="118" y2="42" stroke="currentColor" stroke-width="1" />
+        <circle cx="248" cy="58" r="44" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 4" />
+        <circle cx="248" cy="58" r="28" stroke="currentColor" stroke-width="0.9" />
+        <circle cx="248" cy="58" r="11" fill="currentColor" opacity="0.22" stroke="currentColor" stroke-width="1" />
+        <line x1="132" y1="58" x2="204" y2="58" stroke="currentColor" stroke-width="0.7" />
+        <text x="304" y="34" fill="currentColor" font-size="9.5" font-family="Cinzel, serif" letter-spacing="1.6">EPISODIC</text>
+        <text x="304" y="54" fill="currentColor" font-size="9.5" font-family="Cinzel, serif" letter-spacing="1.6">SEMANTIC</text>
+        <text x="304" y="74" fill="currentColor" font-size="9.5" font-family="Cinzel, serif" letter-spacing="1.6">PROCEDURAL</text>
+        <text x="304" y="94" fill="currentColor" font-size="9.5" font-family="Cinzel, serif" letter-spacing="1.6">PROSPECTIVE</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'executive-signal' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 102" fill="none">
+        <path d="M16 52 L28 32 L38 72 L50 26 L62 78 L76 38 L88 64 L100 44 L112 58" stroke="currentColor" stroke-width="0.9" opacity="0.45" />
+        <rect x="128" y="24" width="66" height="56" stroke="currentColor" stroke-width="1" />
+        <text x="161" y="55" text-anchor="middle" fill="currentColor" font-size="10" font-family="Cinzel, serif" letter-spacing="1.5">PFC</text>
+        <path d="M210 52 Q232 22 254 52 T298 52 T342 52 T364 52" stroke="currentColor" stroke-width="1.5" />
+        <text x="16" y="94" fill="currentColor" font-size="9" font-family="Cinzel, serif" letter-spacing="2" opacity="0.75">NOISE FILTERING · PREFRONTAL COHERENCE</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'syntax-tree' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 112" fill="none">
+        <text x="86" y="20" text-anchor="middle" fill="currentColor" font-size="12" font-family="Cinzel, serif">S</text>
+        <line x1="86" y1="26" x2="46" y2="52" stroke="currentColor" stroke-width="0.9" />
+        <line x1="86" y1="26" x2="126" y2="52" stroke="currentColor" stroke-width="0.9" />
+        <text x="46" y="66" text-anchor="middle" fill="currentColor" font-size="11" font-family="Cinzel, serif">NP</text>
+        <text x="126" y="66" text-anchor="middle" fill="currentColor" font-size="11" font-family="Cinzel, serif">VP</text>
+        <line x1="126" y1="72" x2="100" y2="94" stroke="currentColor" stroke-width="0.9" />
+        <line x1="126" y1="72" x2="152" y2="94" stroke="currentColor" stroke-width="0.9" />
+        <text x="100" y="106" text-anchor="middle" fill="currentColor" font-size="10" font-family="EB Garamond, serif" font-style="italic">V</text>
+        <text x="152" y="106" text-anchor="middle" fill="currentColor" font-size="10" font-family="EB Garamond, serif" font-style="italic">NP</text>
+        <line x1="186" y1="16" x2="186" y2="100" stroke="currentColor" stroke-width="0.6" opacity="0.45" />
+        <text x="208" y="42" fill="currentColor" font-size="18" font-family="EB Garamond, serif" font-style="italic">νοῦς  →  νόησις</text>
+        <text x="208" y="68" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.85">/ˈnoʊ.i.sɪs/ · direct intellect</text>
+        <text x="208" y="92" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="1.8" opacity="0.72">SYNTAX · PHONOLOGY · ETYMOLOGY</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'tesseract' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 118" fill="none">
+        <rect x="44" y="18" width="76" height="76" stroke="currentColor" stroke-width="1" />
+        <rect x="74" y="34" width="44" height="44" stroke="currentColor" stroke-width="1" />
+        <line x1="44" y1="18" x2="74" y2="34" stroke="currentColor" stroke-width="0.8" />
+        <line x1="120" y1="18" x2="118" y2="34" stroke="currentColor" stroke-width="0.8" />
+        <line x1="44" y1="94" x2="74" y2="78" stroke="currentColor" stroke-width="0.8" />
+        <line x1="120" y1="94" x2="118" y2="78" stroke="currentColor" stroke-width="0.8" />
+        <rect x="26" y="30" width="76" height="76" stroke="currentColor" stroke-width="0.7" stroke-dasharray="3 4" />
+        <text x="160" y="46" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">R(θ) = [ cos θ  −sin θ ; sin θ  cos θ ]</text>
+        <text x="160" y="72" fill="currentColor" font-size="13.5" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">4D Hypercube · Schlegel Projection</text>
+        <text x="160" y="94" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="2" opacity="0.7">SPATIAL ROTATION &amp; PERSPECTIVE</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'circle-of-fifths' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 116" fill="none">
+        <circle cx="76" cy="58" r="44" stroke="currentColor" stroke-width="1" />
+        <circle cx="76" cy="58" r="28" stroke="currentColor" stroke-width="0.7" stroke-dasharray="2 3" />
+        <polygon points="76,16 112,78 40,78" stroke="currentColor" stroke-width="0.85" />
+        <text x="76" y="12" text-anchor="middle" fill="currentColor" font-size="9" font-family="Cinzel, serif">C</text>
+        <text x="126" y="61" text-anchor="middle" fill="currentColor" font-size="9" font-family="Cinzel, serif">A</text>
+        <text x="76" y="112" text-anchor="middle" fill="currentColor" font-size="9" font-family="Cinzel, serif">F♯</text>
+        <text x="24" y="61" text-anchor="middle" fill="currentColor" font-size="9" font-family="Cinzel, serif">E♭</text>
+        <path d="M158 58 Q195 22 232 58 T306 58 T366 58" stroke="currentColor" stroke-width="1.3" />
+        <path d="M158 58 Q176 34 195 58 T232 58 T269 58 T306 58 T343 58" stroke="currentColor" stroke-width="0.8" opacity="0.55" />
+        <text x="158" y="98" fill="currentColor" font-size="12" font-family="EB Garamond, serif" font-style="italic">fₙ = n · f₀  ·  3:2 Perfect Fifth</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'gaussian-curve' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 108" fill="none">
+        <line x1="20" y1="84" x2="210" y2="84" stroke="currentColor" stroke-width="0.9" />
+        <path d="M24 83 C56 83 76 74 92 44 C104 20 112 16 115 16 C118 16 126 20 138 44 C154 74 174 83 206 83" stroke="currentColor" stroke-width="1.4" />
+        <line x1="115" y1="16" x2="115" y2="84" stroke="currentColor" stroke-width="0.7" stroke-dasharray="3 3" />
+        <line x1="88" y1="50" x2="88" y2="84" stroke="currentColor" stroke-width="0.6" opacity="0.6" />
+        <line x1="142" y1="50" x2="142" y2="84" stroke="currentColor" stroke-width="0.6" opacity="0.6" />
+        <text x="115" y="98" text-anchor="middle" fill="currentColor" font-size="10" font-family="EB Garamond, serif" font-style="italic">−σ   μ   +σ</text>
+        <text x="228" y="46" fill="currentColor" font-size="13.5" font-family="EB Garamond, serif" font-style="italic">f(x) = (1/σ√2π) e^(−½z²)</text>
+        <text x="228" y="72" fill="currentColor" font-size="9" font-family="Cinzel, serif" letter-spacing="1.8" opacity="0.75">EMPIRICAL INFERENCE</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'game-theory' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 108" fill="none">
+        <rect x="24" y="20" width="112" height="68" stroke="currentColor" stroke-width="1" />
+        <line x1="80" y1="20" x2="80" y2="88" stroke="currentColor" stroke-width="0.8" />
+        <line x1="24" y1="54" x2="136" y2="54" stroke="currentColor" stroke-width="0.8" />
+        <text x="52" y="41" text-anchor="middle" fill="currentColor" font-size="11" font-family="EB Garamond, serif">(3, 3)</text>
+        <text x="108" y="41" text-anchor="middle" fill="currentColor" font-size="11" font-family="EB Garamond, serif">(0, 5)</text>
+        <text x="52" y="75" text-anchor="middle" fill="currentColor" font-size="11" font-family="EB Garamond, serif">(5, 0)</text>
+        <text x="108" y="75" text-anchor="middle" fill="currentColor" font-size="11" font-family="EB Garamond, serif">(1, 1)*</text>
+        <text x="160" y="44" fill="currentColor" font-size="14" font-family="EB Garamond, serif" font-style="italic">uᵢ(sᵢ*, s₋ᵢ*) ≥ uᵢ(sᵢ, s₋ᵢ*)</text>
+        <text x="160" y="68" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">Nash Equilibrium &amp; Second-Order Moves</text>
+        <text x="160" y="90" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="2" opacity="0.72">STRATEGIC DOMINANCE</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'dialectic' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 104" fill="none">
+        <polygon points="92,16 154,88 30,88" stroke="currentColor" stroke-width="1" />
+        <circle cx="92" cy="16" r="3" fill="currentColor" />
+        <circle cx="30" cy="88" r="3" fill="currentColor" />
+        <circle cx="154" cy="88" r="3" fill="currentColor" />
+        <text x="184" y="38" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">Thesis  ⇄  Antithesis  →  Synthesis</text>
+        <text x="184" y="64" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.8">Eikasia · Pistis · Dianoia · Noesis</text>
+        <text x="184" y="88" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="2" opacity="0.72">PLATO’S DIVIDED LINE</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'modal-venn' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 106" fill="none">
+        <circle cx="72" cy="54" r="34" stroke="currentColor" stroke-width="1" />
+        <circle cx="114" cy="54" r="34" stroke="currentColor" stroke-width="1" />
+        <circle cx="93" cy="36" r="22" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 3" />
+        <text x="174" y="42" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">∀x ( P(x) → Q(x) )  ·  □P → ◇P</text>
+        <text x="174" y="68" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">First-Order Predicate &amp; Modal Necessity</text>
+        <text x="174" y="90" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="2" opacity="0.72">FORMAL EPISTEMOLOGY</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'maxwell' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 400 112" fill="none">
+        <text x="20" y="34" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">∇ · E = ρ / ε₀</text>
+        <text x="20" y="62" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">∇ · B = 0</text>
+        <text x="186" y="34" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">∇ × E = −∂B / ∂t</text>
+        <text x="186" y="62" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">∇ × B = μ₀J + μ₀ε₀ ∂E/∂t</text>
+        <line x1="20" y1="78" x2="380" y2="78" stroke="currentColor" stroke-width="0.6" opacity="0.45" />
+        <text x="20" y="98" fill="currentColor" font-size="8.6" font-family="Cinzel, serif" letter-spacing="1.4" opacity="0.75">MAXWELL’S UNIFICATION OF LIGHT · c = 1 / √(μ₀ε₀)</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'chemistry-orbitals' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 114" fill="none">
+        <polygon points="74,20 110,40 110,80 74,100 38,80 38,40" stroke="currentColor" stroke-width="1.1" />
+        <circle cx="74" cy="60" r="22" stroke="currentColor" stroke-width="0.9" stroke-dasharray="3 3" />
+        <ellipse cx="164" cy="60" rx="14" ry="34" stroke="currentColor" stroke-width="0.9" />
+        <ellipse cx="164" cy="60" rx="34" ry="14" stroke="currentColor" stroke-width="0.9" />
+        <text x="216" y="46" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">pH = −log₁₀ [H⁺]</text>
+        <text x="216" y="70" fill="currentColor" font-size="13.5" font-family="EB Garamond, serif" font-style="italic" opacity="0.84">ΔG = ΔH − TΔS</text>
+        <text x="216" y="94" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="1.8" opacity="0.72">BENZENE RESONANCE &amp; ORBITALS</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'dna-helix' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 104" fill="none">
+        <path d="M20 34 Q55 8 90 34 T160 34 T230 34" stroke="currentColor" stroke-width="1.3" />
+        <path d="M20 68 Q55 94 90 68 T160 68 T230 68" stroke="currentColor" stroke-width="1.3" />
+        <line x1="42" y1="24" x2="42" y2="78" stroke="currentColor" stroke-width="0.8" />
+        <line x1="68" y1="24" x2="68" y2="78" stroke="currentColor" stroke-width="0.8" />
+        <line x1="112" y1="42" x2="112" y2="60" stroke="currentColor" stroke-width="0.8" />
+        <line x1="138" y1="42" x2="138" y2="60" stroke="currentColor" stroke-width="0.8" />
+        <line x1="184" y1="24" x2="184" y2="78" stroke="currentColor" stroke-width="0.8" />
+        <line x1="208" y1="24" x2="208" y2="78" stroke="currentColor" stroke-width="0.8" />
+        <text x="248" y="42" fill="currentColor" font-size="13.5" font-family="EB Garamond, serif" font-style="italic">A ═ T  ·  G ≡ C</text>
+        <text x="248" y="66" fill="currentColor" font-size="12.5" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">DNA → RNA → Protein</text>
+        <text x="248" y="88" fill="currentColor" font-size="8.6" font-family="Cinzel, serif" letter-spacing="1.6" opacity="0.72">GENETIC CODE</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'action-potential' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 108" fill="none">
+        <line x1="22" y1="74" x2="220" y2="74" stroke="currentColor" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.55" />
+        <path d="M22 74 L74 74 Q88 74 96 64 L112 16 L128 86 Q142 94 156 74 L218 74" stroke="currentColor" stroke-width="1.5" />
+        <text x="118" y="18" fill="currentColor" font-size="9.5" font-family="Cinzel, serif">+40 mV</text>
+        <text x="24" y="68" fill="currentColor" font-size="9" font-family="Cinzel, serif" opacity="0.75">−70 mV</text>
+        <text x="234" y="44" fill="currentColor" font-size="14" font-family="EB Garamond, serif" font-style="italic">Δwᵢⱼ = η · xᵢ · xⱼ</text>
+        <text x="234" y="68" fill="currentColor" font-size="12.5" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">Depolarization &amp; LTP</text>
+        <text x="234" y="90" fill="currentColor" font-size="8.6" font-family="Cinzel, serif" letter-spacing="1.6" opacity="0.72">SYNAPTIC SIGNALING</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'compound-curve' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 108" fill="none">
+        <line x1="24" y1="88" x2="178" y2="88" stroke="currentColor" stroke-width="0.9" />
+        <line x1="24" y1="16" x2="24" y2="88" stroke="currentColor" stroke-width="0.9" />
+        <path d="M26 84 Q96 80 128 58 T174 18" stroke="currentColor" stroke-width="1.5" />
+        <line x1="26" y1="84" x2="174" y2="46" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 4" opacity="0.6" />
+        <text x="198" y="42" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">A = P (1 + r/n)ⁿᵗ</text>
+        <text x="198" y="66" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">Marginal Utility &amp; Compounding</text>
+        <text x="198" y="88" fill="currentColor" font-size="8.6" font-family="Cinzel, serif" letter-spacing="1.8" opacity="0.72">CAPITAL &amp; EQUILIBRIUM</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'compass-rose' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 116" fill="none">
+        <circle cx="82" cy="58" r="42" stroke="currentColor" stroke-width="0.9" />
+        <polygon points="82,12 90,50 128,58 90,66 82,104 74,66 36,58 74,50" stroke="currentColor" stroke-width="1" />
+        <polygon points="82,28 86,54 112,58 86,62 82,88 78,62 52,58 78,54" fill="currentColor" opacity="0.22" />
+        <circle cx="82" cy="58" r="4" fill="currentColor" />
+        <text x="158" y="42" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">31° 12′ N · 29° 55′ E — Alexandria</text>
+        <text x="158" y="66" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">Cartography, Trade Routes &amp; Statecraft</text>
+        <text x="158" y="90" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="1.8" opacity="0.72">ATLAS &amp; GEOPOLITICS</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'big-o-tree' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 110" fill="none">
+        <circle cx="84" cy="24" r="7" stroke="currentColor" stroke-width="1" />
+        <circle cx="48" cy="58" r="7" stroke="currentColor" stroke-width="1" />
+        <circle cx="120" cy="58" r="7" stroke="currentColor" stroke-width="1" />
+        <circle cx="30" cy="92" r="6" stroke="currentColor" stroke-width="0.9" />
+        <circle cx="66" cy="92" r="6" stroke="currentColor" stroke-width="0.9" />
+        <circle cx="102" cy="92" r="6" stroke="currentColor" stroke-width="0.9" />
+        <circle cx="138" cy="92" r="6" stroke="currentColor" stroke-width="0.9" />
+        <line x1="79" y1="30" x2="53" y2="52" stroke="currentColor" stroke-width="0.9" />
+        <line x1="89" y1="30" x2="115" y2="52" stroke="currentColor" stroke-width="0.9" />
+        <line x1="44" y1="64" x2="33" y2="86" stroke="currentColor" stroke-width="0.8" />
+        <line x1="52" y1="64" x2="63" y2="86" stroke="currentColor" stroke-width="0.8" />
+        <line x1="116" y1="64" x2="105" y2="86" stroke="currentColor" stroke-width="0.8" />
+        <line x1="124" y1="64" x2="135" y2="86" stroke="currentColor" stroke-width="0.8" />
+        <text x="172" y="42" fill="currentColor" font-size="14.5" font-family="EB Garamond, serif" font-style="italic">O(1) &lt; O(log n) &lt; O(n log n) &lt; O(2ⁿ)</text>
+        <text x="172" y="66" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">Algorithms, Graphs &amp; Information</text>
+        <text x="172" y="90" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="1.8" opacity="0.72">COMPUTATIONAL ARCHITECTURE</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'perspective-grid' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 106" fill="none">
+        <line x1="18" y1="34" x2="196" y2="34" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" />
+        <circle cx="107" cy="34" r="3" fill="currentColor" />
+        <line x1="107" y1="34" x2="18" y2="96" stroke="currentColor" stroke-width="0.85" />
+        <line x1="107" y1="34" x2="62" y2="96" stroke="currentColor" stroke-width="0.85" />
+        <line x1="107" y1="34" x2="107" y2="96" stroke="currentColor" stroke-width="0.85" />
+        <line x1="107" y1="34" x2="152" y2="96" stroke="currentColor" stroke-width="0.85" />
+        <line x1="107" y1="34" x2="196" y2="96" stroke="currentColor" stroke-width="0.85" />
+        <line x1="48" y1="74" x2="166" y2="74" stroke="currentColor" stroke-width="0.7" />
+        <line x1="72" y1="56" x2="142" y2="56" stroke="currentColor" stroke-width="0.7" />
+        <text x="214" y="48" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">Brunelleschi Vanishing Point</text>
+        <text x="214" y="72" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">Proportion · Light · Composition</text>
+        <text x="214" y="92" fill="currentColor" font-size="8.6" font-family="Cinzel, serif" letter-spacing="1.6" opacity="0.72">RENAISSANCE OPTICS</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'polymath-star' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 118" fill="none">
+        <circle cx="86" cy="59" r="44" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 4" />
+        <polygon points="86,15 110,95 45,45 127,45 62,95" stroke="currentColor" stroke-width="0.95" />
+        <circle cx="86" cy="59" r="6" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1" />
+        <text x="156" y="42" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">Ars · Scientia · Philosophia · Technē</text>
+        <text x="156" y="66" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">Cross-Domain Transfer &amp; Synthesis</text>
+        <text x="156" y="90" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="1.8" opacity="0.72">THE POLYMATH CONSTELLATION</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'forgetting-curve' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 106" fill="none">
+        <line x1="22" y1="86" x2="188" y2="86" stroke="currentColor" stroke-width="0.9" />
+        <line x1="22" y1="16" x2="22" y2="86" stroke="currentColor" stroke-width="0.9" />
+        <path d="M24 22 Q48 64 184 78" stroke="currentColor" stroke-width="0.9" stroke-dasharray="3 4" opacity="0.55" />
+        <path d="M24 22 Q44 46 66 48 L68 22 Q98 38 124 38 L126 22 Q156 30 184 30" stroke="currentColor" stroke-width="1.4" />
+        <text x="206" y="44" fill="currentColor" font-size="15" font-family="EB Garamond, serif" font-style="italic">R(t) = e^(−t / S)</text>
+        <text x="206" y="68" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">Ebbinghaus Retrieval Consolidation</text>
+        <text x="206" y="90" fill="currentColor" font-size="8.6" font-family="Cinzel, serif" letter-spacing="1.6" opacity="0.72">SPACED MASTERY</text>
+      </svg>
+    </div>
+  )}
+
+  {kind === 'lissajous' && (
+    <div class="noesis-exhibit__inner">
+      <svg viewBox="0 0 380 110" fill="none">
+        <path d="M40 55 C40 16, 126 94, 126 55 C126 16, 40 94, 40 55 Z" stroke="currentColor" stroke-width="1.2" />
+        <path d="M83 18 C122 18, 44 92, 83 92 C122 92, 44 18, 83 18 Z" stroke="currentColor" stroke-width="0.85" opacity="0.65" />
+        <text x="156" y="44" fill="currentColor" font-size="14.5" font-family="EB Garamond, serif" font-style="italic">x = A sin(at + δ)  ·  y = B sin(bt)</text>
+        <text x="156" y="68" fill="currentColor" font-size="13" font-family="EB Garamond, serif" font-style="italic" opacity="0.82">Harmonic Continuity &amp; Resonance</text>
+        <text x="156" y="90" fill="currentColor" font-size="8.8" font-family="Cinzel, serif" letter-spacing="1.8" opacity="0.72">CONTINUUM II</text>
+      </svg>
+    </div>
+  )}
+</figure>

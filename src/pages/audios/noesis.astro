@@ -8,6 +8,7 @@ import '../../styles/noesis.css';
 
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import NoesisExhibit, { type ExhibitId } from '../../components/NoesisExhibit.astro';
 import { withBase } from '../../lib/site';
 import { VOLUMES_1_TO_2 } from '../../data/noesis/volumes1to2';
 import { VOLUMES_3_TO_5 } from '../../data/noesis/volumes3to5';
@@ -41,6 +42,30 @@ const PLATES: Record<NoesisPlateKey, ImageMetadata> = {
 const WATERMARK_GLYPHS = [
   'ψ', '∫', 'φ', '∞', 'Δ', 'ζ', '☉', 'π', 'Ω', '∇', 'ħ', 'Γ',
 ];
+
+const CHAPTER_EXHIBITS: Partial<Record<string, ExhibitId>> = {
+  '02': 'logic-matrix',
+  '05': 'memory-palace',
+  '08': 'executive-signal',
+  '11': 'syntax-tree',
+  '13': 'tesseract',
+  '14': 'circle-of-fifths',
+  '17': 'gaussian-curve',
+  '18': 'game-theory',
+  '21': 'dialectic',
+  '23': 'modal-venn',
+  '26': 'maxwell',
+  '27': 'chemistry-orbitals',
+  '28': 'dna-helix',
+  '30': 'action-potential',
+  '33': 'compound-curve',
+  '35': 'compass-rose',
+  '40': 'big-o-tree',
+  '42': 'perspective-grid',
+  '46': 'polymath-star',
+  '48': 'forgetting-curve',
+  '53': 'lissajous',
+};
 
 const ALL_VOLUMES = [...VOLUMES_1_TO_2, ...VOLUMES_3_TO_5];
 const OPENING_INTERLUDE = DESK_INTERLUDES.find((i) => i.afterVolumeIndex === -1);
@@ -550,44 +575,15 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
                 </header>
 
                 <div class="noesis-chapters">
-                  {vol.chapters.map((ch, chIdx) => {
+                  {vol.chapters.map((ch) => {
                     const searchCorpus = buildChapterSearchText(ch);
                     const plateImage = ch.plate ? PLATES[ch.plate.key] : undefined;
                     const glyph = WATERMARK_GLYPHS[parseInt(ch.number, 10) % WATERMARK_GLYPHS.length];
                     const isAviation = ch.number === '45';
-                    const showVisualFrieze = chIdx > 0 && chIdx % 4 === 0;
+                    const exhibitKind = CHAPTER_EXHIBITS[ch.number];
 
                     return (
                       <>
-                        {showVisualFrieze && (
-                          <div class="noesis-visual-frieze" data-noesis-frieze aria-hidden="true">
-                            {chIdx % 8 === 0 ? (
-                              <svg viewBox="0 0 540 36" fill="none">
-                                <line x1="20" y1="18" x2="215" y2="18" stroke="currentColor" stroke-width="0.7" stroke-dasharray="3 5" />
-                                <circle cx="238" cy="18" r="10" stroke="currentColor" stroke-width="0.85" />
-                                <polygon points="270,5 282,29 258,29" stroke="currentColor" stroke-width="0.85" />
-                                <circle cx="302" cy="18" r="10" stroke="currentColor" stroke-width="0.85" />
-                                <line x1="325" y1="18" x2="520" y2="18" stroke="currentColor" stroke-width="0.7" stroke-dasharray="3 5" />
-                                <circle cx="120" cy="18" r="2" fill="currentColor" />
-                                <circle cx="420" cy="18" r="2" fill="currentColor" />
-                              </svg>
-                            ) : (
-                              <svg viewBox="0 0 540 36" fill="none">
-                                <line x1="20" y1="18" x2="180" y2="18" stroke="currentColor" stroke-width="0.6" />
-                                <polyline points="195,24 222,10 248,22 270,8 294,25 320,12 345,20" stroke="currentColor" stroke-width="0.9" />
-                                <circle cx="195" cy="24" r="2.2" fill="currentColor" />
-                                <circle cx="222" cy="10" r="2.2" fill="currentColor" />
-                                <circle cx="248" cy="22" r="2.2" fill="currentColor" />
-                                <circle cx="270" cy="8" r="2.8" fill="currentColor" />
-                                <circle cx="294" cy="25" r="2.2" fill="currentColor" />
-                                <circle cx="320" cy="12" r="2.2" fill="currentColor" />
-                                <circle cx="345" cy="20" r="2.2" fill="currentColor" />
-                                <line x1="360" y1="18" x2="520" y2="18" stroke="currentColor" stroke-width="0.6" />
-                              </svg>
-                            )}
-                          </div>
-                        )}
-
                         <details
                           class="noesis-chapter"
                           id={ch.id}
@@ -695,6 +691,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
 
                           <span class="noesis-chapter__watermark" aria-hidden="true">{glyph}</span>
                         </details>
+                        {exhibitKind && <NoesisExhibit kind={exhibitKind} />}
                       </>
                     );
                   })}
@@ -814,7 +811,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
       const chapters = Array.from(document.querySelectorAll('[data-noesis-chapter]'));
       const volumes = Array.from(document.querySelectorAll('[data-noesis-volume]'));
       const interludes = Array.from(document.querySelectorAll('[data-noesis-interlude]'));
-      const friezes = Array.from(document.querySelectorAll('[data-noesis-frieze]'));
+      const exhibits = Array.from(document.querySelectorAll('[data-noesis-exhibit]'));
 
       function updateProgress() {
         if (!progressBar) return;
@@ -859,7 +856,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
         interludes.forEach((el) => {
           el.hidden = q.length > 0;
         });
-        friezes.forEach((el) => {
+        exhibits.forEach((el) => {
           el.hidden = q.length > 0;
         });
 

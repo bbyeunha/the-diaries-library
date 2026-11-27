@@ -21,13 +21,10 @@ body.page-noesis {
   --noesis-glow: #A18B65;
   --noesis-border: rgba(138, 114, 73, 0.36);
   --noesis-border-strong: rgba(122, 98, 59, 0.60);
-  --noesis-grid-line: rgba(122, 98, 59, 0.09);
-  --noesis-grid-fine: rgba(122, 98, 59, 0.042);
-
-  /* Coprime Repeating Renaissance + Quantum Tapestry (Light Ink #6E5835) */
-  --noesis-tapestry-a: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='1700' viewBox='0 0 1800 1700' fill='none'%3E%3Cg stroke='%236E5835' stroke-opacity='0.24' fill='%236E5835' fill-opacity='0.24' font-family='Georgia,serif' font-style='italic'%3E%3C!-- Left Top: Armillary & Calculus --%3E%3Ccircle cx='135' cy='180' r='92' stroke-width='1.1'/%3E%3Cellipse cx='135' cy='180' rx='92' ry='36' transform='rotate(-26 135 180)' stroke-width='0.9'/%3E%3Cellipse cx='135' cy='180' rx='92' ry='36' transform='rotate(32 135 180)' stroke-width='0.9'/%3E%3Cpolygon points='55,330 205,330 135,215' stroke-width='1' fill='none'/%3E%3Ctext x='48' y='362' stroke='none' font-size='18'%3E%E2%88%AB x%C2%B2 dx = x%C2%B3/3 + C%3C/text%3E%3C!-- Right Top: Orion & Star Chart --%3E%3Ccircle cx='1655' cy='230' r='105' stroke-dasharray='4 6' stroke-width='0.9' fill='none'/%3E%3Cpolyline points='1605,170 1645,215 1665,222 1682,229 1712,285 1625,295 1645,215' stroke-width='0.9' fill='none'/%3E%3Ccircle cx='1605' cy='170' r='3.5'/%3E%3Ccircle cx='1645' cy='215' r='2.8'/%3E%3Ccircle cx='1665' cy='222' r='2.8'/%3E%3Ccircle cx='1682' cy='229' r='2.8'/%3E%3Ccircle cx='1712' cy='285' r='3.5'/%3E%3Ccircle cx='1625' cy='295' r='3'/%3E%3Ctext x='1585' y='368' stroke='none' font-size='15'%3E%CE%B1 Ori %C2%B7 %CE%B2 Ori %C2%B7 Ephemeris%3C/text%3E%3C!-- Left Mid: Feynman Loop & Dirac --%3E%3Cline x1='38' y1='610' x2='92' y2='665' stroke-width='1.3'/%3E%3Cline x1='38' y1='720' x2='92' y2='665' stroke-width='1.3'/%3E%3Cpath d='M92 665 Q102 650 112 665 T132 665' stroke-width='1.3' fill='none'/%3E%3Ccircle cx='156' cy='665' r='24' stroke-width='1.2' fill='none'/%3E%3Cpath d='M180 665 Q190 650 200 665 T220 665' stroke-width='1.3' fill='none'/%3E%3Cline x1='220' y1='665' x2='268' y2='610' stroke-width='1.3'/%3E%3Cline x1='220' y1='665' x2='268' y2='720' stroke-width='1.3'/%3E%3Ctext x='38' y='762' stroke='none' font-size='17'%3E(i%CE%B3%CA%B8%E2%88%82%E1%B5%A7 %E2%88%92 m)%CF%88 = 0%3C/text%3E%3C!-- Right Mid: Golden Spiral --%3E%3Crect x='1535' y='690' width='210' height='130' stroke-width='1' fill='none'/%3E%3Cline x1='1665' y1='690' x2='1665' y2='820' stroke-width='0.8'/%3E%3Cpath d='M1535 820 A130 130 0 0 1 1665 690 A80 80 0 0 1 1745 770 A50 50 0 0 1 1695 820' stroke-width='1.4' fill='none'/%3E%3Ctext x='1560' y='852' stroke='none' font-size='16'%3E%CF%86 = (1 + %E2%88%9A5)/2 %E2%89%88 1.618%3C/text%3E%3C!-- Left Lower: Airfoil & Circulation --%3E%3Cpath d='M42 1190 Q135 1142 258 1185 Q145 1198 42 1190 Z' stroke-width='1.2' fill='none'/%3E%3Cpath d='M25 1160 Q135 1118 275 1162' stroke-width='0.8' fill='none'/%3E%3Cpath d='M25 1215 Q140 1218 275 1208' stroke-width='0.8' fill='none'/%3E%3Ctext x='45' y='1252' stroke='none' font-size='16'%3EL = %C2%BD %CF%81 v%C2%B2 S C_L %C2%B7 %E2%88%AE v%C2%B7ds = %CE%93%3C/text%3E%3C!-- Right Lower: Vitruvian Geometry & Zeta --%3E%3Ccircle cx='1645' cy='1260' r='96' stroke-width='1' fill='none'/%3E%3Crect x='1565' y='1180' width='160' height='160' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='1645,1164 1728,1308 1562,1308' stroke-width='0.85' fill='none'/%3E%3Ctext x='1552' y='1388' stroke='none' font-size='16'%3E%CE%B6(s) = %E2%88%91 n%E2%81%BB%CB%A2 %C2%B7 e%E2%81%B1%CF%80 + 1 = 0%3C/text%3E%3C!-- Subtle Center Connecting Arcs --%3E%3Ccircle cx='900' cy='850' r='520' stroke-dasharray='3 11' stroke-width='0.75' fill='none'/%3E%3C/g%3E%3C/svg%3E");
-
-  --noesis-tapestry-b: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='2300' viewBox='0 0 1800 2300' fill='none'%3E%3Cg stroke='%236E5835' stroke-opacity='0.20' fill='%236E5835' fill-opacity='0.20' font-family='Georgia,serif' font-style='italic'%3E%3C!-- Right Upper: 12-House Zodiac Wheel --%3E%3Ccircle cx='1650' cy='460' r='112' stroke-width='1.1' fill='none'/%3E%3Ccircle cx='1650' cy='460' r='82' stroke-width='0.8' fill='none'/%3E%3Cpolygon points='1650,352 1743,514 1557,514' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='1650,568 1743,406 1557,406' stroke-width='0.9' fill='none'/%3E%3Ctext x='1565' y='602' stroke='none' font-size='15'%3E%E2%98%89 %E2%98%8C %E2%98%BF %C2%B7 Thema Mundi%3C/text%3E%3C!-- Left Upper: Neural Synapse & Bayes --%3E%3Ccircle cx='95' cy='430' r='4'/%3E%3Ccircle cx='165' cy='395' r='4'/%3E%3Ccircle cx='215' cy='455' r='4'/%3E%3Ccircle cx='145' cy='505' r='4'/%3E%3Ccircle cx='65' cy='495' r='4'/%3E%3Cpolyline points='65,495 95,430 165,395 215,455 145,505 65,495 215,455' stroke-width='0.9' fill='none'/%3E%3Cline x1='95' y1='430' x2='145' y2='505' stroke-width='0.8'/%3E%3Ctext x='42' y='544' stroke='none' font-size='16'%3EP(H|E) = P(E|H)P(H)/P(E)%3C/text%3E%3C!-- Left Mid-Low: Wavepacket & Relativity --%3E%3Cpath d='M35 1520 Q65 1520 82 1495 T115 1555 T148 1465 T182 1570 T215 1495 T265 1520' stroke-width='1.3' fill='none'/%3E%3Ctext x='38' y='1605' stroke='none' font-size='16'%3ER_%CE%BC%CE%BD %E2%88%92 %C2%BDRg_%CE%BC%CE%BD = 8%CF%80GT_%CE%BC%CE%BD%3C/text%3E%3C!-- Right Lower: Lorenz Attractor & Entropy --%3E%3Cellipse cx='1618' cy='1820' rx='62' ry='36' transform='rotate(-28 1618 1820)' stroke-width='1.1' fill='none'/%3E%3Cellipse cx='1682' cy='1820' rx='62' ry='36' transform='rotate(28 1682 1820)' stroke-width='1.1' fill='none'/%3E%3Ctext x='1542' y='1892' stroke='none' font-size='15'%3EH(X) = %E2%88%92%E2%88%91 p(x) log p(x)%3C/text%3E%3C/g%3E%3C/svg%3E");
+  --noesis-grid-line: rgba(122, 98, 59, 0.085);
+  --noesis-grid-fine: rgba(122, 98, 59, 0.038);
+  --noesis-ambient-a: rgba(161, 139, 101, 0.14);
+  --noesis-ambient-b: rgba(76, 83, 63, 0.08);
 
   --bg: var(--noesis-bg);
   --surface: var(--noesis-surface-solid);
@@ -58,13 +55,10 @@ html[data-theme='dark'] body.page-noesis {
   --noesis-glow: #D4C09B;
   --noesis-border: rgba(161, 139, 101, 0.34);
   --noesis-border-strong: rgba(197, 177, 140, 0.54);
-  --noesis-grid-line: rgba(197, 177, 140, 0.08);
-  --noesis-grid-fine: rgba(197, 177, 140, 0.036);
-
-  /* Coprime Repeating Renaissance + Quantum Tapestry (Dark Candlelit Gold #C9B590) */
-  --noesis-tapestry-a: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='1700' viewBox='0 0 1800 1700' fill='none'%3E%3Cg stroke='%23C9B590' stroke-opacity='0.24' fill='%23C9B590' fill-opacity='0.24' font-family='Georgia,serif' font-style='italic'%3E%3Ccircle cx='135' cy='180' r='92' stroke-width='1.1' fill='none'/%3E%3Cellipse cx='135' cy='180' rx='92' ry='36' transform='rotate(-26 135 180)' stroke-width='0.9' fill='none'/%3E%3Cellipse cx='135' cy='180' rx='92' ry='36' transform='rotate(32 135 180)' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='55,330 205,330 135,215' stroke-width='1' fill='none'/%3E%3Ctext x='48' y='362' stroke='none' font-size='18'%3E%E2%88%AB x%C2%B2 dx = x%C2%B3/3 + C%3C/text%3E%3Ccircle cx='1655' cy='230' r='105' stroke-dasharray='4 6' stroke-width='0.9' fill='none'/%3E%3Cpolyline points='1605,170 1645,215 1665,222 1682,229 1712,285 1625,295 1645,215' stroke-width='0.9' fill='none'/%3E%3Ccircle cx='1605' cy='170' r='3.5'/%3E%3Ccircle cx='1645' cy='215' r='2.8'/%3E%3Ccircle cx='1665' cy='222' r='2.8'/%3E%3Ccircle cx='1682' cy='229' r='2.8'/%3E%3Ccircle cx='1712' cy='285' r='3.5'/%3E%3Ccircle cx='1625' cy='295' r='3'/%3E%3Ctext x='1585' y='368' stroke='none' font-size='15'%3E%CE%B1 Ori %C2%B7 %CE%B2 Ori %C2%B7 Ephemeris%3C/text%3E%3Cline x1='38' y1='610' x2='92' y2='665' stroke-width='1.3'/%3E%3Cline x1='38' y1='720' x2='92' y2='665' stroke-width='1.3'/%3E%3Cpath d='M92 665 Q102 650 112 665 T132 665' stroke-width='1.3' fill='none'/%3E%3Ccircle cx='156' cy='665' r='24' stroke-width='1.2' fill='none'/%3E%3Cpath d='M180 665 Q190 650 200 665 T220 665' stroke-width='1.3' fill='none'/%3E%3Cline x1='220' y1='665' x2='268' y2='610' stroke-width='1.3'/%3E%3Cline x1='220' y1='665' x2='268' y2='720' stroke-width='1.3'/%3E%3Ctext x='38' y='762' stroke='none' font-size='17'%3E(i%CE%B3%CA%B8%E2%88%82%E1%B5%A7 %E2%88%92 m)%CF%88 = 0%3C/text%3E%3Crect x='1535' y='690' width='210' height='130' stroke-width='1' fill='none'/%3E%3Cline x1='1665' y1='690' x2='1665' y2='820' stroke-width='0.8'/%3E%3Cpath d='M1535 820 A130 130 0 0 1 1665 690 A80 80 0 0 1 1745 770 A50 50 0 0 1 1695 820' stroke-width='1.4' fill='none'/%3E%3Ctext x='1560' y='852' stroke='none' font-size='16'%3E%CF%86 = (1 + %E2%88%9A5)/2 %E2%89%88 1.618%3C/text%3E%3Cpath d='M42 1190 Q135 1142 258 1185 Q145 1198 42 1190 Z' stroke-width='1.2' fill='none'/%3E%3Cpath d='M25 1160 Q135 1118 275 1162' stroke-width='0.8' fill='none'/%3E%3Cpath d='M25 1215 Q140 1218 275 1208' stroke-width='0.8' fill='none'/%3E%3Ctext x='45' y='1252' stroke='none' font-size='16'%3EL = %C2%BD %CF%81 v%C2%B2 S C_L %C2%B7 %E2%88%AE v%C2%B7ds = %CE%93%3C/text%3E%3Ccircle cx='1645' cy='1260' r='96' stroke-width='1' fill='none'/%3E%3Crect x='1565' y='1180' width='160' height='160' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='1645,1164 1728,1308 1562,1308' stroke-width='0.85' fill='none'/%3E%3Ctext x='1552' y='1388' stroke='none' font-size='16'%3E%CE%B6(s) = %E2%88%91 n%E2%81%BB%CB%A2 %C2%B7 e%E2%81%B1%CF%80 + 1 = 0%3C/text%3E%3Ccircle cx='900' cy='850' r='520' stroke-dasharray='3 11' stroke-width='0.75' fill='none'/%3E%3C/g%3E%3C/svg%3E");
-
-  --noesis-tapestry-b: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='2300' viewBox='0 0 1800 2300' fill='none'%3E%3Cg stroke='%23C9B590' stroke-opacity='0.20' fill='%23C9B590' fill-opacity='0.20' font-family='Georgia,serif' font-style='italic'%3E%3Ccircle cx='1650' cy='460' r='112' stroke-width='1.1' fill='none'/%3E%3Ccircle cx='1650' cy='460' r='82' stroke-width='0.8' fill='none'/%3E%3Cpolygon points='1650,352 1743,514 1557,514' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='1650,568 1743,406 1557,406' stroke-width='0.9' fill='none'/%3E%3Ctext x='1565' y='602' stroke='none' font-size='15'%3E%E2%98%89 %E2%98%8C %E2%98%BF %C2%B7 Thema Mundi%3C/text%3E%3Ccircle cx='95' cy='430' r='4'/%3E%3Ccircle cx='165' cy='395' r='4'/%3E%3Ccircle cx='215' cy='455' r='4'/%3E%3Ccircle cx='145' cy='505' r='4'/%3E%3Ccircle cx='65' cy='495' r='4'/%3E%3Cpolyline points='65,495 95,430 165,395 215,455 145,505 65,495 215,455' stroke-width='0.9' fill='none'/%3E%3Cline x1='95' y1='430' x2='145' y2='505' stroke-width='0.8'/%3E%3Ctext x='42' y='544' stroke='none' font-size='16'%3EP(H|E) = P(E|H)P(H)/P(E)%3C/text%3E%3Cpath d='M35 1520 Q65 1520 82 1495 T115 1555 T148 1465 T182 1570 T215 1495 T265 1520' stroke-width='1.3' fill='none'/%3E%3Ctext x='38' y='1605' stroke='none' font-size='16'%3ER_%CE%BC%CE%BD %E2%88%92 %C2%BDRg_%CE%BC%CE%BD = 8%CF%80GT_%CE%BC%CE%BD%3C/text%3E%3Cellipse cx='1618' cy='1820' rx='62' ry='36' transform='rotate(-28 1618 1820)' stroke-width='1.1' fill='none'/%3E%3Cellipse cx='1682' cy='1820' rx='62' ry='36' transform='rotate(28 1682 1820)' stroke-width='1.1' fill='none'/%3E%3Ctext x='1542' y='1892' stroke='none' font-size='15'%3EH(X) = %E2%88%92%E2%88%91 p(x) log p(x)%3C/text%3E%3C/g%3E%3C/svg%3E");
+  --noesis-grid-line: rgba(197, 177, 140, 0.075);
+  --noesis-grid-fine: rgba(197, 177, 140, 0.032);
+  --noesis-ambient-a: rgba(201, 181, 144, 0.08);
+  --noesis-ambient-b: rgba(109, 119, 91, 0.09);
 
   --bg: var(--noesis-bg);
   --surface: var(--noesis-surface-solid);
@@ -96,35 +90,35 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 /* ==========================================================================
-   CONTINUOUS SCROLLING WORKBENCH CANVAS (Never Empty Down All 54 Chapters!)
+   ARCHIVAL DRAFTING SURFACE (Clean Grid + Ambient Pools, Zero Repeating Formulas)
    ========================================================================== */
 .noesis-universe {
   position: relative;
   background-color: var(--noesis-bg);
   background-image:
-    var(--noesis-tapestry-a),
-    var(--noesis-tapestry-b),
+    radial-gradient(920px 560px at 14% 280px, var(--noesis-ambient-a), transparent 72%),
+    radial-gradient(840px 520px at 88% 960px, var(--noesis-ambient-b), transparent 72%),
     linear-gradient(to right, var(--noesis-grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--noesis-grid-line) 1px, transparent 1px),
     linear-gradient(to right, var(--noesis-grid-fine) 1px, transparent 1px),
     linear-gradient(to bottom, var(--noesis-grid-fine) 1px, transparent 1px);
   background-repeat:
-    repeat-y,
-    repeat-y,
+    no-repeat,
+    no-repeat,
     repeat,
     repeat,
     repeat,
     repeat;
   background-position:
-    center 120px,
-    center 640px,
+    0 0,
+    0 0,
     0 0,
     0 0,
     0 0,
     0 0;
   background-size:
-    1800px 1700px,
-    1800px 2300px,
+    100% 100%,
+    100% 100%,
     96px 96px,
     96px 96px,
     24px 24px,
@@ -671,22 +665,53 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 /* ==========================================================================
-   PURELY VISUAL CONSTELLATION & GEOMETRY FRIEZES (Zero Reading Load!)
+   21 UNIQUE CHAPTER-SPECIFIC VISUAL EXHIBITS (Zero Repetition, Mobile-Safe)
    ========================================================================== */
-.noesis-visual-frieze {
-  margin: 0.6rem 0;
-  padding: 0.45rem 0;
+.noesis-exhibit {
+  position: relative;
+  margin: 0.75rem auto;
+  width: min(100%, 660px);
+  padding: 1.05rem 1.35rem;
+  background: radial-gradient(circle at 18% 50%, var(--noesis-ambient-a), transparent 68%),
+    var(--noesis-bg-alt);
+  border-top: 1px solid var(--noesis-border-strong);
+  border-bottom: 1px solid var(--noesis-border-strong);
+  border-left: 1px solid var(--noesis-border);
+  border-right: 1px solid var(--noesis-border);
+  color: var(--noesis-gold);
+  box-shadow: 0 10px 26px rgba(10, 8, 5, 0.12);
+}
+
+.noesis-exhibit[hidden] {
+  display: none;
+}
+
+.noesis-exhibit::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) top left / 12px 1.5px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) top left / 1.5px 12px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) top right / 12px 1.5px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) top right / 1.5px 12px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) bottom left / 12px 1.5px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) bottom left / 1.5px 12px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) bottom right / 12px 1.5px no-repeat,
+    linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) bottom right / 1.5px 12px no-repeat;
+}
+
+.noesis-exhibit__inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--noesis-gold);
-  opacity: 0.58;
-  pointer-events: none;
 }
 
-.noesis-visual-frieze svg {
-  width: min(100%, 540px);
-  height: 36px;
+.noesis-exhibit svg {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
   display: block;
 }
 
@@ -1302,8 +1327,8 @@ html[data-theme='dark'] body.page-noesis {
 @media (max-width: 980px) {
   .noesis-universe {
     background-size:
-      980px 925px,
-      980px 1250px,
+      100% 100%,
+      100% 100%,
       64px 64px,
       64px 64px,
       16px 16px,
@@ -1349,6 +1374,12 @@ html[data-theme='dark'] body.page-noesis {
   .noesis-interlude {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .noesis-exhibit {
+    width: 100%;
+    padding: 0.75rem 0.65rem;
+    margin: 0.45rem 0;
   }
 
   .noesis-plate {
