@@ -9,7 +9,8 @@
 body.page-noesis {
   --noesis-bg: #F1E8D6;
   --noesis-bg-alt: #E6DAC2;
-  --noesis-surface: #FAF5E9;
+  --noesis-surface: rgba(250, 245, 233, 0.94);
+  --noesis-surface-solid: #FAF5E9;
   --noesis-surface-strong: #DFCFAF;
   --noesis-parchment: #D1C0A0;
   --noesis-ink: #2C241B;
@@ -18,14 +19,18 @@ body.page-noesis {
   --noesis-gold-rule: #A18B65;
   --noesis-olive: #4C533F;
   --noesis-glow: #A18B65;
-  --noesis-border: rgba(138, 114, 73, 0.34);
-  --noesis-border-strong: rgba(122, 98, 59, 0.58);
-  --noesis-grid-line: rgba(122, 98, 59, 0.085);
-  --noesis-grid-fine: rgba(122, 98, 59, 0.04);
-  --noesis-watermark: rgba(105, 86, 56, 0.14);
+  --noesis-border: rgba(138, 114, 73, 0.36);
+  --noesis-border-strong: rgba(122, 98, 59, 0.60);
+  --noesis-grid-line: rgba(122, 98, 59, 0.09);
+  --noesis-grid-fine: rgba(122, 98, 59, 0.042);
+
+  /* Coprime Repeating Renaissance + Quantum Tapestry (Light Ink #6E5835) */
+  --noesis-tapestry-a: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='1700' viewBox='0 0 1800 1700' fill='none'%3E%3Cg stroke='%236E5835' stroke-opacity='0.24' fill='%236E5835' fill-opacity='0.24' font-family='Georgia,serif' font-style='italic'%3E%3C!-- Left Top: Armillary & Calculus --%3E%3Ccircle cx='135' cy='180' r='92' stroke-width='1.1'/%3E%3Cellipse cx='135' cy='180' rx='92' ry='36' transform='rotate(-26 135 180)' stroke-width='0.9'/%3E%3Cellipse cx='135' cy='180' rx='92' ry='36' transform='rotate(32 135 180)' stroke-width='0.9'/%3E%3Cpolygon points='55,330 205,330 135,215' stroke-width='1' fill='none'/%3E%3Ctext x='48' y='362' stroke='none' font-size='18'%3E%E2%88%AB x%C2%B2 dx = x%C2%B3/3 + C%3C/text%3E%3C!-- Right Top: Orion & Star Chart --%3E%3Ccircle cx='1655' cy='230' r='105' stroke-dasharray='4 6' stroke-width='0.9' fill='none'/%3E%3Cpolyline points='1605,170 1645,215 1665,222 1682,229 1712,285 1625,295 1645,215' stroke-width='0.9' fill='none'/%3E%3Ccircle cx='1605' cy='170' r='3.5'/%3E%3Ccircle cx='1645' cy='215' r='2.8'/%3E%3Ccircle cx='1665' cy='222' r='2.8'/%3E%3Ccircle cx='1682' cy='229' r='2.8'/%3E%3Ccircle cx='1712' cy='285' r='3.5'/%3E%3Ccircle cx='1625' cy='295' r='3'/%3E%3Ctext x='1585' y='368' stroke='none' font-size='15'%3E%CE%B1 Ori %C2%B7 %CE%B2 Ori %C2%B7 Ephemeris%3C/text%3E%3C!-- Left Mid: Feynman Loop & Dirac --%3E%3Cline x1='38' y1='610' x2='92' y2='665' stroke-width='1.3'/%3E%3Cline x1='38' y1='720' x2='92' y2='665' stroke-width='1.3'/%3E%3Cpath d='M92 665 Q102 650 112 665 T132 665' stroke-width='1.3' fill='none'/%3E%3Ccircle cx='156' cy='665' r='24' stroke-width='1.2' fill='none'/%3E%3Cpath d='M180 665 Q190 650 200 665 T220 665' stroke-width='1.3' fill='none'/%3E%3Cline x1='220' y1='665' x2='268' y2='610' stroke-width='1.3'/%3E%3Cline x1='220' y1='665' x2='268' y2='720' stroke-width='1.3'/%3E%3Ctext x='38' y='762' stroke='none' font-size='17'%3E(i%CE%B3%CA%B8%E2%88%82%E1%B5%A7 %E2%88%92 m)%CF%88 = 0%3C/text%3E%3C!-- Right Mid: Golden Spiral --%3E%3Crect x='1535' y='690' width='210' height='130' stroke-width='1' fill='none'/%3E%3Cline x1='1665' y1='690' x2='1665' y2='820' stroke-width='0.8'/%3E%3Cpath d='M1535 820 A130 130 0 0 1 1665 690 A80 80 0 0 1 1745 770 A50 50 0 0 1 1695 820' stroke-width='1.4' fill='none'/%3E%3Ctext x='1560' y='852' stroke='none' font-size='16'%3E%CF%86 = (1 + %E2%88%9A5)/2 %E2%89%88 1.618%3C/text%3E%3C!-- Left Lower: Airfoil & Circulation --%3E%3Cpath d='M42 1190 Q135 1142 258 1185 Q145 1198 42 1190 Z' stroke-width='1.2' fill='none'/%3E%3Cpath d='M25 1160 Q135 1118 275 1162' stroke-width='0.8' fill='none'/%3E%3Cpath d='M25 1215 Q140 1218 275 1208' stroke-width='0.8' fill='none'/%3E%3Ctext x='45' y='1252' stroke='none' font-size='16'%3EL = %C2%BD %CF%81 v%C2%B2 S C_L %C2%B7 %E2%88%AE v%C2%B7ds = %CE%93%3C/text%3E%3C!-- Right Lower: Vitruvian Geometry & Zeta --%3E%3Ccircle cx='1645' cy='1260' r='96' stroke-width='1' fill='none'/%3E%3Crect x='1565' y='1180' width='160' height='160' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='1645,1164 1728,1308 1562,1308' stroke-width='0.85' fill='none'/%3E%3Ctext x='1552' y='1388' stroke='none' font-size='16'%3E%CE%B6(s) = %E2%88%91 n%E2%81%BB%CB%A2 %C2%B7 e%E2%81%B1%CF%80 + 1 = 0%3C/text%3E%3C!-- Subtle Center Connecting Arcs --%3E%3Ccircle cx='900' cy='850' r='520' stroke-dasharray='3 11' stroke-width='0.75' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+
+  --noesis-tapestry-b: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='2300' viewBox='0 0 1800 2300' fill='none'%3E%3Cg stroke='%236E5835' stroke-opacity='0.20' fill='%236E5835' fill-opacity='0.20' font-family='Georgia,serif' font-style='italic'%3E%3C!-- Right Upper: 12-House Zodiac Wheel --%3E%3Ccircle cx='1650' cy='460' r='112' stroke-width='1.1' fill='none'/%3E%3Ccircle cx='1650' cy='460' r='82' stroke-width='0.8' fill='none'/%3E%3Cpolygon points='1650,352 1743,514 1557,514' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='1650,568 1743,406 1557,406' stroke-width='0.9' fill='none'/%3E%3Ctext x='1565' y='602' stroke='none' font-size='15'%3E%E2%98%89 %E2%98%8C %E2%98%BF %C2%B7 Thema Mundi%3C/text%3E%3C!-- Left Upper: Neural Synapse & Bayes --%3E%3Ccircle cx='95' cy='430' r='4'/%3E%3Ccircle cx='165' cy='395' r='4'/%3E%3Ccircle cx='215' cy='455' r='4'/%3E%3Ccircle cx='145' cy='505' r='4'/%3E%3Ccircle cx='65' cy='495' r='4'/%3E%3Cpolyline points='65,495 95,430 165,395 215,455 145,505 65,495 215,455' stroke-width='0.9' fill='none'/%3E%3Cline x1='95' y1='430' x2='145' y2='505' stroke-width='0.8'/%3E%3Ctext x='42' y='544' stroke='none' font-size='16'%3EP(H|E) = P(E|H)P(H)/P(E)%3C/text%3E%3C!-- Left Mid-Low: Wavepacket & Relativity --%3E%3Cpath d='M35 1520 Q65 1520 82 1495 T115 1555 T148 1465 T182 1570 T215 1495 T265 1520' stroke-width='1.3' fill='none'/%3E%3Ctext x='38' y='1605' stroke='none' font-size='16'%3ER_%CE%BC%CE%BD %E2%88%92 %C2%BDRg_%CE%BC%CE%BD = 8%CF%80GT_%CE%BC%CE%BD%3C/text%3E%3C!-- Right Lower: Lorenz Attractor & Entropy --%3E%3Cellipse cx='1618' cy='1820' rx='62' ry='36' transform='rotate(-28 1618 1820)' stroke-width='1.1' fill='none'/%3E%3Cellipse cx='1682' cy='1820' rx='62' ry='36' transform='rotate(28 1682 1820)' stroke-width='1.1' fill='none'/%3E%3Ctext x='1542' y='1892' stroke='none' font-size='15'%3EH(X) = %E2%88%92%E2%88%91 p(x) log p(x)%3C/text%3E%3C/g%3E%3C/svg%3E");
 
   --bg: var(--noesis-bg);
-  --surface: var(--noesis-surface);
+  --surface: var(--noesis-surface-solid);
   --text: var(--noesis-ink);
   --muted: var(--noesis-ink-muted);
   --accent: var(--noesis-gold);
@@ -41,7 +46,8 @@ body.page-noesis {
 html[data-theme='dark'] body.page-noesis {
   --noesis-bg: #211F1A;
   --noesis-bg-alt: #2B2720;
-  --noesis-surface: #28241E;
+  --noesis-surface: rgba(40, 36, 30, 0.93);
+  --noesis-surface-solid: #28241E;
   --noesis-surface-strong: #443B2E;
   --noesis-parchment: #443B2E;
   --noesis-ink: #E9DFC9;
@@ -50,14 +56,18 @@ html[data-theme='dark'] body.page-noesis {
   --noesis-gold-rule: #A18B65;
   --noesis-olive: #6D775B;
   --noesis-glow: #D4C09B;
-  --noesis-border: rgba(161, 139, 101, 0.32);
-  --noesis-border-strong: rgba(197, 177, 140, 0.52);
-  --noesis-grid-line: rgba(197, 177, 140, 0.075);
-  --noesis-grid-fine: rgba(197, 177, 140, 0.035);
-  --noesis-watermark: rgba(197, 177, 140, 0.14);
+  --noesis-border: rgba(161, 139, 101, 0.34);
+  --noesis-border-strong: rgba(197, 177, 140, 0.54);
+  --noesis-grid-line: rgba(197, 177, 140, 0.08);
+  --noesis-grid-fine: rgba(197, 177, 140, 0.036);
+
+  /* Coprime Repeating Renaissance + Quantum Tapestry (Dark Candlelit Gold #C9B590) */
+  --noesis-tapestry-a: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='1700' viewBox='0 0 1800 1700' fill='none'%3E%3Cg stroke='%23C9B590' stroke-opacity='0.24' fill='%23C9B590' fill-opacity='0.24' font-family='Georgia,serif' font-style='italic'%3E%3Ccircle cx='135' cy='180' r='92' stroke-width='1.1' fill='none'/%3E%3Cellipse cx='135' cy='180' rx='92' ry='36' transform='rotate(-26 135 180)' stroke-width='0.9' fill='none'/%3E%3Cellipse cx='135' cy='180' rx='92' ry='36' transform='rotate(32 135 180)' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='55,330 205,330 135,215' stroke-width='1' fill='none'/%3E%3Ctext x='48' y='362' stroke='none' font-size='18'%3E%E2%88%AB x%C2%B2 dx = x%C2%B3/3 + C%3C/text%3E%3Ccircle cx='1655' cy='230' r='105' stroke-dasharray='4 6' stroke-width='0.9' fill='none'/%3E%3Cpolyline points='1605,170 1645,215 1665,222 1682,229 1712,285 1625,295 1645,215' stroke-width='0.9' fill='none'/%3E%3Ccircle cx='1605' cy='170' r='3.5'/%3E%3Ccircle cx='1645' cy='215' r='2.8'/%3E%3Ccircle cx='1665' cy='222' r='2.8'/%3E%3Ccircle cx='1682' cy='229' r='2.8'/%3E%3Ccircle cx='1712' cy='285' r='3.5'/%3E%3Ccircle cx='1625' cy='295' r='3'/%3E%3Ctext x='1585' y='368' stroke='none' font-size='15'%3E%CE%B1 Ori %C2%B7 %CE%B2 Ori %C2%B7 Ephemeris%3C/text%3E%3Cline x1='38' y1='610' x2='92' y2='665' stroke-width='1.3'/%3E%3Cline x1='38' y1='720' x2='92' y2='665' stroke-width='1.3'/%3E%3Cpath d='M92 665 Q102 650 112 665 T132 665' stroke-width='1.3' fill='none'/%3E%3Ccircle cx='156' cy='665' r='24' stroke-width='1.2' fill='none'/%3E%3Cpath d='M180 665 Q190 650 200 665 T220 665' stroke-width='1.3' fill='none'/%3E%3Cline x1='220' y1='665' x2='268' y2='610' stroke-width='1.3'/%3E%3Cline x1='220' y1='665' x2='268' y2='720' stroke-width='1.3'/%3E%3Ctext x='38' y='762' stroke='none' font-size='17'%3E(i%CE%B3%CA%B8%E2%88%82%E1%B5%A7 %E2%88%92 m)%CF%88 = 0%3C/text%3E%3Crect x='1535' y='690' width='210' height='130' stroke-width='1' fill='none'/%3E%3Cline x1='1665' y1='690' x2='1665' y2='820' stroke-width='0.8'/%3E%3Cpath d='M1535 820 A130 130 0 0 1 1665 690 A80 80 0 0 1 1745 770 A50 50 0 0 1 1695 820' stroke-width='1.4' fill='none'/%3E%3Ctext x='1560' y='852' stroke='none' font-size='16'%3E%CF%86 = (1 + %E2%88%9A5)/2 %E2%89%88 1.618%3C/text%3E%3Cpath d='M42 1190 Q135 1142 258 1185 Q145 1198 42 1190 Z' stroke-width='1.2' fill='none'/%3E%3Cpath d='M25 1160 Q135 1118 275 1162' stroke-width='0.8' fill='none'/%3E%3Cpath d='M25 1215 Q140 1218 275 1208' stroke-width='0.8' fill='none'/%3E%3Ctext x='45' y='1252' stroke='none' font-size='16'%3EL = %C2%BD %CF%81 v%C2%B2 S C_L %C2%B7 %E2%88%AE v%C2%B7ds = %CE%93%3C/text%3E%3Ccircle cx='1645' cy='1260' r='96' stroke-width='1' fill='none'/%3E%3Crect x='1565' y='1180' width='160' height='160' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='1645,1164 1728,1308 1562,1308' stroke-width='0.85' fill='none'/%3E%3Ctext x='1552' y='1388' stroke='none' font-size='16'%3E%CE%B6(s) = %E2%88%91 n%E2%81%BB%CB%A2 %C2%B7 e%E2%81%B1%CF%80 + 1 = 0%3C/text%3E%3Ccircle cx='900' cy='850' r='520' stroke-dasharray='3 11' stroke-width='0.75' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+
+  --noesis-tapestry-b: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='2300' viewBox='0 0 1800 2300' fill='none'%3E%3Cg stroke='%23C9B590' stroke-opacity='0.20' fill='%23C9B590' fill-opacity='0.20' font-family='Georgia,serif' font-style='italic'%3E%3Ccircle cx='1650' cy='460' r='112' stroke-width='1.1' fill='none'/%3E%3Ccircle cx='1650' cy='460' r='82' stroke-width='0.8' fill='none'/%3E%3Cpolygon points='1650,352 1743,514 1557,514' stroke-width='0.9' fill='none'/%3E%3Cpolygon points='1650,568 1743,406 1557,406' stroke-width='0.9' fill='none'/%3E%3Ctext x='1565' y='602' stroke='none' font-size='15'%3E%E2%98%89 %E2%98%8C %E2%98%BF %C2%B7 Thema Mundi%3C/text%3E%3Ccircle cx='95' cy='430' r='4'/%3E%3Ccircle cx='165' cy='395' r='4'/%3E%3Ccircle cx='215' cy='455' r='4'/%3E%3Ccircle cx='145' cy='505' r='4'/%3E%3Ccircle cx='65' cy='495' r='4'/%3E%3Cpolyline points='65,495 95,430 165,395 215,455 145,505 65,495 215,455' stroke-width='0.9' fill='none'/%3E%3Cline x1='95' y1='430' x2='145' y2='505' stroke-width='0.8'/%3E%3Ctext x='42' y='544' stroke='none' font-size='16'%3EP(H|E) = P(E|H)P(H)/P(E)%3C/text%3E%3Cpath d='M35 1520 Q65 1520 82 1495 T115 1555 T148 1465 T182 1570 T215 1495 T265 1520' stroke-width='1.3' fill='none'/%3E%3Ctext x='38' y='1605' stroke='none' font-size='16'%3ER_%CE%BC%CE%BD %E2%88%92 %C2%BDRg_%CE%BC%CE%BD = 8%CF%80GT_%CE%BC%CE%BD%3C/text%3E%3Cellipse cx='1618' cy='1820' rx='62' ry='36' transform='rotate(-28 1618 1820)' stroke-width='1.1' fill='none'/%3E%3Cellipse cx='1682' cy='1820' rx='62' ry='36' transform='rotate(28 1682 1820)' stroke-width='1.1' fill='none'/%3E%3Ctext x='1542' y='1892' stroke='none' font-size='15'%3EH(X) = %E2%88%92%E2%88%91 p(x) log p(x)%3C/text%3E%3C/g%3E%3C/svg%3E");
 
   --bg: var(--noesis-bg);
-  --surface: var(--noesis-surface);
+  --surface: var(--noesis-surface-solid);
   --text: var(--noesis-ink);
   --muted: var(--noesis-ink-muted);
   --accent: var(--noesis-gold);
@@ -86,23 +96,35 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 /* ==========================================================================
-   GIANT STUDY DESK CANVAS (Drafting Grid + Candlelit Glow + Layered Artifacts)
+   CONTINUOUS SCROLLING WORKBENCH CANVAS (Never Empty Down All 54 Chapters!)
    ========================================================================== */
 .noesis-universe {
   position: relative;
   background-color: var(--noesis-bg);
   background-image:
-    radial-gradient(ellipse 90% 34% at 50% 0%, rgba(161, 139, 101, 0.14), transparent 72%),
-    radial-gradient(ellipse 60% 25% at 88% 35%, rgba(85, 92, 71, 0.10), transparent 70%),
-    radial-gradient(ellipse 65% 28% at 12% 72%, rgba(161, 139, 101, 0.11), transparent 70%),
+    var(--noesis-tapestry-a),
+    var(--noesis-tapestry-b),
     linear-gradient(to right, var(--noesis-grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--noesis-grid-line) 1px, transparent 1px),
     linear-gradient(to right, var(--noesis-grid-fine) 1px, transparent 1px),
     linear-gradient(to bottom, var(--noesis-grid-fine) 1px, transparent 1px);
+  background-repeat:
+    repeat-y,
+    repeat-y,
+    repeat,
+    repeat,
+    repeat,
+    repeat;
+  background-position:
+    center 120px,
+    center 640px,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
   background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
+    1800px 1700px,
+    1800px 2300px,
     96px 96px,
     96px 96px,
     24px 24px,
@@ -111,82 +133,10 @@ html[data-theme='dark'] body.page-noesis {
   overflow-x: clip;
 }
 
-/* Decorative Etched Desk Backdrops Positioned Down the Page */
-.noesis-desk-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.noesis-desk-glyph {
-  position: absolute;
-  color: var(--noesis-watermark);
-  user-select: none;
-}
-
-.noesis-desk-glyph--wheel {
-  top: 40px;
-  right: -140px;
-  width: 680px;
-  height: 680px;
-  opacity: 0.85;
-}
-
-.noesis-desk-glyph--spiral {
-  top: 24%;
-  left: -130px;
-  width: 520px;
-  height: 520px;
-  opacity: 0.72;
-}
-
-.noesis-desk-glyph--polyhedron {
-  top: 52%;
-  right: -110px;
-  width: 540px;
-  height: 540px;
-  opacity: 0.72;
-}
-
-.noesis-desk-glyph--orbits {
-  top: 78%;
-  left: -120px;
-  width: 560px;
-  height: 560px;
-  opacity: 0.75;
-}
-
-/* Vertical Margin Formula Strips (Wide Desktop Gutters) */
-.noesis-gutter-note {
-  position: absolute;
-  font-family: 'EB Garamond', Georgia, serif;
-  font-style: italic;
-  font-size: 0.88rem;
-  letter-spacing: 0.14em;
-  color: var(--noesis-gold);
-  opacity: 0.34;
-  white-space: nowrap;
-  writing-mode: vertical-rl;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.noesis-gutter-note--left-1 { left: 16px; top: 340px; transform: rotate(180deg); }
-.noesis-gutter-note--right-1 { right: 16px; top: 980px; }
-.noesis-gutter-note--left-2 { left: 16px; top: 2400px; transform: rotate(180deg); }
-.noesis-gutter-note--right-2 { right: 16px; top: 4100px; }
-.noesis-gutter-note--left-3 { left: 16px; top: 5800px; transform: rotate(180deg); }
-
-@media (max-width: 1320px) {
-  .noesis-gutter-note { display: none; }
-}
-
 .noesis-shell {
   position: relative;
   z-index: 2;
-  width: min(100% - 2.5rem, 1240px);
+  width: min(100% - 2.5rem, 1180px);
   margin-inline: auto;
 }
 
@@ -221,7 +171,7 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 /* ==========================================================================
-   HERO — THE NOESIS ARCHIVE (Rich Layered Polymath Study Desk)
+   HERO — THE NOESIS ARCHIVE
    ========================================================================== */
 .noesis-hero {
   position: relative;
@@ -230,20 +180,19 @@ html[data-theme='dark'] body.page-noesis {
 
 .noesis-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
-  gap: clamp(2rem, 4.5vw, 4.25rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3.75rem);
   align-items: center;
 }
 
 .noesis-hero__folio {
   position: relative;
-  padding: 1.5rem 1.75rem;
-  background: linear-gradient(155deg, var(--noesis-surface) 0%, var(--noesis-bg-alt) 100%);
+  padding: 1.55rem 1.75rem;
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
-  box-shadow: 0 22px 54px rgba(12, 9, 6, 0.22);
+  box-shadow: 0 22px 54px rgba(12, 9, 6, 0.24);
 }
 
-/* Ornate Brass Corner Ticks on Hero Folio */
 .noesis-hero__folio::before,
 .noesis-hero__folio::after {
   content: '';
@@ -284,7 +233,7 @@ html[data-theme='dark'] body.page-noesis {
   margin: 0;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 500;
-  font-size: clamp(3.2rem, 6.4vw, 5.2rem);
+  font-size: clamp(3.2rem, 6.2vw, 5.1rem);
   line-height: 0.92;
   letter-spacing: 0.25em;
   color: var(--noesis-ink);
@@ -400,7 +349,7 @@ html[data-theme='dark'] body.page-noesis {
   border-color: var(--noesis-ink);
 }
 
-/* Hero Desk Collage (3 Layered Specimen Plates + Stamp) */
+/* Hero Desk Collage */
 .noesis-hero__plates {
   position: relative;
 }
@@ -409,7 +358,7 @@ html[data-theme='dark'] body.page-noesis {
   position: relative;
   margin: 0;
   padding: 0.65rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
   box-shadow: 0 22px 54px rgba(10, 8, 5, 0.28);
 }
@@ -446,7 +395,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-hero__mini-plate {
   margin: 0;
   padding: 0.4rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border);
   box-shadow: 0 10px 24px rgba(10, 8, 5, 0.16);
 }
@@ -455,7 +404,7 @@ html[data-theme='dark'] body.page-noesis {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
@@ -525,7 +474,7 @@ html[data-theme='dark'] body.page-noesis {
 
 .noesis-note-card {
   padding: clamp(1.65rem, 3.8vw, 2.75rem);
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
   outline: 1px solid var(--noesis-border);
   outline-offset: -7px;
@@ -626,7 +575,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-interlude {
   margin: 2.5rem 0 3.25rem;
   padding: clamp(1.35rem, 3vw, 2.15rem);
-  background: linear-gradient(135deg, var(--noesis-surface) 0%, var(--noesis-bg-alt) 100%);
+  background: linear-gradient(135deg, var(--noesis-surface-solid) 0%, var(--noesis-bg-alt) 100%);
   border: 1px solid var(--noesis-border-strong);
   position: relative;
   display: grid;
@@ -722,13 +671,33 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 /* ==========================================================================
+   PURELY VISUAL CONSTELLATION & GEOMETRY FRIEZES (Zero Reading Load!)
+   ========================================================================== */
+.noesis-visual-frieze {
+  margin: 0.6rem 0;
+  padding: 0.45rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--noesis-gold);
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.noesis-visual-frieze svg {
+  width: min(100%, 540px);
+  height: 36px;
+  display: block;
+}
+
+/* ==========================================================================
    ARCHIVE WORKSPACE (Sticky Desk Index + 5-Volume Encyclopedia)
    ========================================================================== */
 .noesis-workspace {
   padding: 1rem 0 4.5rem;
   display: grid;
-  grid-template-columns: 286px minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 3.75rem);
+  grid-template-columns: 278px minmax(0, 1fr);
+  gap: clamp(1.75rem, 3.5vw, 3.25rem);
   align-items: start;
 }
 
@@ -738,7 +707,7 @@ html[data-theme='dark'] body.page-noesis {
   max-height: calc(100vh - 2.5rem);
   overflow-y: auto;
   padding: 1.35rem 1.2rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
   box-shadow: 0 14px 34px rgba(10, 8, 5, 0.16);
   scrollbar-width: thin;
@@ -873,7 +842,7 @@ html[data-theme='dark'] body.page-noesis {
   width: 100%;
   min-height: 40px;
   padding: 0.45rem 2.25rem 0.45rem 0.85rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
   color: var(--noesis-ink);
   font-family: 'EB Garamond', Georgia, serif;
@@ -915,7 +884,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-ctrl-btn {
   min-height: 38px;
   padding: 0.4rem 0.8rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border);
   color: var(--noesis-ink);
   font-family: 'Cinzel', 'Cormorant Garamond', serif;
@@ -935,7 +904,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-mobile-index {
   display: none;
   margin-bottom: 1.5rem;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border-strong);
 }
 
@@ -1015,7 +984,7 @@ html[data-theme='dark'] body.page-noesis {
   background-color: var(--noesis-bg-alt);
   border-left: 2px solid var(--noesis-olive);
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   line-height: 1.55;
   color: var(--noesis-ink-muted);
 }
@@ -1027,11 +996,28 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 .noesis-chapter {
+  position: relative;
+  overflow: hidden;
   background-color: var(--noesis-surface);
   border: 1px solid var(--noesis-border);
   border-left: 3px solid var(--noesis-border-strong);
   scroll-margin-top: 5.5rem;
   box-shadow: 0 8px 24px rgba(10, 8, 5, 0.08);
+}
+
+/* Subtle Watermark Mathematical / Astral Glyph inside every Chapter Card */
+.noesis-chapter__watermark {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.35rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 4.4rem;
+  line-height: 1;
+  color: var(--noesis-gold);
+  opacity: 0.085;
+  pointer-events: none;
+  user-select: none;
 }
 
 .noesis-chapter[hidden] {
@@ -1051,7 +1037,7 @@ html[data-theme='dark'] body.page-noesis {
 
 .noesis-chapter[open] > .noesis-chapter__summary {
   border-bottom-color: var(--noesis-border);
-  background-color: rgba(161, 139, 101, 0.045);
+  background-color: rgba(161, 139, 101, 0.05);
 }
 
 .noesis-chapter__summary::-webkit-details-marker {
@@ -1126,6 +1112,8 @@ html[data-theme='dark'] body.page-noesis {
 }
 
 .noesis-chapter__body {
+  position: relative;
+  z-index: 1;
   padding: 1.2rem 1.45rem 1.45rem;
 }
 
@@ -1136,6 +1124,19 @@ html[data-theme='dark'] body.page-noesis {
   line-height: 1.7;
   color: var(--noesis-ink);
   max-width: 68ch;
+}
+
+/* Personal handwritten-feel author whisper pill (e.g. Chapter 45 Aviation!) */
+.noesis-author-whisper {
+  display: inline-block;
+  margin: 0 0 1.05rem;
+  padding: 0.38rem 0.85rem;
+  background-color: var(--noesis-bg-alt);
+  border: 1px dashed var(--noesis-border-strong);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.14rem;
+  color: var(--noesis-gold);
 }
 
 .noesis-chapter__list {
@@ -1248,7 +1249,7 @@ html[data-theme='dark'] body.page-noesis {
 .noesis-empty-search {
   padding: 2.25rem 1.5rem;
   text-align: center;
-  background-color: var(--noesis-surface);
+  background-color: var(--noesis-surface-solid);
   border: 1px solid var(--noesis-border);
   font-family: 'EB Garamond', Georgia, serif;
   font-style: italic;
@@ -1299,6 +1300,16 @@ html[data-theme='dark'] body.page-noesis {
 
 /* Responsive Breakpoints */
 @media (max-width: 980px) {
+  .noesis-universe {
+    background-size:
+      980px 925px,
+      980px 1250px,
+      64px 64px,
+      64px 64px,
+      16px 16px,
+      16px 16px;
+  }
+
   .noesis-hero__grid,
   .noesis-note-spread,
   .noesis-workspace {
@@ -1316,7 +1327,7 @@ html[data-theme='dark'] body.page-noesis {
 
 @media (max-width: 680px) {
   .noesis-shell {
-    width: min(100% - 1.5rem, 1240px);
+    width: min(100% - 1.5rem, 1180px);
   }
 
   .noesis-hero__folio {

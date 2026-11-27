@@ -9,12 +9,12 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
       en: 'Volume III — The Encyclopedia of Human Knowledge',
     },
     subtitle: {
-      es: 'Temas, conceptos fundamentales y áreas de aplicación abordados por la capa enciclopédica del audio.',
-      en: 'Core subjects, foundational concepts and areas of application addressed by the encyclopedic layer of the audio.',
+      es: 'Todas las ramas científicas, humanísticas, técnicas y artísticas que metí en la capa enciclopédica.',
+      en: 'Every scientific, humanistic, technical, and artistic field I wove into the encyclopedic layer.',
     },
     epigraph: {
-      es: 'Este volumen reúne las disciplinas científicas, humanísticas, técnicas y artísticas que articulan la capa de conocimiento declarativo de NOESIS.',
-      en: 'This volume gathers the scientific, humanistic, technical and artistic disciplines woven into NOESIS’s declarative knowledge layer.',
+      es: 'Esta parte me encanta: son los temas y fundamentos reales que incluí para tener contexto mental de prácticamente cualquier conversación.',
+      en: 'My favorite part right here—the actual subjects and foundations I packed in so you’ve got mental hooks for pretty much any conversation.',
     },
     chapters: [
       {
@@ -325,8 +325,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
           ],
         },
         note: {
-          es: 'Estos contenidos corresponden a conocimientos fundamentales de neurociencia de carácter educativo; no describen modificaciones anatómicas provocadas por el audio.',
-          en: 'These items reflect foundational educational knowledge in neuroscience; they do not describe anatomical changes caused by listening to the audio.',
+          es: 'Todo esto entra como cultura general y conceptos reales de neurociencia que metí al audio, nada de promesas raras de cambiarte la anatomía.',
+          en: 'All of this is in here as real neuroscience concepts to know and connect—not weird claims about physically altering your anatomy.',
         },
       },
       {
@@ -530,8 +530,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
           ],
         },
         note: {
-          es: 'Contenido exclusivamente introductorio y cultural; no constituye asesoramiento jurídico ni sustituye la formación profesional en derecho.',
-          en: 'Strictly introductory and cultural in scope; not legal advice and not a substitute for formal legal education.',
+          es: 'Pura base conceptual para entender cómo funcionan las leyes y el Estado (obviamente no reemplaza a un abogado ni estudiar la carrera JAJAJ).',
+          en: 'Purely here so you get how constitutions and legal systems work—obviously not legal advice or law school in two minutes lol.',
         },
       },
       {
@@ -742,6 +742,10 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
         number: '45',
         id: 'chapter-45',
         title: { es: 'Aviación', en: 'Aviation' },
+        intro: {
+          es: 'pd: esta sección la metí puramente para mí muejeje ✈️',
+          en: 'p.s. slipped this whole section in purely for myself hehe ✈️',
+        },
         items: {
           es: [
             'Aerodinámica.',
@@ -771,8 +775,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
           ],
         },
         note: {
-          es: 'La aviación se incluye aquí como un campo de conocimiento añadido por interés personal de la autora. Este audio no sustituye la formación aeronáutica, los procedimientos operacionales ni la instrucción profesional.',
-          en: 'Aviation is included as a field of knowledge added out of the author’s personal passion. This audio does not replace aeronautical training, operational procedures or professional flight instruction.',
+          es: 'Tenía que meter mi mundo aquí sí o sí. Igual sobra decir que está por puro amor a la física de vuelo y jamás reemplaza instrucción aeronáutica ni procedimientos reales.',
+          en: 'Had to bring my own world into the mix. Goes without saying, it’s here out of pure love for flight physics and never replaces real flight training or SOPs.',
         },
         plate: {
           key: 'aerodynamics',
@@ -797,8 +801,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
       en: 'Volume IV — The Intellectual Identity',
     },
     subtitle: {
-      es: 'Polimatía, elocuencia, rendimiento académico, curiosidad permanente y autoconcepto intelectual.',
-      en: 'Polymathy, eloquence, academic performance, lifelong curiosity and intellectual self-concept.',
+      es: 'Cómo se traduce todo esto en tu día a día: hablar con soltura, rendir brutal en clases y disfrutar aprender de todo.',
+      en: 'How all of this shows up day to day—speaking effortlessly, crushing classes, and genuinely loving to learn.',
     },
     chapters: [
       {
@@ -975,8 +979,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
       en: 'Volume V — AURELIS & CONTINUUM',
     },
     subtitle: {
-      es: 'Presentación pública de la arquitectura de afirmaciones, integración semántica, refuerzos y notas de escucha.',
-      en: 'Public overview of the affirmation architecture, semantic knowledge integration, reinforcement layer and listening notes.',
+      es: 'Cómo armé la fórmula por dentro, de qué va la capa enciclopédica y lo básico para escucharlo a tu ritmo.',
+      en: 'How I built the formula under the hood, what the encyclopedic layer does, and the basics for listening your way.',
     },
     chapters: [
       {
@@ -984,8 +988,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
         id: 'chapter-51',
         title: { es: 'AURELIS 3.3', en: 'AURELIS 3.3' },
         intro: {
-          es: 'AURELIS 3.3 es una arquitectura experimental de afirmaciones desarrollada por bbyeunha, diseñada para organizar afirmaciones multidimensionales y sumamente detalladas en una experiencia de escucha cohesiva.',
-          en: 'AURELIS 3.3 is an experimental affirmation architecture developed by bbyeunha, designed to organize multidimensional, highly detailed affirmations into a cohesive listening experience.',
+          es: 'AURELIS 3.3 es la arquitectura experimental de afirmaciones que creé para mis propios audios, pensada para organizar capas multidimensionales y absurdamente detalladas dentro de una misma experiencia de escucha.',
+          en: 'AURELIS 3.3 is an experimental affirmation architecture I developed for my own audios, designed to organize multidimensional, ridiculously detailed affirmations into one cohesive listening experience.',
         },
         items: {
           es: [
@@ -1010,8 +1014,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
           ],
         },
         note: {
-          es: 'AURELIS 3.3 es un enfoque creativo y experimental de diseño de audios; no se presenta como una tecnología científicamente validada.',
-          en: 'AURELIS 3.3 is a creative, experimental approach to audio design; it is not presented as a scientifically validated technology.',
+          es: 'Es mi propio sistema creativo y experimental para diseñar audios, no una tecnología médica ni algo validado en laboratorio.',
+          en: 'It’s my own creative, experimental system for building audios—not medical or lab-validated technology.',
         },
         plate: {
           key: 'ephemeris',
@@ -1034,8 +1038,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
           en: 'Semantic Knowledge Integration',
         },
         intro: {
-          es: 'NOESIS combina afirmaciones orientadas a capacidades intelectuales con enunciados educativos que contienen conocimientos fundamentales de distintas disciplinas.',
-          en: 'NOESIS combines affirmations focused on intellectual capacities with educational statements containing foundational knowledge across multiple disciplines.',
+          es: 'En vez de dejarlo solo en afirmaciones típicas de capacidad mental, mezclé enfoque cognitivo con conceptos y fundamentos reales de muchísimas disciplinas.',
+          en: 'Instead of sticking strictly to cognitive affirmations, I paired mental capacity with actual foundational concepts across dozens of disciplines.',
         },
         items: {
           es: [
@@ -1056,8 +1060,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
           ],
         },
         note: {
-          es: 'La incorporación de información educativa al audio tiene carácter experimental y su presencia no garantiza el aprendizaje inconsciente ni sustituye el estudio activo.',
-          en: 'Including educational information within the audio is experimental; its presence does not guarantee unconscious learning or replace active study.',
+          es: 'Meter información educativa así dentro del audio es un experimento mío: busca despertar curiosidad y conexiones mentales, pero obviamente no garantiza aprender por arte de magia ni reemplaza sentarse a estudiar.',
+          en: 'Weaving educational material into an audio like this is an experiment of mine—meant to spark curiosity and mental hooks, not magically replace cracking open a book.',
         },
       },
       {
@@ -1065,8 +1069,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
         id: 'chapter-53',
         title: { es: 'CONTINUUM II', en: 'CONTINUUM II' },
         intro: {
-          es: 'Objetivos de refuerzo integrados dentro del audio:',
-          en: 'Reinforcement objectives integrated within the audio:',
+          es: 'Lo que busco trabajar con el booster integrado que ya trae puesto:',
+          en: 'What I built the integrated booster layer to focus on:',
         },
         items: {
           es: [
@@ -1122,8 +1126,8 @@ export const VOLUMES_3_TO_5: NoesisVolume[] = [
           ],
         },
         note: {
-          es: 'Seguridad: no escuchar este audio al conducir, pilotar u operar maquinaria. Nota pública: Este audio fue creado para el disfrute personal y el desarrollo de intereses intelectuales. Los resultados pueden variar y no están garantizados. Las afirmaciones y los enunciados educativos no sustituyen el estudio, la práctica, la formación profesional ni la atención médica.',
-          en: 'Safety: do not listen to this audio while driving, piloting or operating machinery. Public note: This audio was created for personal enjoyment and the cultivation of intellectual interests. Results may vary and are not guaranteed. Affirmations and educational statements do not replace study, practice, professional training or medical care.',
+          es: 'Por seguridad básica: no lo escuches manejando, volando ni operando maquinaria. Hice este audio para mí por puro amor al conocimiento y lo comparto con todo el cariño; los resultados pueden variar, no están garantizados y nada aquí sustituye estudiar, practicar, formarte profesionalmente ni ir al médico.',
+          en: 'Basic safety first: don’t play this while driving, flying, or operating machinery. I made this for myself out of pure love for learning and decided to share it—results vary, nothing is guaranteed, and none of this replaces real study, practice, professional training, or medical care.',
         },
       },
     ],

@@ -35,8 +35,8 @@ export const DESK_INTERLUDES: DeskInterlude[] = [
     formulaLabel: 'ACTIVE INFERENCE · PREDICTIVE BRAIN',
     formulaHtml: 'F = D<sub>KL</sub>[ q(θ) || p(θ | y) ] − ln p(y)',
     marginalia: {
-      es: 'Anotación marginal: la inteligencia fluida no acumula datos aislados; teje un modelo generativo vivo donde cada disciplina ilumina a las demás.',
-      en: 'Marginal note: fluid intelligence does not hoard isolated facts; it weaves a living generative model where every discipline illuminates the rest.',
+      es: 'Esta frase resume todo lo que quería lograr aquí: dejar de ver las materias en cajitas separadas y conectar todo con todo.',
+      en: 'This pretty much sums up the whole point for me—stop keeping subjects in separate little boxes and let everything click together.',
     },
   },
   {
@@ -51,8 +51,8 @@ export const DESK_INTERLUDES: DeskInterlude[] = [
     formulaLabel: 'FEYNMAN PATH INTEGRAL · QUANTUM AMPLITUDE',
     formulaHtml: '⟨q<sub>f</sub> | e<sup>−iĤt/ħ</sup> | q<sub>i</sub>⟩ = ∫ 𝒟[q] exp((i/ħ) S[q])',
     marginalia: {
-      es: 'Integración cognitiva Φ: cuando múltiples dimensiones del pensamiento operan juntas, emergen patrones que ninguna facultad aislada podría percibir.',
-      en: 'Cognitive integration Φ: when multiple dimensions of thought operate together, patterns emerge that no isolated faculty could perceive alone.',
+      es: 'Siempre me ha volado la cabeza cómo cuando combinas lógica, lenguaje e intuición espacial, empiezas a captar patrones que antes ni veías.',
+      en: 'Wild how once logic, language, and spatial intuition start firing together, you spot patterns that used to fly right over your head.',
     },
   },
   {
@@ -67,8 +67,8 @@ export const DESK_INTERLUDES: DeskInterlude[] = [
     formulaLabel: 'THEMA MUNDI · SYNCHRONICITY & ASPECTS',
     formulaHtml: '☉ ☌ ☿ 0°08′ &nbsp;·&nbsp; ♊︎ △ ♎︎ △ ♒︎ &nbsp;·&nbsp; Sicut superius, sic inferius',
     marginalia: {
-      es: 'De la cartografía celeste de Kepler a la psicología analítica: leer el mundo exige dominar tanto la precisión matemática como el símbolo.',
-      en: 'From Kepler’s celestial cartography to analytical psychology: reading the world demands mastery of both mathematical precision and symbol.',
+      es: 'Ahora sí empieza la parte densa: de la física y las finanzas hasta psicología, historia, arte y vuelo.',
+      en: 'Now for the heavy hitter—everything from physics and finance to psychology, history, art, and flight.',
     },
   },
   {
@@ -83,8 +83,8 @@ export const DESK_INTERLUDES: DeskInterlude[] = [
     formulaLabel: 'GOLDEN RATIO & RIEMANN HARMONICS',
     formulaHtml: 'φ = (1 + √5) / 2 ≈ 1.61803 &nbsp;·&nbsp; ζ(s) = ∏ (1 − p<sup>−s</sup>)<sup>−1</sup>',
     marginalia: {
-      es: 'Del cálculo y la anatomía a la literatura y la aviación: la polimatía convierte el aprendizaje en una segunda naturaleza.',
-      en: 'From calculus and anatomy to literature and aviation: polymathy turns curiosity into second nature.',
+      es: 'Saber un montón no sirve de nada si se queda encerrado; este siguiente bloque va de cómo lo expresas, lo disfrutas y lo usas a tu favor.',
+      en: 'Knowing a ton means nothing if it stays locked up—this next part is all about how you express it, enjoy it, and actually put it to work.',
     },
   },
   {
@@ -99,8 +99,8 @@ export const DESK_INTERLUDES: DeskInterlude[] = [
     formulaLabel: 'SCHRÖDINGER EVOLUTION & SHANNON ENTROPY',
     formulaHtml: 'iħ ∂|ψ(t)⟩/∂t = Ĥ|ψ(t)⟩ &nbsp;·&nbsp; H(X) = −∑ p(x) log<sub>2</sub> p(x)',
     marginalia: {
-      es: 'Último volumen del códice: arquitectura experimental, integración semántica y guía práctica para escuchar con libertad.',
-      en: 'Final volume of the codex: experimental architecture, semantic integration and practical guidelines for effortless listening.',
+      es: 'Y para cerrar: cómo está armado AURELIS 3.3 por dentro y las notas básicas para escucharlo.',
+      en: 'And to wrap things up—how I built AURELIS 3.3 under the hood plus the basics for listening.',
     },
   },
 ];
