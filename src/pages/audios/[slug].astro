@@ -23,8 +23,12 @@ const fullEditionLabel = externalLabel ?? {
 const { Content, headings } = await render(entry);
 const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
 const pageTitle = `${entry.data.title} — ${entry.data.series} · ${SITE.name}`;
-const maxWidth = Math.min(entry.data.cover.width, 1120);
-const coverWidths = [400, 640, maxWidth].filter((v, i, a) => v <= maxWidth && a.indexOf(v) === i);
+const framedCover = theme?.coverLayout === 'framed';
+const maxWidth = Math.min(entry.data.cover.width, framedCover ? 1920 : 1120);
+const candidateWidths = framedCover ? [400, 640, 960, 1120, 1440] : [400, 640];
+const coverWidths = [...candidateWidths.filter((width) => width < maxWidth), maxWidth];
+// The framed cover fills a taller column on desktop, cropping the sides of a 16:9 image.
+const coverSizes = `(max-width: 831px) calc(100vw - 2.5rem), ${framedCover ? 900 : 600}px`;
 ---
 
 <BaseLayout
@@ -46,7 +50,7 @@ const coverWidths = [400, 640, maxWidth].filter((v, i, a) => v <= maxWidth && a.
             src={entry.data.cover}
             alt={entry.data.coverAlt.es}
             widths={coverWidths}
-            sizes="(max-width: 831px) calc(100vw - 2.5rem), 600px"
+            sizes={coverSizes}
             format="webp"
             quality={84}
             loading="eager"
