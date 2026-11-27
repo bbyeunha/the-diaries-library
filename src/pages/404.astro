@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, withBase } from '../lib/site';
+---
+
+<BaseLayout
+  title={`404 — ${SITE.name}`}
+  description="Página no encontrada en The Diaries Library."
+>
+  <section class="shell editorial-intro" style="padding-block: 4rem 5rem;">
+    <p class="section-kicker">404</p>
+    <h1 class="editorial-intro__title">
+      <span data-i18n-lang="es">Esta página no está en el archivo.</span>
+      <span data-i18n-lang="en">This page isn't in the archive.</span>
+    </h1>
+    <p class="editorial-intro__note" style="margin-top: 1.25rem; border-left: 0; padding-left: 0;">
+      <span data-i18n-lang="es">
+        Puede que el enlace haya cambiado o que esta entrada aún no exista.
+      </span>
+      <span data-i18n-lang="en">
+        Perhaps the link moved, or this entry hasn't been written yet.
+      </span>
+    </p>
+    <p style="margin-top: 1.75rem;">
+      <a class="editorial-action" href={withBase('/')}>
+        <span aria-hidden="true">←</span>
+        <span data-i18n-lang="es">Volver al archivo</span>
+        <span data-i18n-lang="en">Back to archive</span>
+      </a>
+    </p>
+  </section>
+</BaseLayout>

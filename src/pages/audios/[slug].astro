@@ -1,0 +1,681 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE, withBase } from '../../lib/site';
+import { UI } from '../../lib/i18n';
+
+export async function getStaticPaths() {
+  const audios = await getCollection('audios');
+  return audios.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
+const pageTitle = `${entry.data.title} — ${entry.data.series} · ${SITE.name}`;
+const maxWidth = Math.min(entry.data.cover.width, 1120);
+const coverWidths = [400, 640, maxWidth].filter((v, i, a) => v <= maxWidth && a.indexOf(v) === i);
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={entry.data.description.es}
+  pageTheme={entry.data.theme}
+>
+  <article>
+    <header class="shell entry-top">
+      <a class="back-link" href={withBase('/')}>
+        <span aria-hidden="true">←</span>
+        <span data-i18n-lang="es">{UI.es.backToLibrary}</span>
+        <span data-i18n-lang="en">{UI.en.backToLibrary}</span>
+      </a>
+
+      <div class="entry-hero">
+        <figure class="entry-hero__media">
+          <Image
+            src={entry.data.cover}
+            alt={entry.data.coverAlt.es}
+            widths={coverWidths}
+            sizes="(max-width: 831px) calc(100vw - 2.5rem), 600px"
+            format="webp"
+            quality={84}
+            loading="eager"
+            fetchpriority="high"
+            decoding="sync"
+          />
+        </figure>
+
+        <div class="entry-hero__info">
+          <div class="entry-hero__meta">
+            <span class="entry-hero__issue">{entry.data.issue}</span>
+            <span>
+              <span data-i18n-lang="es">{entry.data.category.es}</span>
+              <span data-i18n-lang="en">{entry.data.category.en}</span>
+            </span>
+            <span aria-hidden="true">·</span>
+            <span>{entry.data.series} — {entry.data.code}</span>
+          </div>
+
+          <h1 class="entry-hero__title">{entry.data.title}</h1>
+
+          {entry.data.subtitle && (
+            <p class="entry-hero__subtitle">
+              <span data-i18n-lang="es">{entry.data.subtitle.es}</span>
+              <span data-i18n-lang="en">{entry.data.subtitle.en}</span>
+            </p>
+          )}
+
+          <p class="entry-hero__desc">
+            <span data-i18n-lang="es">{entry.data.description.es}</span>
+            <span data-i18n-lang="en">{entry.data.description.en}</span>
+          </p>
+
+          <div class="entry-hero__links">
+            <a
+              class="editorial-action"
+              href={entry.data.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span data-i18n-lang="es">{UI.es.listenYoutube}</span>
+              <span data-i18n-lang="en">{UI.en.listenYoutube}</span>
+              <span class="link-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            {entry.data.externalUrl && (
+              <a
+                class="editorial-secondary-link"
+                href={entry.data.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span data-i18n-lang="es">
+                  {entry.data.externalLabel?.es || UI.es.rentryEdition}
+                </span>
+                <span data-i18n-lang="en">
+                  {entry.data.externalLabel?.en || UI.en.rentryEdition}
+                </span>
+                <span class="link-arrow" aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <section class="listening-ledger" aria-labelledby="listening-strip-heading">
+        <h2 id="listening-strip-heading" class="listening-ledger__label">
+          <span data-i18n-lang="es">{UI.es.listeningInfoTitle}</span>
+          <span data-i18n-lang="en">{UI.en.listeningInfoTitle}</span>
+        </h2>
+        <ul class="listening-ledger__list" data-i18n-lang="es">
+          {entry.data.listeningNotes.es.map((note) => (
+            <li>{note}</li>
+          ))}
+        </ul>
+        <ul class="listening-ledger__list" data-i18n-lang="en">
+          {entry.data.listeningNotes.en.map((note) => (
+            <li>{note}</li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Uncluttered Reader Bar: Easy Search + Discreet "Aa" Typography & Reading Panel -->
+      <section class="reader-bar-wrap" aria-label="Herramientas de lectura">
+        <div class="reader-bar">
+          <div class="reader-search">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              style="color: var(--muted); flex-shrink: 0;"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-3.5-3.5"></path>
+            </svg>
+            <label class="sr-only" for="doc-search-input">
+              <span data-i18n-lang="es">{UI.es.inDocSearchPlaceholder}</span>
+              <span data-i18n-lang="en">{UI.en.inDocSearchPlaceholder}</span>
+            </label>
+            <input
+              id="doc-search-input"
+              type="search"
+              class="reader-search__input"
+              placeholder={UI.es.inDocSearchPlaceholder}
+              data-placeholder-es={UI.es.inDocSearchPlaceholder}
+              data-placeholder-en={UI.en.inDocSearchPlaceholder}
+              autocomplete="off"
+            />
+            <div class="reader-search__stepper" id="doc-search-stepper" hidden>
+              <span class="reader-search__meta" id="doc-search-count" aria-live="polite"></span>
+              <button
+                type="button"
+                class="reader-btn"
+                id="doc-search-prev"
+                aria-label="Coincidencia anterior"
+                disabled
+              >
+                <span aria-hidden="true">↑</span>
+              </button>
+              <button
+                type="button"
+                class="reader-btn"
+                id="doc-search-next"
+                aria-label="Siguiente coincidencia"
+                disabled
+              >
+                <span aria-hidden="true">↓</span>
+              </button>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="aa-trigger"
+            id="aa-trigger"
+            aria-expanded="false"
+            aria-controls="aa-panel"
+            aria-label="Aa — Ajustes de lectura"
+          >
+            <span aria-hidden="true">Aa</span>
+          </button>
+        </div>
+
+        <div class="aa-panel" id="aa-panel" hidden>
+          <div class="aa-group" role="group" aria-label="Tamaño de letra">
+            <span class="aa-group__label">
+              <span data-i18n-lang="es">{UI.es.fontSizeTitle}</span>
+              <span data-i18n-lang="en">{UI.en.fontSizeTitle}</span>
+            </span>
+            <div class="aa-options">
+              <button
+                type="button"
+                class="reader-btn"
+                id="font-dec"
+                aria-label="A- Reducir tamaño de letra"
+              >
+                <span aria-hidden="true">A−</span>
+              </button>
+              <button
+                type="button"
+                class="reader-btn"
+                id="font-reset"
+                aria-pressed="true"
+              >
+                <span data-i18n-lang="es">{UI.es.fontReset}</span>
+                <span data-i18n-lang="en">{UI.en.fontReset}</span>
+              </button>
+              <button
+                type="button"
+                class="reader-btn"
+                id="font-inc"
+                aria-label="A+ Aumentar tamaño de letra"
+              >
+                <span aria-hidden="true">A+</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="aa-group" role="group" aria-label="Idioma del documento">
+            <span class="aa-group__label">
+              <span data-i18n-lang="es">{UI.es.readingLangTitle}</span>
+              <span data-i18n-lang="en">{UI.en.readingLangTitle}</span>
+            </span>
+            <div class="aa-options">
+              <button
+                type="button"
+                class="reader-btn"
+                data-reading-lang-btn="es"
+                aria-pressed="false"
+              >
+                es
+              </button>
+              <button
+                type="button"
+                class="reader-btn"
+                data-reading-lang-btn="en"
+                aria-pressed="false"
+              >
+                en
+              </button>
+              <button
+                type="button"
+                class="reader-btn"
+                data-reading-lang-btn="both"
+                aria-pressed="true"
+              >
+                es+en
+              </button>
+            </div>
+          </div>
+
+          <div class="aa-group aa-group--end">
+            <button type="button" class="reader-btn" id="copy-benefits-btn">
+              <span data-i18n-lang="es" data-copy-label-es>{UI.es.copyBenefits}</span>
+              <span data-i18n-lang="en" data-copy-label-en>{UI.en.copyBenefits}</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <div class="shell reader-layout">
+      {tocHeadings.length > 0 && (
+        <details class="toc-mobile">
+          <summary>
+            <span>
+              <span data-i18n-lang="es">{UI.es.tocToggle} ({tocHeadings.length})</span>
+              <span data-i18n-lang="en">{UI.en.tocToggle} ({tocHeadings.length})</span>
+            </span>
+          </summary>
+          <nav class="toc-mobile__body" aria-label="Índice de capítulos">
+            <ul class="toc-list">
+              {tocHeadings.map((h) => (
+                <li class={h.depth === 3 ? 'toc-list__item--sub' : undefined}>
+                  <a class="toc-list__link" href={`#${h.slug}`}>
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </details>
+      )}
+
+      {tocHeadings.length > 0 && (
+        <aside class="toc-desktop" aria-label="Índice de capítulos">
+          <p class="toc-desktop__title">
+            <span data-i18n-lang="es">{UI.es.tocTitle}</span>
+            <span data-i18n-lang="en">{UI.en.tocTitle}</span>
+          </p>
+          <nav>
+            <ul class="toc-list">
+              {tocHeadings.map((h) => (
+                <li class={h.depth === 3 ? 'toc-list__item--sub' : undefined}>
+                  <a class="toc-list__link" href={`#${h.slug}`} data-toc-link={h.slug}>
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+      )}
+
+      <div class="prose" id="benefits-content">
+        <Content />
+
+        <div class="entry-bottom-meta">
+          {entry.data.externalUrl ? (
+            <a
+              class="editorial-secondary-link"
+              href={entry.data.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span data-i18n-lang="es">{UI.es.externalNote}</span>
+              <span data-i18n-lang="en">{UI.en.externalNote}</span>
+              <span class="link-arrow" aria-hidden="true">↗</span>
+            </a>
+          ) : (
+            <span></span>
+          )}
+
+          <a class="editorial-secondary-link" href="#main-content">
+            <span aria-hidden="true">↑</span>
+            <span data-i18n-lang="es">{UI.es.backToTop}</span>
+            <span data-i18n-lang="en">{UI.en.backToTop}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script is:inline>
+    (() => {
+      const prose = document.getElementById('benefits-content');
+      if (!prose) return;
+
+      const searchInput = document.getElementById('doc-search-input');
+      const searchStepper = document.getElementById('doc-search-stepper');
+      const searchCount = document.getElementById('doc-search-count');
+      const prevBtn = document.getElementById('doc-search-prev');
+      const nextBtn = document.getElementById('doc-search-next');
+      const aaTrigger = document.getElementById('aa-trigger');
+      const aaPanel = document.getElementById('aa-panel');
+      let marks = [];
+      let activeIdx = -1;
+
+      // Clipboard helper with fallback for embedded WebViews (e.g. YouTube in-app browser)
+      async function copyTextSafe(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          try {
+            await navigator.clipboard.writeText(text);
+            return true;
+          } catch {}
+        }
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          ta.style.pointerEvents = 'none';
+          document.body.appendChild(ta);
+          ta.select();
+          ta.setSelectionRange(0, text.length);
+          const ok = document.execCommand('copy');
+          document.body.removeChild(ta);
+          return ok;
+        } catch {
+          return false;
+        }
+      }
+
+      // Discreet Aa typography drawer toggle
+      if (aaTrigger && aaPanel) {
+        aaTrigger.addEventListener('click', () => {
+          const willOpen = aaPanel.hidden;
+          aaPanel.hidden = !willOpen;
+          aaTrigger.setAttribute('aria-expanded', String(willOpen));
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !aaPanel.hidden) {
+            aaPanel.hidden = true;
+            aaTrigger.setAttribute('aria-expanded', 'false');
+            aaTrigger.focus();
+          }
+        });
+      }
+
+      function clearMarks() {
+        prose.querySelectorAll('mark.doc-hit').forEach((mark) => {
+          const parent = mark.parentNode;
+          if (!parent) return;
+          parent.replaceChild(document.createTextNode(mark.textContent || ''), mark);
+          parent.normalize();
+        });
+        marks = [];
+        activeIdx = -1;
+      }
+
+      function focusMark(idx, shouldScroll = true) {
+        if (marks.length === 0) return;
+        marks.forEach((m) => m.classList.remove('doc-hit--active'));
+        activeIdx = ((idx % marks.length) + marks.length) % marks.length;
+        const target = marks[activeIdx];
+        target.classList.add('doc-hit--active');
+        if (shouldScroll) {
+          target.scrollIntoView({ behavior: 'auto', block: 'center' });
+        }
+        if (searchCount) searchCount.textContent = `${activeIdx + 1} / ${marks.length}`;
+      }
+
+      function isElementVisible(el) {
+        return !!(el && el.offsetParent !== null);
+      }
+
+      function runDocSearch(rawQuery) {
+        clearMarks();
+        const query = rawQuery.trim();
+        if (query.length < 2) {
+          if (searchStepper) searchStepper.hidden = true;
+          if (searchCount) searchCount.textContent = '';
+          if (prevBtn) prevBtn.disabled = true;
+          if (nextBtn) nextBtn.disabled = true;
+          return;
+        }
+
+        if (searchStepper) searchStepper.hidden = false;
+
+        const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escaped, 'gi');
+        const walker = document.createTreeWalker(prose, NodeFilter.SHOW_TEXT, {
+          acceptNode(node) {
+            const parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            if (parent.closest('.heading-anchor, script, style, .entry-bottom-meta')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            if (!isElementVisible(parent)) return NodeFilter.FILTER_REJECT;
+            return regex.test(node.nodeValue || '')
+              ? NodeFilter.FILTER_ACCEPT
+              : NodeFilter.FILTER_SKIP;
+          },
+        });
+
+        const textNodes = [];
+        let current;
+        while ((current = walker.nextNode())) {
+          regex.lastIndex = 0;
+          textNodes.push(current);
+        }
+
+        textNodes.forEach((node) => {
+          const text = node.nodeValue || '';
+          const frag = document.createDocumentFragment();
+          let last = 0;
+          let match;
+          regex.lastIndex = 0;
+          while ((match = regex.exec(text))) {
+            if (match.index > last) {
+              frag.appendChild(document.createTextNode(text.slice(last, match.index)));
+            }
+            const mark = document.createElement('mark');
+            mark.className = 'doc-hit';
+            mark.textContent = match[0];
+            frag.appendChild(mark);
+            marks.push(mark);
+            last = match.index + match[0].length;
+          }
+          if (last < text.length) {
+            frag.appendChild(document.createTextNode(text.slice(last)));
+          }
+          node.parentNode?.replaceChild(frag, node);
+        });
+
+        const hasHits = marks.length > 0;
+        if (prevBtn) prevBtn.disabled = !hasHits;
+        if (nextBtn) nextBtn.disabled = !hasHits;
+
+        if (hasHits) {
+          focusMark(0, false);
+        } else if (searchCount) {
+          const lang = document.documentElement.getAttribute('data-lang') || 'es';
+          searchCount.textContent = lang === 'en' ? '0' : '0';
+        }
+      }
+
+      // Direct shareable links for every chapter and subchapter
+      const headings = Array.from(prose.querySelectorAll('h2[id], h3[id]'));
+      headings.forEach((heading) => {
+        const id = heading.getAttribute('id');
+        if (!id) return;
+        const labelText = heading.textContent?.trim() || id;
+        const anchor = document.createElement('a');
+        anchor.className = 'heading-anchor';
+        anchor.href = `#${id}`;
+        anchor.setAttribute('aria-label', `Copiar enlace a ${labelText}`);
+
+        const hashSpan = document.createElement('span');
+        hashSpan.setAttribute('aria-hidden', 'true');
+        hashSpan.textContent = '#';
+        anchor.appendChild(hashSpan);
+
+        const toast = document.createElement('span');
+        toast.className = 'heading-anchor__toast';
+        toast.hidden = true;
+        anchor.appendChild(toast);
+
+        anchor.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const url = `${window.location.origin}${window.location.pathname}#${id}`;
+          history.replaceState(null, '', `#${id}`);
+          heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          await copyTextSafe(url);
+          const lang = document.documentElement.getAttribute('data-lang') || 'es';
+          toast.textContent = lang === 'en' ? 'Copied' : 'Copiado';
+          toast.hidden = false;
+          anchor.setAttribute('data-copied', 'true');
+          setTimeout(() => {
+            toast.hidden = true;
+            anchor.removeAttribute('data-copied');
+          }, 1800);
+        });
+
+        heading.appendChild(anchor);
+      });
+
+      const tocLinks = new Map();
+      document.querySelectorAll('[data-toc-link]').forEach((link) => {
+        const slug = link.getAttribute('data-toc-link');
+        if (slug) tocLinks.set(slug, link);
+      });
+
+      if ('IntersectionObserver' in window && tocLinks.size > 0) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((item) => {
+              if (item.isIntersecting) {
+                const id = item.target.getAttribute('id');
+                tocLinks.forEach((link, slug) => {
+                  link.setAttribute('aria-current', String(slug === id));
+                });
+              }
+            });
+          },
+          { rootMargin: '-12% 0px -72% 0px', threshold: 0 }
+        );
+        headings.forEach((h) => observer.observe(h));
+      }
+
+      const mobileToc = document.querySelector('.toc-mobile');
+      if (mobileToc) {
+        mobileToc.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileToc.removeAttribute('open');
+          });
+        });
+      }
+
+      const langBtns = Array.from(document.querySelectorAll('[data-reading-lang-btn]'));
+      let manualReadingChoice = false;
+
+      function setReadingLang(mode) {
+        prose.setAttribute('data-reading-lang', mode);
+        langBtns.forEach((btn) => {
+          btn.setAttribute('aria-pressed', String(btn.getAttribute('data-reading-lang-btn') === mode));
+        });
+        if (searchInput && searchInput.value.trim()) {
+          runDocSearch(searchInput.value);
+        }
+      }
+
+      langBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const mode = btn.getAttribute('data-reading-lang-btn') || 'both';
+          manualReadingChoice = true;
+          setReadingLang(mode);
+        });
+      });
+
+      window.addEventListener('tdl:langchange', (ev) => {
+        if (!manualReadingChoice && ev.detail && (ev.detail.lang === 'es' || ev.detail.lang === 'en')) {
+          setReadingLang(ev.detail.lang);
+        }
+      });
+
+      const initialGlobalLang = document.documentElement.getAttribute('data-lang') || 'es';
+      setReadingLang(initialGlobalLang === 'en' ? 'en' : 'es');
+
+      const FONT_SIZES = [1.0, 1.09375, 1.15625, 1.26, 1.38];
+      const defaultIdx = window.innerWidth >= 768 ? 2 : 1;
+      let sizeIndex = defaultIdx;
+
+      const decBtn = document.getElementById('font-dec');
+      const resetBtn = document.getElementById('font-reset');
+      const incBtn = document.getElementById('font-inc');
+
+      try {
+        const saved = Number(localStorage.getItem('tdl-font-idx'));
+        if (Number.isInteger(saved) && saved >= 0 && saved < FONT_SIZES.length) {
+          sizeIndex = saved;
+        }
+      } catch {}
+
+      function applyFontSize() {
+        prose.style.setProperty('--reading-size', `${FONT_SIZES[sizeIndex]}rem`);
+        if (decBtn) decBtn.disabled = sizeIndex === 0;
+        if (incBtn) incBtn.disabled = sizeIndex === FONT_SIZES.length - 1;
+        if (resetBtn) resetBtn.setAttribute('aria-pressed', String(sizeIndex === defaultIdx));
+        try {
+          localStorage.setItem('tdl-font-idx', String(sizeIndex));
+        } catch {}
+      }
+      applyFontSize();
+
+      decBtn?.addEventListener('click', () => {
+        if (sizeIndex > 0) {
+          sizeIndex -= 1;
+          applyFontSize();
+        }
+      });
+      resetBtn?.addEventListener('click', () => {
+        sizeIndex = defaultIdx;
+        applyFontSize();
+      });
+      incBtn?.addEventListener('click', () => {
+        if (sizeIndex < FONT_SIZES.length - 1) {
+          sizeIndex += 1;
+          applyFontSize();
+        }
+      });
+
+      const copyBtn = document.getElementById('copy-benefits-btn');
+      const copyEs = document.querySelector('[data-copy-label-es]');
+      const copyEn = document.querySelector('[data-copy-label-en]');
+
+      copyBtn?.addEventListener('click', async () => {
+        const clone = prose.cloneNode(true);
+        clone.querySelectorAll('.heading-anchor, .entry-bottom-meta').forEach((el) => el.remove());
+        const activeReading = prose.getAttribute('data-reading-lang');
+        if (activeReading === 'es') {
+          clone.querySelectorAll('[data-lang-block="en"], .bilingual-table th:nth-child(2), .bilingual-table td:nth-child(2)').forEach((el) => el.remove());
+        } else if (activeReading === 'en') {
+          clone.querySelectorAll('[data-lang-block="es"], .bilingual-table th:nth-child(1), .bilingual-table td:nth-child(1)').forEach((el) => el.remove());
+        }
+        const text = (clone.textContent || '').replace(/\n{3,}/g, '\n\n').trim();
+
+        const ok = await copyTextSafe(text);
+        if (ok) {
+          if (copyEs) copyEs.textContent = 'Copiado ♡';
+          if (copyEn) copyEn.textContent = 'Copied ♡';
+          setTimeout(() => {
+            if (copyEs) copyEs.textContent = 'Copiar beneficios';
+            if (copyEn) copyEn.textContent = 'Copy benefits';
+          }, 2000);
+        }
+      });
+
+      searchInput?.addEventListener('input', () => runDocSearch(searchInput.value));
+      searchInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && marks.length > 0) {
+          e.preventDefault();
+          focusMark(e.shiftKey ? activeIdx - 1 : activeIdx + 1, true);
+        }
+      });
+      prevBtn?.addEventListener('click', () => focusMark(activeIdx - 1, true));
+      nextBtn?.addEventListener('click', () => focusMark(activeIdx + 1, true));
+    })();
+  </script>
+</BaseLayout>

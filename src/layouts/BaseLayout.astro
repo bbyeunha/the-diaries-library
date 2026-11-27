@@ -1,0 +1,201 @@
+---
+import '@fontsource/cormorant-garamond/latin-400.css';
+import '@fontsource/cormorant-garamond/latin-500.css';
+import '@fontsource/cormorant-garamond/latin-600.css';
+import '@fontsource/cormorant-garamond/latin-400-italic.css';
+import '@fontsource/cormorant-garamond/latin-500-italic.css';
+import '@fontsource/lora/latin-400.css';
+import '@fontsource/lora/latin-500.css';
+import '@fontsource/lora/latin-400-italic.css';
+import '../styles/editorial.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { SITE, withBase } from '../lib/site';
+
+interface Palette {
+  bg: string;
+  surface: string;
+  text: string;
+  muted: string;
+  accent: string;
+  accentSoft: string;
+  border: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  pageTheme?: {
+    name: string;
+    defaultMode?: 'light' | 'dark';
+    light: Palette;
+    dark: Palette;
+  };
+}
+
+const { title, description, ogImage, pageTheme } = Astro.props;
+const defaultMode = pageTheme?.defaultMode || '';
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
+
+const customThemeCss = pageTheme
+  ? `
+    :root {
+      --bg: ${pageTheme.light.bg};
+      --surface: ${pageTheme.light.surface};
+      --text: ${pageTheme.light.text};
+      --muted: ${pageTheme.light.muted};
+      --accent: ${pageTheme.light.accent};
+      --accent-soft: ${pageTheme.light.accentSoft};
+      --border: ${pageTheme.light.border};
+    }
+    :root[data-theme='dark'] {
+      --bg: ${pageTheme.dark.bg};
+      --surface: ${pageTheme.dark.surface};
+      --text: ${pageTheme.dark.text};
+      --muted: ${pageTheme.dark.muted};
+      --accent: ${pageTheme.dark.accent};
+      --accent-soft: ${pageTheme.dark.accentSoft};
+      --border: ${pageTheme.dark.border};
+    }
+  `
+  : '';
+---
+
+<!doctype html>
+<html lang="es" data-lang="es" data-theme="light" data-default-theme={defaultMode}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#19121B" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={SITE.name} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {customThemeCss && <style is:inline set:html={customThemeCss} />}
+    <script is:inline>
+      (() => {
+        try {
+          const root = document.documentElement;
+          const savedTheme = localStorage.getItem('tdl-theme');
+          const pageDefault = root.getAttribute('data-default-theme');
+          const prefersDark =
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme =
+            savedTheme === 'dark' || savedTheme === 'light'
+              ? savedTheme
+              : pageDefault === 'dark' || pageDefault === 'light'
+                ? pageDefault
+                : prefersDark
+                  ? 'dark'
+                  : 'light';
+          root.setAttribute('data-theme', theme);
+
+          const savedLang = localStorage.getItem('tdl-lang');
+          const lang = savedLang === 'en' || savedLang === 'es' ? savedLang : 'es';
+          root.setAttribute('data-lang', lang);
+          root.setAttribute('lang', lang);
+          root.classList.add('js-ready');
+        } catch {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">
+      <span data-i18n-lang="es">Saltar al contenido</span>
+      <span data-i18n-lang="en">Skip to content</span>
+    </a>
+
+    <SiteHeader />
+
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+
+    <SiteFooter />
+
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+
+        function syncThemeButton() {
+          const btn = document.querySelector('[data-theme-toggle]');
+          if (!btn) return;
+          const theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          const lang = root.getAttribute('data-lang') || 'es';
+          const ariaLabel =
+            theme === 'dark'
+              ? lang === 'en'
+                ? 'Switch to light mode'
+                : 'Cambiar a modo claro'
+              : lang === 'en'
+                ? 'Switch to dark mode'
+                : 'Cambiar a modo oscuro';
+          btn.setAttribute('aria-label', ariaLabel);
+        }
+
+        function applyLang(lang) {
+          root.setAttribute('data-lang', lang);
+          root.setAttribute('lang', lang);
+          try {
+            localStorage.setItem('tdl-lang', lang);
+          } catch {}
+
+          document.querySelectorAll('[data-lang-toggle]').forEach((btn) => {
+            btn.setAttribute('aria-pressed', String(btn.getAttribute('data-lang-toggle') === lang));
+          });
+
+          document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach((el) => {
+            el.setAttribute(
+              'placeholder',
+              lang === 'en'
+                ? el.getAttribute('data-placeholder-en') || ''
+                : el.getAttribute('data-placeholder-es') || ''
+            );
+          });
+
+          syncThemeButton();
+          window.dispatchEvent(new CustomEvent('tdl:langchange', { detail: { lang } }));
+        }
+
+        function applyTheme(theme) {
+          root.setAttribute('data-theme', theme);
+          try {
+            localStorage.setItem('tdl-theme', theme);
+          } catch {}
+          syncThemeButton();
+        }
+
+        const initialLang = root.getAttribute('data-lang') || 'es';
+        applyLang(initialLang);
+
+        document.querySelectorAll('[data-lang-toggle]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const next = btn.getAttribute('data-lang-toggle');
+            if (next === 'es' || next === 'en') applyLang(next);
+          });
+        });
+
+        const themeBtn = document.querySelector('[data-theme-toggle]');
+        if (themeBtn) {
+          themeBtn.addEventListener('click', () => {
+            const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+          });
+          syncThemeButton();
+        }
+      })();
+    </script>
+  </body>
+</html>

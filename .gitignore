@@ -1,0 +1,29 @@
+# Build output & dependencies
+dist/
+node_modules/
+.astro/
+
+# Environment & local secrets
+.env
+.env.*
+*.local
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.log
+
+# Local drafts & raw media
+_local/
+_drafts/
+private/
+*.wav
+*.mp3
+*.mp4
+*.mov
+*.aiff
+*.flac

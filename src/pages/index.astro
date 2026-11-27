@@ -1,0 +1,300 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, withBase } from '../lib/site';
+import { UI } from '../lib/i18n';
+
+const allAudios = (await getCollection('audios')).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
+
+const categoriesMap = new Map<string, { slug: string; es: string; en: string }>();
+for (const entry of allAudios) {
+  if (!categoriesMap.has(entry.data.category.slug)) {
+    categoriesMap.set(entry.data.category.slug, entry.data.category);
+  }
+}
+const categories = Array.from(categoriesMap.values());
+
+function buildSearchCorpus(entry: (typeof allAudios)[number]): string {
+  const plainBody = (entry.body || '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/[#*_`|>\-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return [
+    entry.data.issue,
+    entry.data.series,
+    entry.data.code,
+    entry.data.title,
+    entry.data.subtitle?.es || '',
+    entry.data.subtitle?.en || '',
+    entry.data.category.es,
+    entry.data.category.en,
+    entry.data.description.es,
+    entry.data.description.en,
+    entry.data.keywords.join(' '),
+    plainBody,
+  ]
+    .join(' ')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+---
+
+<BaseLayout title={SITE.name} description={UI.es.siteDescription}>
+  <section class="shell editorial-intro" aria-labelledby="library-title">
+    <div class="editorial-intro__grid">
+      <div>
+        <h1 id="library-title" class="editorial-intro__title">{SITE.name}</h1>
+        <p class="editorial-intro__tagline">{SITE.tagline}</p>
+      </div>
+      <p class="editorial-intro__note">
+        <span data-i18n-lang="es">{UI.es.welcome}</span>
+        <span data-i18n-lang="en">{UI.en.welcome}</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="index-ledger" aria-label="Índice y búsqueda">
+    <div class="shell index-ledger__inner">
+      <div class="index-ledger__left">
+        <p class="index-count" id="archive-count" aria-live="polite">
+          <span data-i18n-lang="es" data-count-es>{UI.es.entriesCount(allAudios.length)}</span>
+          <span data-i18n-lang="en" data-count-en>{UI.en.entriesCount(allAudios.length)}</span>
+        </p>
+
+        <div class="category-tabs" role="group" aria-label="Categorías / Categories">
+          <button
+            type="button"
+            class="category-tab"
+            data-category-filter="all"
+            aria-pressed="true"
+          >
+            <span data-i18n-lang="es">{UI.es.filterAll}</span>
+            <span data-i18n-lang="en">{UI.en.filterAll}</span>
+          </button>
+          {categories.map((cat) => (
+            <button
+              type="button"
+              class="category-tab"
+              data-category-filter={cat.slug}
+              aria-pressed="false"
+            >
+              <span data-i18n-lang="es">{cat.es}</span>
+              <span data-i18n-lang="en">{cat.en}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="index-search">
+        <svg
+          class="index-search__icon"
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-3.5-3.5"></path>
+        </svg>
+        <label class="sr-only" for="library-search">
+          <span data-i18n-lang="es">{UI.es.searchLabel}</span>
+          <span data-i18n-lang="en">{UI.en.searchLabel}</span>
+        </label>
+        <input
+          id="library-search"
+          type="search"
+          class="index-search__input"
+          placeholder={UI.es.searchPlaceholder}
+          data-placeholder-es={UI.es.searchPlaceholder}
+          data-placeholder-en={UI.en.searchPlaceholder}
+          autocomplete="off"
+        />
+        <button
+          type="button"
+          id="library-search-clear"
+          class="index-search__clear"
+          aria-label="Limpiar búsqueda"
+          hidden
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="shell publications" aria-labelledby="archive-heading">
+    <h2 id="archive-heading" class="sr-only">
+      <span data-i18n-lang="es">{UI.es.archiveHeading}</span>
+      <span data-i18n-lang="en">{UI.en.archiveHeading}</span>
+    </h2>
+
+    <ol class="publications__list" id="archive-list">
+      {allAudios.map((entry, index) => {
+        const internalHref = withBase(`/audios/${entry.id}`);
+        const searchCorpus = buildSearchCorpus(entry);
+        const maxWidth = Math.min(entry.data.cover.width, 1120);
+        const widths = [400, 640, maxWidth].filter((v, i, a) => v <= maxWidth && a.indexOf(v) === i);
+
+        return (
+          <li
+            class="pub-item"
+            data-entry
+            data-category={entry.data.category.slug}
+            data-search={searchCorpus}
+          >
+            <article class="pub-spread">
+              <a class="pub-spread__photo" href={internalHref}>
+                <Image
+                  src={entry.data.cover}
+                  alt={entry.data.coverAlt.es}
+                  widths={widths}
+                  sizes="(max-width: 831px) calc(100vw - 2.5rem), 640px"
+                  format="webp"
+                  quality={84}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  fetchpriority={index === 0 ? 'high' : 'auto'}
+                  decoding={index === 0 ? 'sync' : 'async'}
+                />
+              </a>
+
+              <div class="pub-spread__body">
+                <div class="pub-spread__index-row">
+                  <span class="pub-spread__num">{entry.data.issue}</span>
+                  <div class="pub-spread__taxonomy">
+                    <span>
+                      <span data-i18n-lang="es">{entry.data.category.es}</span>
+                      <span data-i18n-lang="en">{entry.data.category.en}</span>
+                    </span>
+                    <span aria-hidden="true">·</span>
+                    <span class="pub-spread__formula">{entry.data.series}</span>
+                  </div>
+                </div>
+
+                <h3 class="pub-spread__title">
+                  <a href={internalHref}>{entry.data.title}</a>
+                </h3>
+
+                <p class="pub-spread__code">{entry.data.code.toLowerCase()}</p>
+
+                <p class="pub-spread__desc">
+                  <span data-i18n-lang="es">{entry.data.description.es}</span>
+                  <span data-i18n-lang="en">{entry.data.description.en}</span>
+                </p>
+
+                <div class="pub-spread__links">
+                  <a class="editorial-action" href={internalHref}>
+                    <span data-i18n-lang="es">{UI.es.readBenefits}</span>
+                    <span data-i18n-lang="en">{UI.en.readBenefits}</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+
+                  <a
+                    class="editorial-secondary-link"
+                    href={entry.data.youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span data-i18n-lang="es">{UI.es.listenYoutube}</span>
+                    <span data-i18n-lang="en">{UI.en.listenYoutube}</span>
+                    <span class="link-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+        );
+      })}
+    </ol>
+
+    <p class="publications__empty" id="archive-empty" hidden>
+      <span data-i18n-lang="es">{UI.es.searchEmpty}</span>
+      <span data-i18n-lang="en">{UI.en.searchEmpty}</span>
+    </p>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const searchInput = document.getElementById('library-search');
+      const clearBtn = document.getElementById('library-search-clear');
+      const entries = Array.from(document.querySelectorAll('[data-entry]'));
+      const filterButtons = Array.from(document.querySelectorAll('[data-category-filter]'));
+      const emptyMsg = document.getElementById('archive-empty');
+      const countEs = document.querySelector('[data-count-es]');
+      const countEn = document.querySelector('[data-count-en]');
+
+      if (!searchInput || entries.length === 0) return;
+
+      let activeCategory = 'all';
+
+      function normalize(str) {
+        return (str || '')
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .trim();
+      }
+
+      function pad2(n) {
+        return String(n).padStart(2, '0');
+      }
+
+      function updateArchive() {
+        const query = normalize(searchInput.value);
+        if (clearBtn) clearBtn.hidden = query.length === 0;
+
+        let visible = 0;
+        entries.forEach((item) => {
+          const cat = item.getAttribute('data-category') || '';
+          const corpus = item.getAttribute('data-search') || '';
+          const matchesCategory = activeCategory === 'all' || cat === activeCategory;
+          const matchesQuery = !query || corpus.includes(query);
+          const show = matchesCategory && matchesQuery;
+          item.hidden = !show;
+          if (show) visible += 1;
+        });
+
+        if (emptyMsg) emptyMsg.hidden = visible > 0;
+        if (countEs) {
+          countEs.textContent =
+            visible === 1 ? '01 entrada' : `${pad2(visible)} entradas`;
+        }
+        if (countEn) {
+          countEn.textContent =
+            visible === 1 ? '01 entry' : `${pad2(visible)} entries`;
+        }
+      }
+
+      searchInput.addEventListener('input', updateArchive);
+
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          searchInput.focus();
+          updateArchive();
+        });
+      }
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          activeCategory = btn.getAttribute('data-category-filter') || 'all';
+          filterButtons.forEach((b) =>
+            b.setAttribute('aria-pressed', String(b === btn))
+          );
+          updateArchive();
+        });
+      });
+    })();
+  </script>
+</BaseLayout>

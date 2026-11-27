@@ -1,0 +1,64 @@
+---
+import { SITE, withBase } from '../lib/site';
+import { UI } from '../lib/i18n';
+---
+
+<header class="masthead">
+  <div class="shell masthead__inner">
+    <a class="masthead__signature" href={withBase('/')} aria-label={SITE.name}>
+      {SITE.signatureMark}
+    </a>
+
+    <nav class="masthead__nav" aria-label="Navegación principal">
+      <div class="text-lang" role="group" aria-label="Idioma / Language">
+        <button
+          type="button"
+          class="nav-text-btn"
+          data-lang-toggle="es"
+          aria-pressed="true"
+        >
+          es
+        </button>
+        <span class="masthead__sep" aria-hidden="true">/</span>
+        <button
+          type="button"
+          class="nav-text-btn"
+          data-lang-toggle="en"
+          aria-pressed="false"
+        >
+          en
+        </button>
+      </div>
+
+      <span class="masthead__dot" aria-hidden="true">·</span>
+
+      <button
+        type="button"
+        class="nav-text-btn nav-theme-btn"
+        data-theme-toggle
+        aria-label="Cambiar a modo oscuro"
+      >
+        <span class="theme-label--to-dark">
+          <span data-i18n-lang="es">{UI.es.themeLabelDark}</span>
+          <span data-i18n-lang="en">{UI.en.themeLabelDark}</span>
+        </span>
+        <span class="theme-label--to-light">
+          <span data-i18n-lang="es">{UI.es.themeLabelLight}</span>
+          <span data-i18n-lang="en">{UI.en.themeLabelLight}</span>
+        </span>
+      </button>
+
+      <span class="masthead__dot" aria-hidden="true">·</span>
+
+      <a
+        class="nav-text-link"
+        href={SITE.youtubeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>youtube</span>
+        <span class="link-arrow" aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
