@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets';
+import duval from '../assets/audios/project-duval/hero-square.jpg';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, withBase } from '../lib/site';
+import { UI } from '../lib/i18n';
+---
+
+<BaseLayout
+  title={`Sobre mí / About me · ${SITE.name}`}
+  description="Una nota de bbyeunha sobre cómo empezó a hacer audios y por qué abrió The Diaries Library."
+>
+  <article class="shell about" aria-labelledby="about-title">
+    <a class="back-link" href={withBase('/')}>
+      <span aria-hidden="true">←</span>
+      <span lang="es" data-i18n-lang="es">{UI.es.backToLibrary}</span>
+      <span lang="en" data-i18n-lang="en">{UI.en.backToLibrary}</span>
+    </a>
+
+    <header class="letter-heading">
+      <h1 id="about-title"><span lang="es" data-i18n-lang="es">un poquito <em>sobre mí.</em></span><span lang="en" data-i18n-lang="en">a little <em>about me.</em></span></h1>
+      <span class="flourish" aria-hidden="true">♡</span>
+    </header>
+    <div class="letter-layout">
+      <div class="letter">
+        <div lang="es" data-i18n-lang="es">
+          <p>holiii, llevo por aquí desde más o menos 2019. si se ponen a curiosear por mi canal, probablemente encuentren algunos de mis subliminales de 2021 (sí, decidí dejarlos ahí JAJAJA).</p>
+          <p>les tengo bastante cariño. en esa época apenas estaba aprendiendo a hacer mis audios y probaba distintas formas de escribir las afirmaciones. me gusta volver a esos videos y ver cuánto ha cambiado mi forma de hacerlos.</p>
+          <p>algo que quizá se nota al leer los beneficios es que me cuesta mucho visualizar. por eso me voy tanto al detalle cuando escribo. a mí me sirve que hasta las cosas chiquitas ya estén en el audio.</p>
+          <p>normalmente los hago para mí, pero por amor al arte decidí volver a trabajar algunos y subirlos al canal. con jason, por ejemplo… seguro no soy la única que quedó enamorada de ese hombre JAJAJA.</p>
+          <p>espero que les gusten tanto como a mí. ୨ৎ</p>
+        </div>
+        <div lang="en" data-i18n-lang="en">
+          <p>hiii, i've been around since about 2019. dig around my channel a little and you'll probably find some of my subs from 2021 (yes, i left those up on purpose lol).</p>
+          <p>i have a soft spot for those videos. i was still figuring out how to make my own audios and trying out different ways to word the affirmations. it's fun going back and hearing how differently i do things now.</p>
+          <p>if you've ever read my benefits and wondered why i get so specific, honestly, i struggle to picture things in my head. having even the little details in the audio helps me.</p>
+          <p>i usually make these for myself. then i went back and reworked a few just for the fun of it, so anyone who wanted to could listen too. and with jason… i figured i couldn't be the only one with a crush on him lol.</p>
+          <p>hope you love them as much as i do. ୨ৎ</p>
+        </div>
+        <p class="signature">bbyeunha</p>
+      </div>
+      <a class="print" href={withBase('/audios/project-duval')}>
+        <Image src={duval} alt="" widths={[240, 480]} sizes="(min-width: 800px) 210px, 155px" format="webp" />
+        <span>project duval <i aria-hidden="true">↗</i></span>
+      </a>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .about { max-width: 64rem; padding-block: 1.2rem clamp(3rem, 7vw, 6rem); }
+  .letter-heading { margin: clamp(.5rem, 2vw, 2rem) auto clamp(1.75rem, 4vw, 3rem); text-align: center; }
+  h1 { margin: 0; font: 400 clamp(2.9rem, 6.6vw, 5.2rem)/1.02 var(--font-display); letter-spacing: -.04em; text-wrap: balance; }
+  h1 em, .flourish, .signature { color: var(--accent); }
+  .flourish { display: flex; align-items: center; justify-content: center; gap: .8rem; margin-top: 1rem; }
+  .flourish::before, .flourish::after { content: ''; width: 3rem; height: 1px; background: var(--border); }
+  .letter-layout { max-width: 52rem; margin-inline: auto; }
+  .letter { max-width: 54ch; margin-inline: auto; line-height: 1.8; font-size: clamp(1rem, 1.6vw, 1.12rem); }
+  .letter p { margin: 0 0 1em; }
+  .letter p:first-child::first-letter { font: italic 2.3em/.85 var(--font-display); color: var(--accent); }
+  .letter .signature { margin: .6em 0 0; font: italic 2.15rem/1 var(--font-display); }
+  .print { display: block; width: min(11rem, 70%); margin: 1.7rem auto 0; padding: .5rem .5rem .3rem; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 4px 10px #0001; transform: rotate(2deg); text-decoration: none; }
+  .print img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .print span { display: flex; justify-content: space-between; padding: .45rem .2rem; font: italic 1.3rem/1.1 var(--font-display); }
+  @media (min-width: 50rem) {
+    .letter-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(10rem, 13rem); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+    .print { width: 100%; margin-top: 2rem; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .print { transition: transform .18s ease; }
+    .print:is(:hover, :focus-visible) { transform: rotate(0); }
+  }
+</style>

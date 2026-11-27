@@ -1,4 +1,5 @@
 ---
+import { UI } from '../lib/i18n';
 import { SITE, withBase } from '../lib/site';
 ---
 
@@ -7,6 +8,11 @@ import { SITE, withBase } from '../lib/site';
     <p class="site-footer__signature">{SITE.signature}</p>
     <div class="site-footer__meta">
       <a href={withBase('/')}>{SITE.signatureMark}</a>
+      <span aria-hidden="true">·</span>
+      <a href={withBase('/about')}>
+        <span data-i18n-lang="es">{UI.es.aboutMe}</span>
+        <span data-i18n-lang="en">{UI.en.aboutMe}</span>
+      </a>
       <span aria-hidden="true">·</span>
       <a href={SITE.youtubeUrl} target="_blank" rel="noopener noreferrer">
         {SITE.youtubeHandle} <span aria-hidden="true">↗</span>

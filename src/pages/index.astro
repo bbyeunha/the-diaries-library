@@ -53,10 +53,17 @@ function buildSearchCorpus(entry: (typeof allAudios)[number]): string {
         <h1 id="library-title" class="editorial-intro__title">{SITE.name}</h1>
         <p class="editorial-intro__tagline">{SITE.tagline}</p>
       </div>
-      <p class="editorial-intro__note">
-        <span data-i18n-lang="es">{UI.es.welcome}</span>
-        <span data-i18n-lang="en">{UI.en.welcome}</span>
-      </p>
+      <div class="editorial-intro__note">
+        <div>
+          <span data-i18n-lang="es">{UI.es.welcome}</span>
+          <span data-i18n-lang="en">{UI.en.welcome}</span>
+        </div>
+        <a class="editorial-action" href={withBase('/about')}>
+          <span lang="es" data-i18n-lang="es">{UI.es.aboutMe}</span>
+          <span lang="en" data-i18n-lang="en">{UI.en.aboutMe}</span>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
