@@ -2,14 +2,18 @@ import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
+const hexColor = z.string().regex(/^#[0-9a-f]{6}$/i);
+const publicationUrl = z.url({ protocol: /^https?$/ });
+
 const paletteSchema = z.object({
-  bg: z.string(),
-  surface: z.string(),
-  text: z.string(),
-  muted: z.string(),
-  accent: z.string(),
-  accentSoft: z.string(),
-  border: z.string(),
+  bg: hexColor,
+  surface: hexColor,
+  text: hexColor,
+  muted: hexColor,
+  accent: hexColor,
+  accentSoft: hexColor,
+  border: hexColor,
+  link: hexColor.optional(),
 });
 
 const audios = defineCollection({
@@ -42,15 +46,16 @@ const audios = defineCollection({
         es: z.string(),
         en: z.string(),
       }),
-      youtubeUrl: z.string().url(),
-      externalUrl: z.string().url().optional(),
+      youtubeUrl: publicationUrl,
+      externalUrl: publicationUrl.optional(),
       externalLabel: z
         .object({
           es: z.string(),
           en: z.string(),
         })
         .optional(),
-      preferExternal: z.boolean().default(false),
+      mode: z.enum(['full', 'summary']).default('full'),
+      summaryNote: z.object({ es: z.string(), en: z.string() }).optional(),
       listeningNotes: z.object({
         es: z.array(z.string()),
         en: z.array(z.string()),
@@ -60,11 +65,17 @@ const audios = defineCollection({
         .object({
           name: z.string(),
           defaultMode: z.enum(['light', 'dark']).optional(),
+          displayFont: z.enum(['cormorant', 'lora', 'georgia']).optional(),
+          coverLayout: z.enum(['spread', 'framed']).default('spread'),
           light: paletteSchema,
           dark: paletteSchema,
         })
         .optional(),
-    }),
+    })
+      .refine((entry) => entry.mode !== 'summary' || entry.externalUrl, {
+        path: ['externalUrl'],
+        message: 'Summary entries require a link to the full edition.',
+      }),
 });
 
 export const collections = { audios };

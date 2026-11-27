@@ -14,6 +14,12 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const { mode, theme, externalUrl, externalLabel, summaryNote } = entry.data;
+const isSummary = mode === 'summary';
+const fullEditionLabel = externalLabel ?? {
+  es: isSummary ? UI.es.readFullEdition : UI.es.externalEdition,
+  en: isSummary ? UI.en.readFullEdition : UI.en.externalEdition,
+};
 const { Content, headings } = await render(entry);
 const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
 const pageTitle = `${entry.data.title} — ${entry.data.series} · ${SITE.name}`;
@@ -34,7 +40,7 @@ const coverWidths = [400, 640, maxWidth].filter((v, i, a) => v <= maxWidth && a.
         <span data-i18n-lang="en">{UI.en.backToLibrary}</span>
       </a>
 
-      <div class="entry-hero">
+      <div class="entry-hero" data-cover-layout={theme?.coverLayout}>
         <figure class="entry-hero__media">
           <Image
             src={entry.data.cover}
@@ -86,18 +92,18 @@ const coverWidths = [400, 640, maxWidth].filter((v, i, a) => v <= maxWidth && a.
               <span class="link-arrow" aria-hidden="true">↗</span>
             </a>
 
-            {entry.data.externalUrl && (
+            {!isSummary && externalUrl && (
               <a
                 class="editorial-secondary-link"
-                href={entry.data.externalUrl}
+                href={externalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span data-i18n-lang="es">
-                  {entry.data.externalLabel?.es || UI.es.rentryEdition}
+                  {fullEditionLabel.es}
                 </span>
                 <span data-i18n-lang="en">
-                  {entry.data.externalLabel?.en || UI.en.rentryEdition}
+                  {fullEditionLabel.en}
                 </span>
                 <span class="link-arrow" aria-hidden="true">↗</span>
               </a>
@@ -312,18 +318,33 @@ const coverWidths = [400, 640, maxWidth].filter((v, i, a) => v <= maxWidth && a.
       )}
 
       <div class="prose" id="benefits-content">
+        {isSummary && externalUrl && (
+          <div class="summary-preface">
+            {summaryNote && (
+              <>
+                <p data-lang-block="es" lang="es">{summaryNote.es}</p>
+                <p data-lang-block="en" lang="en">{summaryNote.en}</p>
+              </>
+            )}
+            <a class="editorial-action" href={externalUrl} target="_blank" rel="noopener noreferrer">
+              <span data-i18n-lang="es">{fullEditionLabel.es}</span>
+              <span data-i18n-lang="en">{fullEditionLabel.en}</span>
+              <span class="link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        )}
         <Content />
 
         <div class="entry-bottom-meta">
-          {entry.data.externalUrl ? (
+          {externalUrl ? (
             <a
-              class="editorial-secondary-link"
-              href={entry.data.externalUrl}
+              class={isSummary ? 'editorial-action' : 'editorial-secondary-link'}
+              href={externalUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span data-i18n-lang="es">{UI.es.externalNote}</span>
-              <span data-i18n-lang="en">{UI.en.externalNote}</span>
+              <span data-i18n-lang="es">{fullEditionLabel.es}</span>
+              <span data-i18n-lang="en">{fullEditionLabel.en}</span>
               <span class="link-arrow" aria-hidden="true">↗</span>
             </a>
           ) : (
@@ -607,7 +628,8 @@ const coverWidths = [400, 640, maxWidth].filter((v, i, a) => v <= maxWidth && a.
       const incBtn = document.getElementById('font-inc');
 
       try {
-        const saved = Number(localStorage.getItem('tdl-font-idx'));
+        const savedValue = localStorage.getItem('tdl-font-idx');
+        const saved = savedValue === null ? NaN : Number(savedValue);
         if (Number.isInteger(saved) && saved >= 0 && saved < FONT_SIZES.length) {
           sizeIndex = saved;
         }

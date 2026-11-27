@@ -11,59 +11,49 @@ import '../styles/editorial.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { SITE, withBase } from '../lib/site';
+import type { CollectionEntry } from 'astro:content';
 
-interface Palette {
-  bg: string;
-  surface: string;
-  text: string;
-  muted: string;
-  accent: string;
-  accentSoft: string;
-  border: string;
-}
+type PublicationTheme = NonNullable<CollectionEntry<'audios'>['data']['theme']>;
 
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
-  pageTheme?: {
-    name: string;
-    defaultMode?: 'light' | 'dark';
-    light: Palette;
-    dark: Palette;
-  };
+  pageTheme?: PublicationTheme;
 }
 
 const { title, description, ogImage, pageTheme } = Astro.props;
 const defaultMode = pageTheme?.defaultMode || '';
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 
-const customThemeCss = pageTheme
-  ? `
-    :root {
-      --bg: ${pageTheme.light.bg};
-      --surface: ${pageTheme.light.surface};
-      --text: ${pageTheme.light.text};
-      --muted: ${pageTheme.light.muted};
-      --accent: ${pageTheme.light.accent};
-      --accent-soft: ${pageTheme.light.accentSoft};
-      --border: ${pageTheme.light.border};
-    }
-    :root[data-theme='dark'] {
-      --bg: ${pageTheme.dark.bg};
-      --surface: ${pageTheme.dark.surface};
-      --text: ${pageTheme.dark.text};
-      --muted: ${pageTheme.dark.muted};
-      --accent: ${pageTheme.dark.accent};
-      --accent-soft: ${pageTheme.dark.accentSoft};
-      --border: ${pageTheme.dark.border};
-    }
-  `
-  : '';
+const displayFonts = {
+  cormorant: "'Cormorant Garamond', Georgia, serif",
+  lora: "Lora, Georgia, serif",
+  georgia: "Georgia, 'Times New Roman', serif",
+};
+
+function paletteVariables(mode: 'light' | 'dark', palette: PublicationTheme['light']) {
+  return {
+    [`--publication-${mode}-bg`]: palette.bg,
+    [`--publication-${mode}-surface`]: palette.surface,
+    [`--publication-${mode}-text`]: palette.text,
+    [`--publication-${mode}-muted`]: palette.muted,
+    [`--publication-${mode}-accent`]: palette.accent,
+    [`--publication-${mode}-accent-soft`]: palette.accentSoft,
+    [`--publication-${mode}-border`]: palette.border,
+    [`--publication-${mode}-link`]: palette.link ?? palette.accent,
+  };
+}
+
+const themeStyle = pageTheme && {
+  ...paletteVariables('light', pageTheme.light),
+  ...paletteVariables('dark', pageTheme.dark),
+  '--publication-font-display': pageTheme.displayFont && displayFonts[pageTheme.displayFont],
+};
 ---
 
 <!doctype html>
-<html lang="es" data-lang="es" data-theme="light" data-default-theme={defaultMode}>
+<html lang="es" data-lang="es" data-theme={defaultMode || 'light'} data-default-theme={defaultMode}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -83,7 +73,6 @@ const customThemeCss = pageTheme
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={SITE.name} />
     {ogImage && <meta property="og:image" content={ogImage} />}
-    {customThemeCss && <style is:inline set:html={customThemeCss} />}
     <script is:inline>
       (() => {
         try {
@@ -119,7 +108,7 @@ const customThemeCss = pageTheme
 
     <SiteHeader />
 
-    <main id="main-content" tabindex="-1">
+    <main id="main-content" tabindex="-1" data-publication-theme={pageTheme?.name} style={themeStyle}>
       <slot />
     </main>
 
