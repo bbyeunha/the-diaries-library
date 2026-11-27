@@ -27,9 +27,35 @@ interface Props {
 }
 
 const { kind } = Astro.props;
+
+const EXHIBIT_STYLE: Record<ExhibitId, string> = {
+  'logic-matrix': 'is-floating',
+  'memory-palace': 'is-plate',
+  'executive-signal': 'is-wide',
+  'syntax-tree': 'is-stamp-left',
+  'tesseract': 'is-floating',
+  'circle-of-fifths': 'is-stamp-right',
+  'gaussian-curve': 'is-wide',
+  'game-theory': 'is-plate',
+  'dialectic': 'is-floating',
+  'modal-venn': 'is-stamp-left',
+  'maxwell': 'is-wide',
+  'chemistry-orbitals': 'is-floating',
+  'dna-helix': 'is-wide',
+  'action-potential': 'is-plate',
+  'compound-curve': 'is-stamp-right',
+  'compass-rose': 'is-floating',
+  'big-o-tree': 'is-plate',
+  'perspective-grid': 'is-wide',
+  'polymath-star': 'is-floating',
+  'forgetting-curve': 'is-stamp-left',
+  'lissajous': 'is-wide',
+};
+
+const styleClass = EXHIBIT_STYLE[kind];
 ---
 
-<figure class="noesis-exhibit" data-noesis-exhibit aria-hidden="true">
+<figure class={`noesis-exhibit ${styleClass}`} data-noesis-exhibit aria-hidden="true">
   {kind === 'logic-matrix' && (
     <div class="noesis-exhibit__inner">
       <svg viewBox="0 0 395 110" fill="none">

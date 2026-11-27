@@ -167,6 +167,27 @@ html[data-theme='dark'] .noesis-bg-piece {
   right: clamp(0.6rem, 1.8vw, 3rem);
 }
 
+.noesis-bg-piece.is-offset-left {
+  left: clamp(2rem, 12vw, 15rem);
+  opacity: 0.24;
+}
+
+.noesis-bg-piece.is-offset-right {
+  right: clamp(2rem, 12vw, 15rem);
+  opacity: 0.24;
+}
+
+.noesis-bg-piece.is-center-wide {
+  left: 50%;
+  width: min(var(--w, 580px), 86vw);
+  transform: translateX(-50%) rotate(var(--rot, 0deg));
+  opacity: 0.2;
+}
+
+html[data-theme='dark'] .noesis-bg-piece.is-center-wide {
+  opacity: 0.23;
+}
+
 .noesis-bg-piece svg {
   display: block;
   width: 100%;
@@ -704,28 +725,45 @@ html[data-theme='dark'] .noesis-bg-piece {
 }
 
 /* ==========================================================================
-   21 UNIQUE CHAPTER-SPECIFIC VISUAL EXHIBITS (Zero Repetition, Mobile-Safe)
+   21 UNIQUE CHAPTER-SPECIFIC VISUAL EXHIBITS (Varied Shapes, Sizes & Layouts)
    ========================================================================== */
 .noesis-exhibit {
   position: relative;
   margin: 0.75rem auto;
-  width: min(100%, 660px);
+  width: min(100%, 640px);
   padding: 1.05rem 1.35rem;
-  background: radial-gradient(circle at 18% 50%, var(--noesis-ambient-a), transparent 68%),
-    var(--noesis-bg-alt);
-  border-top: 1px solid var(--noesis-border-strong);
-  border-bottom: 1px solid var(--noesis-border-strong);
-  border-left: 1px solid var(--noesis-border);
-  border-right: 1px solid var(--noesis-border);
   color: var(--noesis-gold);
-  box-shadow: 0 10px 26px rgba(10, 8, 5, 0.12);
 }
 
 .noesis-exhibit[hidden] {
   display: none;
 }
 
-.noesis-exhibit::before {
+.noesis-exhibit__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noesis-exhibit svg {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  display: block;
+}
+
+/* Variant 1: Framed museum blueprint plate with brass corners */
+.noesis-exhibit.is-plate {
+  background: radial-gradient(circle at 18% 50%, var(--noesis-ambient-a), transparent 68%),
+    var(--noesis-bg-alt);
+  border-top: 1px solid var(--noesis-border-strong);
+  border-bottom: 1px solid var(--noesis-border-strong);
+  border-left: 1px solid var(--noesis-border);
+  border-right: 1px solid var(--noesis-border);
+  box-shadow: 0 10px 26px rgba(10, 8, 5, 0.12);
+}
+
+.noesis-exhibit.is-plate::before {
   content: '';
   position: absolute;
   inset: -3px;
@@ -741,17 +779,51 @@ html[data-theme='dark'] .noesis-bg-piece {
     linear-gradient(var(--noesis-gold-rule), var(--noesis-gold-rule)) bottom right / 1.5px 12px no-repeat;
 }
 
-.noesis-exhibit__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Variant 2: Open floating ink sketch directly on the desk grid (no box!) */
+.noesis-exhibit.is-floating {
+  width: min(100%, 560px);
+  padding: 0.65rem 0.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  opacity: 0.88;
 }
 
-.noesis-exhibit svg {
+.noesis-exhibit.is-floating svg {
+  max-width: 520px;
+}
+
+/* Variant 3: Full-column wide chalkboard manuscript band */
+.noesis-exhibit.is-wide {
   width: 100%;
-  max-width: 580px;
-  height: auto;
-  display: block;
+  padding: 1.15rem 1.75rem;
+  background: linear-gradient(90deg, transparent, var(--noesis-bg-alt) 14%, var(--noesis-bg-alt) 86%, transparent);
+  border-top: 1px double var(--noesis-border-strong);
+  border-bottom: 1px double var(--noesis-border-strong);
+}
+
+.noesis-exhibit.is-wide svg {
+  max-width: 680px;
+}
+
+/* Variant 4: Asymmetric compact archival stamp (offset left or right on desktop) */
+.noesis-exhibit.is-stamp-left,
+.noesis-exhibit.is-stamp-right {
+  width: min(100%, 490px);
+  padding: 0.85rem 1.1rem;
+  background-color: var(--noesis-surface);
+  border: 1px dashed var(--noesis-border-strong);
+  border-radius: 2px;
+}
+
+.noesis-exhibit.is-stamp-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.noesis-exhibit.is-stamp-right {
+  margin-left: auto;
+  margin-right: 0;
 }
 
 /* ==========================================================================
@@ -1424,10 +1496,15 @@ html[data-theme='dark'] .noesis-bg-piece {
     gap: 1rem;
   }
 
-  .noesis-exhibit {
+  .noesis-exhibit,
+  .noesis-exhibit.is-plate,
+  .noesis-exhibit.is-floating,
+  .noesis-exhibit.is-wide,
+  .noesis-exhibit.is-stamp-left,
+  .noesis-exhibit.is-stamp-right {
     width: 100%;
-    padding: 0.75rem 0.65rem;
-    margin: 0.45rem 0;
+    margin: 0.45rem auto;
+    padding: 0.7rem 0.65rem;
   }
 
   .noesis-plate {
