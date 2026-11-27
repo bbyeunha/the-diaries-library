@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Words from '../../components/Words.astro';
+import FormulaCredit from '../../components/FormulaCredit.astro';
+import { appliedArchitectures, appliedMethods, formulaUrl } from '../../lib/formulas';
+import { withBase } from '../../lib/site';
+import manuscript from '../../assets/audios/noesis/euler.jpg';
+import '../../styles/formulas.css';
+import '../../styles/applied-architectures.css';
+
+const architecture = appliedArchitectures.noesis;
+const audios = await getCollection('audios', audio => architecture.audioIds.includes(audio.id));
+const methods = appliedMethods(architecture, audios);
+const [ink, shadow, olive, gold, parchment, paper] = architecture.colors;
+const light = { bg: paper, surface: parchment, text: ink, muted: shadow, accent: olive, accentSoft: olive, border: gold };
+const dark = { bg: ink, surface: shadow, text: paper, muted: parchment, accent: parchment, accentSoft: gold, border: gold };
+---
+<BaseLayout
+  title="NOESIS — The Formula Archives | The Diaries Library"
+  description={architecture.intro[0].es + ' ' + architecture.intro[0].en}
+  pageTheme={{ name: architecture.name, coverLayout: 'spread', light, dark }}
+>
+  <article class="shell archive applied-dossier">
+    <a class="back-link" href={withBase('/formulas/')}><Words es="← Archivo de fórmulas" en="← The Formula Archives" /></a>
+    <header class="applied-front">
+      <div>
+        <p class="classification"><Words {...architecture.category} /></p>
+        <h1>{architecture.name}</h1>
+        <p class="motto">{architecture.subtitle}</p>
+        {architecture.intro.map(paragraph => <p><Words {...paragraph} /></p>)}
+        <a href="#convergence"><Words es="Cómo se unen las metodologías" en="How the methods fit together" /> ↓</a>
+      </div>
+      <figure>
+        <Image src={manuscript} alt="" widths={[360, 640, 900]} sizes="(max-width: 760px) 92vw, 420px" format="webp" />
+        <figcaption><Words es="Leonhard Euler · manuscrito" en="Leonhard Euler · manuscript" /></figcaption>
+      </figure>
+    </header>
+
+    <section id="convergence" class="convergence">
+      <h2><Words es="Cómo se unen las metodologías" en="How the methods fit together" /></h2>
+      <ul class="convergence-map">
+        {methods.map(method => (
+          <li>
+            <a href={formulaUrl(method.slug)}>{method.name} <span aria-hidden="true">↗</span></a>
+            <p><Words {...method.description} /></p>
+          </li>
+        ))}
+      </ul>
+      <p class="convergence-result">{architecture.name}</p>
+    </section>
+
+    <div class="reading-layout">
+      <nav class="contents" aria-labelledby="dimension-index">
+        <h2 id="dimension-index"><Words es="Dimensiones de NOESIS" en="Dimensions of NOESIS" /></h2>
+        <ol>{architecture.sections.map(section => <li><a href={'#' + section.id}><Words {...section.title} /></a></li>)}</ol>
+      </nav>
+      <div class="manuscript">
+        {architecture.sections.map(section => (
+          <section class="passage applied-passage" id={section.id}>
+            <h2><Words {...section.title} /></h2>
+            {section.paragraphs.map(paragraph => <p><Words {...paragraph} /></p>)}
+          </section>
+        ))}
+      </div>
+    </div>
+
+    <section class="applied-publication">
+      <h2><Words es="El audio" en="The audio" /></h2>
+      {audios.map(audio => {
+        const href = withBase('/audios/' + audio.id + '/');
+        return (
+          <div class="publication-layout">
+            <a href={href} class="publication-cover">
+              <Image src={audio.data.cover} alt={audio.data.title + ' — NOESIS'} widths={[360, 640, 960]} sizes="(max-width: 760px) 92vw, 450px" format="webp" />
+            </a>
+            <div>
+              <p class="classification">{audio.data.code} · {audio.data.series}</p>
+              <h3><a href={href}>{audio.data.title} ୨ৎ intelligence, memory &amp; polymath</a></h3>
+              <p>Español + English · {audio.data.duration}</p>
+              <p><Words es="5 volúmenes y 54 capítulos de beneficios" en="5 volumes and 54 chapters of benefits" /></p>
+              <a href={href}><Words es="Leer los beneficios" en="Read the benefits" /> →</a>
+            </div>
+          </div>
+        );
+      })}
+    </section>
+    <FormulaCredit />
+  </article>
+</BaseLayout>

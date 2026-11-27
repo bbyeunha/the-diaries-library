@@ -20,6 +20,7 @@ const audios = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/audios' }),
   schema: ({ image }) =>
     z.object({
+      formulaRefs: z.array(z.object({ slug: z.string(), role: z.enum(['main', 'reinforcement', 'technique']), version: z.string().optional() })).default([]),
       issue: z.string(),
       series: z.string(),
       code: z.string(),

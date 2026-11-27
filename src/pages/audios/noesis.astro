@@ -10,6 +10,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NoesisBackdrop from '../../components/NoesisBackdrop.astro';
 import NoesisExhibit, { type ExhibitId } from '../../components/NoesisExhibit.astro';
+import { formulaUrl } from '../../lib/formulas';
 import { withBase } from '../../lib/site';
 import { VOLUMES_1_TO_2 } from '../../data/noesis/volumes1to2';
 import { VOLUMES_3_TO_5 } from '../../data/noesis/volumes3to5';
@@ -27,6 +28,8 @@ import lorenzImg from '../../assets/audios/noesis/lorenz.jpg';
 import ephemerisImg from '../../assets/audios/noesis/ephemeris.jpg';
 import psycheImg from '../../assets/audios/noesis/psyche.jpg';
 import quantumImg from '../../assets/audios/noesis/quantum.jpg';
+
+const chapterFormulas: Record<string, [string, string]> = { '51': ['aurelis','AURELIS 3.3'], '52': ['semantic-knowledge-integration','Semantic Knowledge Integration'], '53': ['continuum','CONTINUUM II'] };
 
 const PLATES: Record<NoesisPlateKey, ImageMetadata> = {
   euler: eulerImg,
@@ -125,7 +128,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
         <span data-i18n-lang="es">Volver a The Diaries Library</span>
         <span data-i18n-lang="en">Back to The Diaries Library</span>
       </a>
-      <span>PROJECT 002 · CODEX POLYMATHEIA · AURELIS 3.3</span>
+      <span>PROJECT 002 · CODEX POLYMATHEIA · <a href={formulaUrl('aurelis')}> AURELIS 3.3</a></span>
     </div>
 
     <!-- ================================================================
@@ -168,7 +171,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
                 <span data-i18n-lang="es">Fórmula</span>
                 <span data-i18n-lang="en">Formula</span>
               </dt>
-              <dd class="noesis-hero__ledger-value">AURELIS 3.3 — CONTINUUM II</dd>
+              <dd class="noesis-hero__ledger-value"><a href={formulaUrl('aurelis')}> AURELIS 3.3</a> — <a href={formulaUrl('continuum')}> CONTINUUM II</a></dd>
             </div>
             <div class="noesis-hero__ledger-item">
               <dt class="noesis-hero__ledger-label">
@@ -182,7 +185,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
                 <span data-i18n-lang="es">Qué trae adentro</span>
                 <span data-i18n-lang="en">Inside the Archive</span>
               </dt>
-              <dd class="noesis-hero__ledger-value">5 Volumes · 54 Chapters · SKI</dd>
+              <dd class="noesis-hero__ledger-value">5 Volumes · 54 Chapters · <a href={formulaUrl('semantic-knowledge-integration')} aria-label="Semantic Knowledge Integration">SKI</a></dd>
             </div>
           </dl>
 
@@ -196,6 +199,12 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
             <a class="noesis-btn-ghost" href="#authors-note">
               <span data-i18n-lang="es">Mi nota</span>
               <span data-i18n-lang="en">My note</span>
+            </a>
+
+            <a class="noesis-btn-ghost" href={formulaUrl('noesis')}>
+              <span data-i18n-lang="es">Explorar la arquitectura de NOESIS</span>
+              <span data-i18n-lang="en">Explore the NOESIS architecture</span>
+              <span aria-hidden="true">→</span>
             </a>
 
             {YOUTUBE_URL && (
@@ -313,7 +322,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
               además de las afirmaciones habituales, incluí pequeñas definiciones y conocimientos reales de diferentes áreas, desde filosofía y matemáticas hasta neurociencia, astronomía, economía, arte y aviación.
             </p>
             <p>
-              este es también el primer audio desarrollado con AURELIS 3.3, una fórmula experimental que he creado para mis propios audios, con afirmaciones absurdamente detalladas y refuerzos integrados.
+              este es también el primer audio desarrollado con <a href={formulaUrl('aurelis')}> AURELIS 3.3</a>, una fórmula experimental que he creado para mis propios audios, con afirmaciones absurdamente detalladas y refuerzos integrados.
             </p>
             <p>
               como siempre, lo hice principalmente para mí y decidí compartirlo por amor al arte. espero que disfruten explorando este pequeño archivo de conocimiento tanto como yo disfruté creándolo. ♡
@@ -333,7 +342,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
               on top of regular affirmations, i slipped in short definitions and real foundational concepts from all over the map—from philosophy and math to neuroscience, astronomy, economics, art, and aviation.
             </p>
             <p>
-              this is also my very first audio built on AURELIS 3.3, an experimental formula i designed for my own audios with ridiculously detailed affirmations and built-in boosters.
+              this is also my very first audio built on <a href={formulaUrl('aurelis')}> AURELIS 3.3</a>, an experimental formula i designed for my own audios with ridiculously detailed affirmations and built-in boosters.
             </p>
             <p>
               as always, i made it mainly for myself and decided to put it out there just for the love of the craft. hope you have as much fun digging through this little knowledge archive as i had making it. ♡
@@ -617,6 +626,7 @@ function buildChapterSearchText(ch: (typeof ALL_VOLUMES)[number]['chapters'][num
                           </summary>
 
                           <div class="noesis-chapter__body">
+                            {chapterFormulas[ch.number] && <a href={formulaUrl(chapterFormulas[ch.number][0])}>{chapterFormulas[ch.number][1]} →</a>}
                             {ch.intro && (
                               <p class={isAviation ? 'noesis-author-whisper' : 'noesis-chapter__intro'}>
                                 <span data-i18n-lang="es">{ch.intro.es}</span>

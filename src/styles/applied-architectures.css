@@ -1,0 +1,63 @@
+.applied-front {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  margin-block: 2.25rem 3rem;
+}
+.applied-front h1 { font-size: clamp(3.4rem, 9vw, 7.5rem); letter-spacing: .075em; }
+.applied-front p { max-width: 60ch; }
+.applied-front figure { margin: 0; padding: .65rem; border: 1px solid var(--border); }
+.applied-front img { width: 100%; height: auto; background: #e9dfc6; }
+.applied-front figcaption { padding: .4rem .2rem 0; color: var(--muted); font-style: italic; }
+.convergence { margin-block: 3rem; padding: clamp(1rem, 3vw, 2rem); border: 1px solid var(--border); scroll-margin-top: 4rem; }
+.convergence h2 { text-align: center; margin-top: 0; }
+.convergence-map {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.convergence-map li { position: relative; padding: 1rem; border: 1px solid var(--border); background: var(--surface); }
+.convergence-map li::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1.55rem;
+  background: var(--border);
+  top: 100%;
+  left: 50%;
+}
+.convergence-map a { font-family: var(--font-display); font-size: 1.3rem; }
+.convergence-map p { margin-bottom: 0; }
+.convergence-result {
+  width: max-content;
+  margin: 0 auto;
+  padding: .45rem 1rem;
+  font: 1.25rem var(--font-display);
+  letter-spacing: .125em;
+  border: 1px solid var(--border);
+  border-top: 0;
+}
+.applied-passage { padding-top: 1rem; margin-bottom: 2rem; border-top: 1px solid var(--border); }
+.applied-passage h2 { margin-top: 0; }
+.applied-publication, .applied-index { border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1rem; }
+.publication-layout, .applied-index-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 3rem);
+}
+.publication-layout h3 { font: italic clamp(1.65rem, 3.2vw, 2.4rem)/1.1 var(--font-display); margin: .6rem 0; }
+.publication-cover img, .applied-index-entry img { display: block; width: 100%; height: auto; }
+.applied-index-entry { background: var(--surface); border: 1px solid var(--border); padding: clamp(1rem, 3vw, 2rem); }
+.applied-index-entry h3 { font: 400 clamp(2rem, 5vw, 3.25rem)/1 var(--font-display); margin: .3rem 0; }
+.applied-index-entry .motto { font-size: 1.4rem; }
+@media (max-width: 760px) {
+  .applied-front, .publication-layout, .applied-index-entry, .convergence-map { grid-template-columns: minmax(0, 1fr); }
+  .applied-front h1 { letter-spacing: .035em; }
+  .convergence-map li:not(:last-child)::after { height: 1.05rem; }
+}

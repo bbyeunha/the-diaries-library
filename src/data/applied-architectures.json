@@ -1,0 +1,149 @@
+{
+  "noesis": {
+    "name": "NOESIS",
+    "subtitle": "the art of knowing everything.",
+    "category": {
+      "es": "Arquitectura cognitiva aplicada",
+      "en": "Applied Cognitive Architecture"
+    },
+    "audioIds": [
+      "noesis"
+    ],
+    "colors": [
+      "#211F1A",
+      "#443B2E",
+      "#555C47",
+      "#A18B65",
+      "#D1C0A0",
+      "#F1E8D6"
+    ],
+    "intro": [
+      {
+        "es": "puedo empezar leyendo sobre una estrella y acabar con quince pestañas abiertas sobre historia, matemáticas y filosofía. luego alguien menciona uno de esos temas en conversación y por fin puedo sacar ese dato que llevaba semanas guardado en mi cabeza JAJAJA. de ahí salió NOESIS.",
+        "en": "I’ll look up one star and somehow end up with fifteen tabs open on history, maths and philosophy. Then someone brings up one of those topics and I finally get to use that random fact I’ve had in my head for weeks. That’s where NOESIS came from."
+      },
+      {
+        "es": "cuando me senté a escribirlo, «quiero aprender de todo» me quedó cortísimo. con AURELIS 3.3 pude entrar en los detalles de cómo recuerdo, razono o explico algo. CONTINUUM II me llevó a pensar en dónde uso todo eso fuera de clase, y con Semantic Knowledge Integration pude meter temas que yo misma quería leer.",
+        "en": "When I sat down to write it, “I want to learn everything” barely covered it. AURELIS 3.3 let me get specific about how I remember, reason and explain things. CONTINUUM II got me thinking about where I use any of that outside class, and Semantic Knowledge Integration made room for subjects I actually wanted to read about."
+      }
+    ],
+    "parts": {
+      "aurelis": {
+        "es": "La usé para distinguir capacidades que suelen quedar bajo una misma palabra y darles un lugar dentro del conjunto. Así pude desarrollar sus matices y las relaciones entre ellas.",
+        "en": "I used it to tease apart abilities that tend to go under the same name and give each one a place in the bigger picture. That gave me room for the nuances and the connections between them."
+      },
+      "continuum": {
+        "es": "Aquí pensé en cómo retomar una idea, sumarle algo nuevo y volver a usarla en otro contexto, al ritmo de cada quien.",
+        "en": "This is where I thought about returning to an idea, adding something new to it and using it somewhere else, at a pace that works for you."
+      },
+      "semantic-knowledge-integration": {
+        "es": "Me permitió dedicar parte del proyecto a conceptos que pertenecen a disciplinas concretas, desde las ciencias hasta las artes.",
+        "en": "This gave me a way to devote part of the project to actual concepts from specific fields, from the sciences to the arts."
+      }
+    },
+    "sections": [
+      {
+        "id": "cognitive-mastery",
+        "title": {
+          "es": "Dominio cognitivo",
+          "en": "Cognitive Mastery"
+        },
+        "paragraphs": [
+          {
+            "es": "puedo entender todas las palabras de un texto y aun así quedarme un buen rato intentando seguir el argumento. para mí ese ejemplo separa bastante bien dos cosas que quería incluir: lo que ya sé por experiencia (inteligencia cristalizada) y lo que puedo deducir cuando algo es nuevo para mí (inteligencia fluida). las dos entran en juego en la misma página.",
+            "en": "I can know every word on a page and still spend ages trying to follow the argument. That’s a pretty good example of two things I wanted to cover: what I already know from experience (crystallised intelligence) and what I can figure out when something is new to me (fluid intelligence). Both come up on the same page."
+          },
+          {
+            "es": "También quise mirar qué hace posible ese recorrido. La atención me ayuda a escoger qué mirar, la memoria de trabajo a mantener varias ideas presentes y la memoria a largo plazo a recuperar lo que ya aprendí. Al procesar esa información puedo entender el lenguaje, encontrar una asociación creativa o revisar mi estrategia si me atasco. Por eso el razonamiento, la creatividad y las funciones ejecutivas tienen su propio espacio y vuelven a encontrarse en distintos capítulos.",
+            "en": "I also wanted to look at what makes that whole process possible. Attention helps me decide what to focus on, working memory keeps several ideas in play, and long-term memory brings back what I’ve already learnt. As I process that information, I can make sense of the language, spot a creative association or change tack if I get stuck. That’s why reasoning, creativity and executive functions each get their own space and meet again across different chapters."
+          }
+        ]
+      },
+      {
+        "id": "encyclopedic-knowledge",
+        "title": {
+          "es": "Conocimiento enciclopédico",
+          "en": "Encyclopedic Knowledge"
+        },
+        "paragraphs": [
+          {
+            "es": "cuando estaba armando esta parte, una cosa era escribir sobre tener buena memoria y otra era decidir qué me gustaría recordar. ahí entraron los conceptos de física, historia, música e informática. quería que esas materias tuvieran su sitio dentro del audio porque son temas que me da curiosidad estudiar por mi cuenta.",
+            "en": "When I was putting this part together, writing about having a good memory was one thing. Deciding what I’d actually want to remember was a whole other question. That’s how physics, history, music and computer science made it in. They’re subjects I’d happily go down a rabbit hole on anyway."
+          },
+          {
+            "es": "Me gustó poder reunir ciencias, humanidades, artes y tecnología sin que todo quedara bajo el rótulo de «aprender más rápido». La memoria y el razonamiento aparecen como capacidades. Las disciplinas me dan algo concreto que recordar, interpretar y discutir.",
+            "en": "I liked bringing sciences, humanities, arts and technology together without squeezing everything under the heading of “learning faster”. Memory and reasoning appear as abilities. The disciplines give me something specific to remember, interpret and talk about."
+          }
+        ]
+      },
+      {
+        "id": "omnidisciplinary-expansion",
+        "title": {
+          "es": "Expansión multidisciplinaria",
+          "en": "Omnidisciplinary Expansion"
+        },
+        "paragraphs": [
+          {
+            "es": "me encanta cuando una pregunta se sale del tema y termino aprendiendo algo que ni había pensado buscar. puedo partir de cómo suena un instrumento, pasar por cómo se fabricaba y acabar mirando por dónde viajaba la gente que lo tocaba. esa es la parte de la polimatía que quería llevar al audio.",
+            "en": "I love when a question goes off on a tangent and I end up learning something I’d never have thought to look up. I can start with how an instrument sounds, get sidetracked by how it was made and end up looking at where the people who played it used to travel. That’s the bit of polymathy I wanted in the audio."
+          },
+          {
+            "es": "Esa familiaridad con varias disciplinas me sirve para reconocer cuándo dos campos están mirando el mismo objeto desde lugares distintos. Me interesa tanto encontrar el punto en común como aprender a hacer la pregunta que le corresponde a cada campo.",
+            "en": "Getting familiar with several disciplines helps me recognise when two fields are looking at the same thing from different angles. I’m as interested in spotting what they have in common as I am in learning to ask the right question in each field."
+          }
+        ]
+      },
+      {
+        "id": "intellectual-identity",
+        "title": {
+          "es": "Identidad intelectual",
+          "en": "Intellectual Identity"
+        },
+        "paragraphs": [
+          {
+            "es": "cuando algo me interesa, quiero poder hablar de eso sin quedarme en blanco justo cuando me piden que lo explique. también quiero poder preguntar sin pena y cambiar de ejemplo si la otra persona me mira con cara de «¿qué?». eso es lo que tenía en mente cuando escribí esta parte sobre la elocuencia.",
+            "en": "When I’m into something, I want to be able to talk about it without going blank the second someone asks me to explain. I also want to ask questions without feeling awkward and switch examples when someone gives me that “wait, what?” look. That’s what I had in mind when I wrote this part about being articulate."
+          },
+          {
+            "es": "De ahí salió la parte de autoconcepto. Me gusta imaginar una vida en la que sigo aprendiendo por gusto, aunque nadie me vaya a poner nota, y en la que descubrir que estaba equivocada me da una razón para seguir leyendo.",
+            "en": "That’s where the self-concept side came from. I like imagining a life where I keep learning for the fun of it, even when no one’s grading me, and where finding out I was wrong gives me a reason to keep reading."
+          }
+        ]
+      },
+      {
+        "id": "functional-expression",
+        "title": {
+          "es": "Expresión funcional",
+          "en": "Functional Expression"
+        },
+        "paragraphs": [
+          {
+            "es": "en clase a veces me cae el veinte cuando el profe dice algo que se parece a lo que leí la noche anterior. en un examen me toca decidir qué parte de todo eso me sirve para responder. y en una charla igual tengo que acordarme de dónde iba si me interrumpen a mitad de la historia. me basé en momentos así para escribir esta parte.",
+            "en": "Sometimes something clicks in class because the teacher says something that reminds me of what I read the night before. In an exam I have to work out which bit of that helps me answer the question. And in conversation I still have to remember where I was if someone cuts in halfway through the story. Those are the moments I had in mind for this part."
+          },
+          {
+            "es": "También me interesan los momentos menos académicos. Cuando algo falla en casa, puedo comparar explicaciones, probar una y cambiar de idea si lo que observo apunta a otra causa. Situaciones así me ayudaron a darle una forma reconocible a lo que quería explorar.",
+            "en": "I’m just as interested in the less academic moments. When something breaks at home, I can weigh a few explanations, test one and change my mind if what I see points to another cause. Moments like that helped me give the abilities I was exploring a shape I could recognise."
+          }
+        ]
+      },
+      {
+        "id": "integrated-continuity",
+        "title": {
+          "es": "Continuidad integrada",
+          "en": "Integrated Continuity"
+        },
+        "paragraphs": [
+          {
+            "es": "a veces dejo un tema aparcado semanas y vuelvo porque me lo cruzo en una conversación. otras veces necesito explicarlo en voz alta para darme cuenta de que me faltaba entender la mitad. eso era lo que quería incluir con CONTINUUM II: cómo una idea va agarrando forma cada vez que vuelvo a ella, con las pausas que hagan falta.",
+            "en": "Sometimes I leave a subject alone for weeks and come back because it pops up in conversation. Other times I have to explain it out loud before I realise I only understood half of it. That’s what I wanted to include with CONTINUUM II: how an idea comes together a little more every time I pick it back up, however long that takes."
+          },
+          {
+            "es": "NOESIS es un experimento creativo que hice alrededor de estas ideas. Cuando quiero aprender algo de verdad, me toca leer, hacer preguntas y practicar. Ahí es donde compruebo cuánto entendí y qué me queda por averiguar.",
+            "en": "NOESIS is a creative experiment I made around these ideas. When I really want to learn something, I still have to read, ask questions and practise. That’s where I find out how much I understood and what I’ve still got to figure out."
+          }
+        ]
+      }
+    ]
+  }
+}

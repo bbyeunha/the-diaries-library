@@ -1,0 +1,570 @@
+{
+  "archive": {
+    "intro": {
+      "es": "me cuesta un montón visualizar, así que si quiero que algo quede claro, me toca escribir hasta el último detalle. aquí les cuento por qué cada audio me llevó a escribirlo de una forma distinta.",
+      "en": "I’m terrible at picturing things in my head, so if I want something to feel clear, I have to write it down in ridiculous detail. Here’s what made me approach each audio differently."
+    },
+    "note": [
+      {
+        "es": "Experimento con distintas formas de escribir mis audios. Sus efectos carecen de validación científica.",
+        "en": "I experiment with different ways of writing my audios. Their effects have not been scientifically validated."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "slug": "aurelis",
+      "name": "AURELIS",
+      "short": "AURELIS",
+      "version": "3.3",
+      "category": {
+        "es": "Arquitectura general",
+        "en": "General architecture"
+      },
+      "role": "main",
+      "subtitle": "the architecture of expansion.",
+      "colors": [
+        "#211D17",
+        "#443628",
+        "#80633F",
+        "#B99A61",
+        "#D8C7A4",
+        "#F3EBDD"
+      ],
+      "art": {
+        "title": "The Court of Heaven — Initial G",
+        "id": "1930.105"
+      },
+      "related": [
+        "continuum",
+        "semantic-knowledge-integration"
+      ],
+      "identity": null,
+      "philosophy": [
+        {
+          "es": "Cuando escribí «inteligencia» para NOESIS, todavía me quedaba casi todo por decidir. ¿Quería hablar de recordar lo que acababa de leer, de entenderlo o de saber explicárselo a alguien? De esa pregunta salió AURELIS. Me gusta tomar una idea que cabe en una palabra y descubrir cuánto hay dentro.",
+          "en": "When I wrote down “intelligence” for NOESIS, I still had almost everything to decide. Did I mean remembering what I’d just read, understanding it, or finding the words to explain it to someone? That question gave me AURELIS. I like taking an idea small enough to fit into one word and finding out how much it holds."
+        }
+      ],
+      "principles": [
+        {
+          "id": "getting-specific",
+          "label": {
+            "es": "Hiperespecificidad",
+            "en": "Getting specific"
+          },
+          "text": {
+            "es": "Puedo dedicar una página entera a la memoria y seguir hablando de cosas distintas. Recordar un término, reconocerlo durante una lectura y recuperar su significado en una conversación merecen su propio espacio. Con una temática estética haría algo parecido: me detendría en los rasgos que hacen reconocible una apariencia. Así consigo que el detalle quede en las palabras.",
+            "en": "I could spend a whole page on memory and still be talking about different things. Recalling a term, recognizing it on the page and retrieving its meaning mid-conversation each deserve room. I’d approach an aesthetic subject much the same way, lingering on the features that make a look recognizable. That way the words carry the detail."
+          }
+        },
+        {
+          "id": "looking-at-an-idea-from-several-sides",
+          "label": {
+            "es": "Expansión multidimensional",
+            "en": "Looking at an idea from several sides"
+          },
+          "text": {
+            "es": "Me interesa lo que pasa cuando cambio de perspectiva. Puedo pensar en una habilidad desde la teoría, desde lo que hago con ella o desde cómo se siente usarla frente a otras personas. Según el tema, también entran los sentidos, las emociones y el lugar donde ocurre la experiencia. Elijo las dimensiones que tienen sentido para ese audio.",
+            "en": "I’m interested in what happens when I shift my point of view. I can think about a skill in theory, through what I do with it, or through how it feels to use it in front of other people. Depending on the subject, the senses, emotions and setting might matter too. I choose the dimensions that belong in that particular audio."
+          }
+        },
+        {
+          "id": "how-ideas-fit-together",
+          "label": {
+            "es": "Integración semántica",
+            "en": "How ideas fit together"
+          },
+          "text": {
+            "es": "En NOESIS quise que la memoria tuviera algo que ver con la comprensión. Una palabra que recuerdo me puede ayudar a comunicar una idea, y dos conocimientos que tenía por separado pueden darme una asociación creativa. A esas relaciones les doy tanto espacio como a las capacidades que conectan.",
+            "en": "In NOESIS I wanted memory to have a meaningful relationship with understanding. A word I remember can help me communicate an idea, and two things I learned separately can give me a creative association. I give those relationships as much space as the abilities they connect."
+          }
+        },
+        {
+          "id": "putting-it-in-context",
+          "label": {
+            "es": "Precisión contextual",
+            "en": "Putting it in context"
+          },
+          "text": {
+            "es": "Si pienso en lo que sé de un tema, enseguida me pregunto dónde lo usaría. En un examen quizá tenga que justificar una respuesta. En una conversación, encontrar un ejemplo que la otra persona entienda. Al escribir, ese cambio de escenario me ayuda a precisar qué quiero decir con «saber».",
+            "en": "When I think about knowing a subject, my next question is where I’d use it. In an exam I might have to justify an answer. In conversation I might need an example the other person can follow. Changing the setting helps me pin down what I mean by “knowing.”"
+          }
+        },
+        {
+          "id": "finding-the-words",
+          "label": {
+            "es": "Diversidad expresiva",
+            "en": "Finding the words"
+          },
+          "text": {
+            "es": "A veces una idea se entiende mejor cuando cuento una experiencia. Otras veces prefiero describir una cualidad o explorar lo que significa para alguien reconocerse en ella. Me gusta que el lenguaje tenga algo del proyecto al que pertenece, incluso cuando vuelvo a una temática que ya conozco.",
+            "en": "Sometimes an idea comes across best when I describe an experience. Other times I’d rather describe a quality or explore what it means to see that quality in yourself. I like the language to carry something of the project it belongs to, even when I revisit familiar territory."
+          }
+        },
+        {
+          "id": "identity-and-selfconcept",
+          "label": {
+            "es": "Identidad y autoconcepto",
+            "en": "Identity and self-concept"
+          },
+          "text": {
+            "es": "También me importa la relación que una persona tiene con sus propias capacidades. Puedo escribir sobre expresar una idea y preguntarme, en esa misma escena, si la persona se siente capaz de tomar la palabra. Incluyo esa parte cuando aporta algo al objetivo del proyecto.",
+            "en": "I care about the relationship someone has with their own abilities. I can write about expressing an idea and wonder, in that very same scene, whether the person feels able to speak up. I include that aspect when it adds something to the project."
+          }
+        },
+        {
+          "id": "making-room-for-different-imaginations",
+          "label": {
+            "es": "Accesibilidad cognitiva",
+            "en": "Making room for different imaginations"
+          },
+          "text": {
+            "es": "A mí me cuesta visualizar. Por eso disfruto tanto los detalles: puedo seguir una descripción por lo que significan las palabras, aunque la imagen mental sea vaga. Al componer dejo espacio tanto para quien imagina una escena con facilidad como para quien piensa mediante conceptos o asociaciones.",
+            "en": "I find it hard to visualize. That’s part of why I enjoy details so much: I can follow a description through the meaning of the words even when the mental picture is hazy. I leave room for people who readily picture a scene and for those who think in concepts or associations."
+          }
+        },
+        {
+          "id": "room-for-personal-preferences",
+          "label": {
+            "es": "Compatibilidad y personalización",
+            "en": "Room for personal preferences"
+          },
+          "text": {
+            "es": "Un detalle tiene gracia precisamente porque puede importarle mucho a alguien. También puede ser algo que otra persona prefiera conservar tal como está. Al desarrollar un objetivo tengo presentes ambas posibilidades y dejo que cada quien decida qué le interesa de él.",
+            "en": "Part of the appeal of a detail is how much it can matter to someone. It might also be something another person would prefer to keep exactly as it is. I keep both possibilities in mind and leave it to each listener to decide what interests them."
+          }
+        },
+        {
+          "id": "where-else-i-could-take-it",
+          "label": {
+            "es": "Flexibilidad temática",
+            "en": "Where else I could take it"
+          },
+          "text": {
+            "es": "Podría explorar así una habilidad artística, la comunicación o una preferencia estética. También me interesa como forma de escribir sobre aprendizaje, autoconcepto y desarrollo personal. Son posibles temas de composición; lo que los une es mi curiosidad por los detalles.",
+            "en": "I could approach an artistic skill, communication or an aesthetic preference this way. I’m also interested in writing about learning, self-concept and personal development through this lens. These are subjects I might compose around; what ties them together is my curiosity about detail."
+          }
+        },
+        {
+          "id": "putting-it-to-work-in-noesis",
+          "label": {
+            "es": "Cómo lo llevé a NOESIS",
+            "en": "Putting it to work in NOESIS"
+          },
+          "text": {
+            "es": "Publiqué AURELIS 3.3 por primera vez en NOESIS. Dediqué cinco volúmenes y 54 capítulos a las relaciones entre razonamiento, memoria, lenguaje, creatividad, cultura general y polimatía. Incorporé CONTINUUM II para explorar la continuidad de esos intereses y Semantic Knowledge Integration para dar espacio a los conocimientos concretos.",
+            "en": "I first published AURELIS 3.3 in NOESIS. Across five volumes and 54 chapters, I explored the relationships between reasoning, memory, language, creativity, general knowledge and polymathy. I brought in CONTINUUM II to explore how those interests might carry through everyday life, and Semantic Knowledge Integration to make room for specific subject matter."
+          }
+        }
+      ],
+      "note": null
+    },
+    {
+      "slug": "syneris",
+      "name": "SYNERIS",
+      "short": "SYNERIS",
+      "version": null,
+      "category": {
+        "es": "Arquitectura especializada",
+        "en": "Specialized architecture"
+      },
+      "role": "main",
+      "subtitle": "the art of selective alignment.",
+      "colors": [
+        "#110D19",
+        "#201627",
+        "#69415F",
+        "#DC9EB8",
+        "#C7A1D8",
+        "#F2DDE9"
+      ],
+      "art": {
+        "title": "Roses in a Vase",
+        "id": "1941.14"
+      },
+      "related": [],
+      "identity": "selective alignment · personal growth · reciprocal connection",
+      "philosophy": [
+        {
+          "es": "Cuando pensé en Jason Duval, sabía qué detalles me gustaban de él. Otra pregunta mucho más personal era cómo me gustaría que se sintiera una relación. Con SYNERIS pude escribir sobre ambas cosas, desde el sonido de una voz hasta la tranquilidad de poder decir lo que necesito.",
+          "en": "When I thought about Jason Duval, I knew which details drew me to him. How I’d want a relationship to feel was a much more personal question. SYNERIS gave me room to write about both, from the sound of a voice to the ease of saying what I need."
+        }
+      ],
+      "principles": [
+        {
+          "id": "the-whole-impression",
+          "label": {
+            "es": "Correspondencia multidimensional",
+            "en": "The whole impression"
+          },
+          "text": {
+            "es": "Me puedo fijar primero en una cara, una voz o una forma de moverse. Cuando sigo pensando en esa persona, me interesan también su carácter, sus valores, cómo pasa el tiempo y qué le entusiasma. Junto esas cosas para entender qué clase de compañía estoy imaginando, incluso en un día bastante normal.",
+            "en": "A face, a voice or the way someone moves might catch my attention first. As I spend more time thinking about them, I also wonder about their character, values, how they spend their days and what lights them up. I bring those things together to work out whose company I’m imagining, even on a fairly ordinary day."
+          }
+        },
+        {
+          "id": "choosing-what-draws-me-in",
+          "label": {
+            "es": "Alineación selectiva",
+            "en": "Choosing what draws me in"
+          },
+          "text": {
+            "es": "Tomar a un personaje como referencia me da la libertad de elegir. Quizá me guste su presencia y me imagine a alguien con intereses completamente distintos. En SYNERIS puedo quedarme con una cualidad concreta y dejar el resto del personaje en su historia.",
+            "en": "Using a character as a reference gives me the freedom to choose. I might love his presence and picture someone with entirely different interests. With SYNERIS I can keep one particular quality and leave the rest of the character in his story."
+          }
+        },
+        {
+          "id": "what-fits-my-life",
+          "label": {
+            "es": "Compatibilidad selectiva",
+            "en": "What fits my life"
+          },
+          "text": {
+            "es": "Que algo me atraiga es una parte de la pregunta. También me interesa cómo encajaría en mi vida, con mis valores, mis horarios y mis límites. Por eso dejo abiertas algunas preferencias: lo que para mí sería una cita preciosa podría ser un plan bastante incómodo para alguien más.",
+            "en": "Attraction is one part of the question. I’m also interested in how something would fit into my life, alongside my values, schedule and boundaries. That’s why I leave some preferences open: my idea of a lovely date could make for a pretty awkward evening for someone else."
+          }
+        },
+        {
+          "id": "what-affection-feels-like",
+          "label": {
+            "es": "La dimensión afectiva",
+            "en": "What affection feels like"
+          },
+          "text": {
+            "es": "Me gusta pensar en cómo reconocería el cariño. Puede estar en el tono de una conversación difícil, en la confianza para contar algo o en el interés con que alguien escucha. Escribir sobre esos momentos me ayuda a darle un sentido concreto a la palabra «afecto».",
+            "en": "I like to think about how I would recognize affection. It might be there in the tone of a difficult conversation, the trust it takes to share something, or how intently someone listens. Writing about those moments gives the word “affection” a meaning I can recognize."
+          }
+        },
+        {
+          "id": "life-together",
+          "label": {
+            "es": "Dinámicas románticas",
+            "en": "Life together"
+          },
+          "text": {
+            "es": "También pienso en lo cotidiano: hacer planes, tener un gesto generoso, acompañarse en un día difícil. Me interesa tanto la atención que recibo como la que puedo ofrecer. Ahí es donde la comunicación, el apoyo y el respeto por los límites encuentran un lugar en la misma historia.",
+            "en": "I think about everyday things too: making plans, a generous gesture, keeping each other company on a difficult day. The care I can offer interests me as much as the care I receive. That’s where communication, support and respect for boundaries find a place in the same story."
+          }
+        },
+        {
+          "id": "my-place-in-the-relationship",
+          "label": {
+            "es": "Crecimiento personal",
+            "en": "My place in the relationship"
+          },
+          "text": {
+            "es": "Al imaginar una relación también aprendo a nombrar mis preferencias. Qué quiero pedir, qué me hace sentir cómoda y qué partes de mi vida quiero seguir cuidando. Incluyo el autoconcepto porque quien escucha tiene sus propios proyectos y necesidades dentro de ese vínculo.",
+            "en": "Imagining a relationship also helps me put names to my preferences. What I want to ask for, what puts me at ease, and which parts of my life I want to keep looking after. I include self-concept because the listener brings their own projects and needs into that relationship."
+          }
+        },
+        {
+          "id": "choosing-each-other",
+          "label": {
+            "es": "Reciprocidad y autonomía",
+            "en": "Choosing each other"
+          },
+          "text": {
+            "es": "Cuando escribo sobre conexión, me imagino a dos personas con criterio propio. Me interesa que ambas puedan mostrar interés, poner límites y decidir si quieren seguir conociéndose. Esa libertad le da sentido al cariño que intento describir.",
+            "en": "When I write about connection, I picture two people with minds of their own. I want both to be able to show interest, set boundaries and decide whether they’d like to keep getting to know each other. That freedom gives the affection I’m trying to describe its meaning."
+          }
+        },
+        {
+          "id": "how-i-used-it-in-project-duval",
+          "label": {
+            "es": "Cómo lo usé en Project Duval",
+            "en": "How I used it in Project Duval"
+          },
+          "text": {
+            "es": "Para Project Duval tomé de Jason su apariencia, su voz y esa presencia que me llamó la atención en primer lugar. A partir de ahí escribí sobre cualidades personales, preferencias románticas y momentos compartidos. La referencia estética fue mi punto de partida; la relación que imaginé tiene sus propios detalles.",
+            "en": "For Project Duval I drew on Jason’s looks, his voice and the presence that caught my attention in the first place. From there I wrote about personal qualities, romantic preferences and time spent together. The visual reference gave me a starting point; the relationship I imagined has details of its own."
+          }
+        }
+      ],
+      "note": null
+    },
+    {
+      "slug": "continuum",
+      "name": "CONTINUUM",
+      "short": "CONTINUUM",
+      "version": "II",
+      "category": {
+        "es": "Sistema de refuerzo integrado",
+        "en": "Integrated reinforcement system"
+      },
+      "role": "reinforcement",
+      "subtitle": "the philosophy of continuity.",
+      "colors": [
+        "#101622",
+        "#202B3C",
+        "#465773",
+        "#8397B6",
+        "#BCCADD",
+        "#E9E7E1"
+      ],
+      "art": {
+        "title": "Urania (astronomy), from the Tarocchi",
+        "id": "1924.432.12"
+      },
+      "related": [
+        "aurelis"
+      ],
+      "identity": null,
+      "philosophy": [
+        {
+          "es": "Me interesa ese momento en que vuelvo a una idea que creía haber dejado en la página de un libro. A lo mejor aparece en una conversación o encuentro otra cosa con la que relacionarla. A esa continuidad le hice un sitio dentro de mis audios con CONTINUUM.",
+          "en": "I’m interested in the moment when an idea I thought I’d left on the page of a book comes back to me. Maybe it turns up in conversation, or I find something else to connect it to. I made room for that sense of continuity in my audios with CONTINUUM."
+        }
+      ],
+      "principles": [
+        {
+          "id": "an-idea-over-time",
+          "label": {
+            "es": "Continuidad temporal",
+            "en": "An idea over time"
+          },
+          "text": {
+            "es": "Cuando imagino un objetivo me gusta poder volver a él en circunstancias distintas. Lo que hoy despierta curiosidad puede seguir interesándome cuando sé un poco más del tema. Uso el tiempo como perspectiva desde la que escribir, con espacio para que cambien las preguntas.",
+            "en": "When I imagine an objective, I like being able to return to it under different circumstances. Something that catches my curiosity today might still interest me once I know a little more. I use time as a perspective to write from, with room for the questions themselves to change."
+          }
+        },
+        {
+          "id": "recognizing-it-in-a-moment",
+          "label": {
+            "es": "Expresión concreta",
+            "en": "Recognizing it in a moment"
+          },
+          "text": {
+            "es": "En un proyecto intelectual puedo pensar en entender un concepto durante una lectura, recordar un dato o participar en una conversación. Me fijo en qué estaría haciendo la persona en ese momento. Eso me acerca a la experiencia que quiero representar.",
+            "en": "In an intellectual project I might think about understanding a concept while reading, remembering a fact or joining a conversation. I pay attention to what the person would actually be doing in that moment. It brings me closer to the experience I want to represent."
+          }
+        },
+        {
+          "id": "building-on-what-i-already-know",
+          "label": {
+            "es": "Desarrollo acumulativo",
+            "en": "Building on what I already know"
+          },
+          "text": {
+            "es": "Me gusta cuando un conocimiento anterior me da por dónde empezar con uno nuevo. Puedo volver a una explicación y encontrarle sentido gracias a algo que aprendí después. En NOESIS quise recoger ese placer de seguir aprendiendo y de revisar lo que ya creía saber.",
+            "en": "I love it when something I already know gives me a way into a new subject. I can revisit an explanation and finally make sense of it because of something I learned later. In NOESIS I wanted to capture the pleasure of continuing to learn and revisiting what I thought I knew."
+          }
+        },
+        {
+          "id": "where-it-shows-up-in-my-day",
+          "label": {
+            "es": "Integración cotidiana",
+            "en": "Where it shows up in my day"
+          },
+          "text": {
+            "es": "Me pregunto qué lugar tendría el objetivo en una actividad habitual. Para NOESIS elegí situaciones en las que alguien lee, conversa o intenta entender algo por curiosidad. En otro audio elegiría otras escenas según el tema y la vida que estoy imaginando.",
+            "en": "I ask where the objective might belong in an ordinary activity. For NOESIS I chose situations where someone reads, talks or tries to understand something out of curiosity. For another audio I’d choose different scenes to suit its subject and the life I’m imagining."
+          }
+        },
+        {
+          "id": "listening-at-your-own-pace",
+          "label": {
+            "es": "Ritmos personales",
+            "en": "Listening at your own pace"
+          },
+          "text": {
+            "es": "Prefiero dejar que cada quien encuentre un lugar cómodo para el audio entre sus actividades y su descanso. Por eso no fijo una rutina ni una cantidad de escuchas. La idea de continuidad me interesa incluso cuando hay pausas.",
+            "en": "I’d rather leave it to each listener to find a comfortable place for the audio among their activities and their downtime. That’s why I don’t set a routine or a listening count. Continuity still interests me when there are breaks."
+          }
+        },
+        {
+          "id": "room-for-an-ordinary-mood",
+          "label": {
+            "es": "Flexibilidad emocional",
+            "en": "Room for an ordinary mood"
+          },
+          "text": {
+            "es": "Hay días en que una idea me entusiasma y otros en que apenas tengo ganas de pensar en ella. Quise que hubiera lugar para ambos. Puedes escuchar un audio que incorpore CONTINUUM con el ánimo que tengas ese día.",
+            "en": "Some days an idea excites me; on others I barely feel like thinking about it. I wanted room for both. You can listen to an audio featuring CONTINUUM in whatever mood you happen to be in that day."
+          }
+        },
+        {
+          "id": "different-ways-of-imagining",
+          "label": {
+            "es": "Accesibilidad",
+            "en": "Different ways of imagining"
+          },
+          "text": {
+            "es": "Yo suelo orientarme por las palabras. Otra persona quizá prefiera imaginar una escena o seguir una asociación. Al escribir sobre continuidad dejo abiertas esas maneras de acercarse al audio, incluida la de escucharlo sin visualizar.",
+            "en": "Words tend to be my way in. Someone else might prefer to picture a scene or follow an association. When I write about continuity, I leave those approaches open, including simply listening without visualizing."
+          }
+        },
+        {
+          "id": "what-i-want-to-keep",
+          "label": {
+            "es": "Qué quiero conservar",
+            "en": "What I want to keep"
+          },
+          "text": {
+            "es": "Puedo querer desarrollar una capacidad y al mismo tiempo estar contenta con otras partes de mi vida. Me interesa respetar esa elección. Lo que alguien desea conservar forma parte de la experiencia tanto como lo que le gustaría explorar.",
+            "en": "I can want to develop an ability and still be happy with other parts of my life as they are. I want to respect that choice. What someone wants to keep is as much a part of the experience as what they’d like to explore."
+          }
+        },
+        {
+          "id": "working-alongside-another-architecture",
+          "label": {
+            "es": "Un sistema complementario",
+            "en": "Working alongside another architecture"
+          },
+          "text": {
+            "es": "Incorporo CONTINUUM dentro de una arquitectura principal cuando la continuidad aporta algo al tema. Así puedo dedicarle atención dentro del propio audio. En NOESIS, AURELIS me dio la amplitud temática y CONTINUUM un lugar para volver sobre las ideas en otros contextos.",
+            "en": "I bring CONTINUUM into a main architecture when continuity adds something to the subject. That gives me room to explore it within the audio itself. In NOESIS, AURELIS gave me breadth, and CONTINUUM gave me a place to revisit ideas in other contexts."
+          }
+        },
+        {
+          "id": "continuum-ii-in-noesis",
+          "label": {
+            "es": "CONTINUUM II en NOESIS",
+            "en": "CONTINUUM II in NOESIS"
+          },
+          "text": {
+            "es": "En NOESIS relacioné la curiosidad intelectual con aprender a lo largo del tiempo, usar conocimientos en el día a día y reconocerse como alguien capaz de seguir aprendiendo. Me importaba dejar espacio para el descanso, los cambios de ánimo y las decisiones personales. Esas son experiencias que quise representar al componerlo.",
+            "en": "In NOESIS I connected intellectual curiosity with learning over time, using knowledge in daily life and seeing yourself as someone capable of continuing to learn. I wanted room for rest, changes in mood and personal choice. Those are experiences I set out to portray in the composition."
+          }
+        }
+      ],
+      "note": null
+    },
+    {
+      "slug": "semantic-knowledge-integration",
+      "name": "Semantic Knowledge Integration",
+      "short": "SKI",
+      "version": null,
+      "category": {
+        "es": "Técnica experimental",
+        "en": "Experimental technique"
+      },
+      "role": "technique",
+      "subtitle": "connecting the worlds of knowledge.",
+      "colors": [
+        "#1D241C",
+        "#343D30",
+        "#55664C",
+        "#8A9674",
+        "#C2C8AD",
+        "#F0EBDD"
+      ],
+      "art": {
+        "title": "White Cape-Coast Lily",
+        "id": "1955.142"
+      },
+      "related": [
+        "aurelis"
+      ],
+      "identity": null,
+      "philosophy": [
+        {
+          "es": "Mientras escribía NOESIS me dieron ganas de detenerme en lo que alguien podría querer aprender. ¿Qué idea de física le habría llamado la atención? ¿Sobre qué pregunta de filosofía querría seguir leyendo? Con Semantic Knowledge Integration empecé a darle un lugar al contenido de esa curiosidad.",
+          "en": "While writing NOESIS I found myself wondering what someone might actually want to learn. Which idea in physics had caught their eye? Which philosophical question would they keep reading about? With Semantic Knowledge Integration I started making room for the substance of that curiosity."
+        }
+      ],
+      "principles": [
+        {
+          "id": "declarative-knowledge",
+          "label": {
+            "es": "Conocimiento declarativo",
+            "en": "Declarative knowledge"
+          },
+          "text": {
+            "es": "Puedo expresar una definición, un hecho o una relación entre conceptos y explicar qué significa. A ese tipo de conocimiento me refiero cuando hablo de contenido declarativo. En NOESIS quise incluir información educativa que tuviera interés por sí misma, además de escribir sobre el deseo de aprender.",
+            "en": "I can state a definition, a fact or a relationship between concepts and explain what it means. That’s what I mean by declarative knowledge. In NOESIS I wanted to include educational material that was interesting in its own right alongside writing about the desire to learn."
+          }
+        },
+        {
+          "id": "finding-a-foothold-in-a-subject",
+          "label": {
+            "es": "Alfabetización conceptual",
+            "en": "Finding a foothold in a subject"
+          },
+          "text": {
+            "es": "Al acercarme a una disciplina busco algunas ideas que me permitan seguir leyendo. En matemáticas pienso en relaciones cuantitativas y estructuras abstractas; en biología, en la vida y la genética. En filosofía me atraen las preguntas sobre qué puedo conocer, qué considero real y cómo decido lo que es justo.",
+            "en": "When I approach a discipline, I look for ideas that give me enough footing to keep reading. In mathematics I think of quantitative relationships and abstract structures; in biology, life and genetics. In philosophy I’m drawn to questions about what I can know, what I consider real and how I decide what’s fair."
+          }
+        },
+        {
+          "id": "getting-to-know-the-vocabulary",
+          "label": {
+            "es": "Familiaridad terminológica",
+            "en": "Getting to know the vocabulary"
+          },
+          "text": {
+            "es": "A veces mi primera puerta a un tema es una palabra que encuentro varias veces. Me interesa el vocabulario científico, técnico, académico y cultural porque cada campo necesita nombrar cosas distintas. En el archivo le doy al término un contexto que ayude a reconocer de qué se está hablando.",
+            "en": "Sometimes my first way into a subject is a word I keep coming across. Scientific, technical, academic and cultural vocabularies interest me because different fields need names for different things. In the archive I give a term enough context to tell what conversation it belongs to."
+          }
+        },
+        {
+          "id": "following-a-connection",
+          "label": {
+            "es": "Conexiones interdisciplinarias",
+            "en": "Following a connection"
+          },
+          "text": {
+            "es": "Para pensar en aviación puedo pasar por la física y la ingeniería. Una pregunta de biología puede llevarme a la química, y una relación matemática puede ayudarme a describir algo que observo en otra ciencia. También me gusta encontrar una pregunta sobre el pensamiento que la psicología y la filosofía abordan desde ángulos distintos.",
+            "en": "Thinking about aviation can take me through physics and engineering. A biology question might lead me to chemistry, and a mathematical relationship might help me describe something I observe in another science. I also enjoy finding a question about thought that psychology and philosophy approach from different angles."
+          }
+        },
+        {
+          "id": "polymathy-and-intellectual-breadth",
+          "label": {
+            "es": "Polimatía y amplitud intelectual",
+            "en": "Polymathy and intellectual breadth"
+          },
+          "text": {
+            "es": "Me atrae la posibilidad de sostener intereses en ciencias, humanidades, artes y tecnología al mismo tiempo. Para NOESIS escogí fundamentos que permitieran pasar de un campo a otro. La selección refleja las conexiones que me interesaba explorar en ese proyecto.",
+            "en": "I like the prospect of having interests in science, the humanities, the arts and technology at the same time. For NOESIS I chose foundations that would let me move between fields. The selection reflects the connections I wanted to explore in that project."
+          }
+        },
+        {
+          "id": "what-i-might-do-with-an-idea",
+          "label": {
+            "es": "Integración funcional",
+            "en": "What I might do with an idea"
+          },
+          "text": {
+            "es": "Una definición empieza a importarme de otra manera cuando intento explicársela a alguien. Quizá la necesite para seguir una lectura o para entender por qué dos personas parecen estar en desacuerdo. Al elegir conceptos pienso también en esas ocasiones en que podría querer usarlos.",
+            "en": "A definition starts to matter differently when I try to explain it to someone. I might need it to follow a reading or understand why two people seem to disagree. When I choose concepts I also think about the occasions when I might want to use them."
+          }
+        },
+        {
+          "id": "two-kinds-of-material-i-bring-together",
+          "label": {
+            "es": "Dos contenidos que reúno",
+            "en": "Two kinds of material I bring together"
+          },
+          "text": {
+            "es": "Al escribir sobre capacidades, me interesa qué significa recordar, razonar, comprender o crear. Al escoger contenido declarativo, elijo algo sobre lo que se pueda razonar: un concepto de una disciplina, una definición, una relación. En SKI reúno esas dos inquietudes dentro del mismo proyecto.",
+            "en": "When I write about abilities, I’m interested in what it means to remember, reason, understand or create. When I choose declarative material, I choose something to reason about: a concept from a discipline, a definition, a relationship. With SKI I bring those two interests into the same project."
+          }
+        },
+        {
+          "id": "my-selection-for-noesis",
+          "label": {
+            "es": "Mi selección para NOESIS",
+            "en": "My selection for NOESIS"
+          },
+          "text": {
+            "es": "Publiqué esta técnica por primera vez en NOESIS. En el tercer volumen reuní campos que suelo encontrar en estantes distintos de una biblioteca. Este mapa recoge las áreas de esa selección y el enlace lleva directamente a sus capítulos.",
+            "en": "I first published this technique in NOESIS. In the third volume I brought together subjects I’d usually find on different library shelves. This map shows the fields in that selection; the link takes you straight to their chapters."
+          }
+        },
+        {
+          "id": "what-experimenting-means-here",
+          "label": {
+            "es": "Lo que significa experimentar aquí",
+            "en": "What experimenting means here"
+          },
+          "text": {
+            "es": "Me gusta incorporar información educativa a un audio, y sigo necesitando leer, estudiar y practicar para entender un tema. No doy por hecho que escuchar información enmascarada permita adquirir conocimientos complejos de forma inconsciente. Mi interés aquí es creativo.",
+            "en": "I like weaving educational material into an audio, and I still need to read, study and practise to understand a subject. I don’t assume that hearing masked information lets someone acquire complex knowledge unconsciously. What interests me here is the creative possibility."
+          }
+        }
+      ],
+      "note": null
+    }
+  ]
+}

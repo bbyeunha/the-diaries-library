@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Words from '../../components/Words.astro';
+import FormulaCredit from '../../components/FormulaCredit.astro';
+import { formulas, formulaUrl, relatedAudios, archiveCopy, artwork, appliedArchitectures, appliedCategory } from '../../lib/formulas';
+import { withBase } from '../../lib/site';
+import '../../styles/formulas.css';
+import '../../styles/applied-architectures.css';
+const audios = await getCollection('audios');
+---
+<BaseLayout title="The Formula Archives | The Diaries Library" description="Cómo escribo mis audios. Inside my writing process.">
+<article class="shell archive">
+<a class="back-link" href={withBase('/')}><Words es="← Volver a la biblioteca" en="← Back to the library"/></a>
+<header class="archive-intro"><div><h1>The Formula Archives</h1><p class="motto">a closer look into the art of creating.</p></div><p><Words {...archiveCopy.intro}/></p></header>
+<div class="catalog">{formulas.map(f => {
+const count = relatedAudios(f.slug,audios).length;
+return <article class="catalog-entry" style={{'--plate':f.colors[0],'--caption':f.colors[5]}}>
+<a href={formulaUrl(f.slug)} class="catalog-cover"><Image src={artwork(f.slug)} alt="" widths={[360,640,960]} sizes="(max-width: 640px) 90vw, 500px" format="webp"/><h2>{f.name}</h2><i>{f.subtitle}</i></a>
+<p class="classification"><Words {...f.category}/> {f.version && ' · '+f.version}</p>
+<p><Words {...f.philosophy[0]}/></p>
+<a href={formulaUrl(f.slug)}><Words es={'Explorar '+f.short} en={'Explore '+f.short}/> →</a> · {count} audio{count===1?'':'s'}</article>
+})}</div>
+<section class="applied-index">
+  <h2><Words {...appliedCategory} /></h2>
+  {Object.entries(appliedArchitectures).map(([slug, architecture]) => {
+    const audio = audios.find(entry => architecture.audioIds.includes(entry.id));
+    const href = formulaUrl(slug);
+    return (
+      <article class="applied-index-entry">
+        {audio && <a href={href} aria-label={architecture.name}><Image src={audio.data.cover} alt="" widths={[360, 640, 960]} sizes="(max-width: 760px) 92vw, 450px" format="webp" /></a>}
+        <div>
+          <p class="classification"><Words {...architecture.category} /></p>
+          <h3><a href={href}>{architecture.name}</a></h3>
+          <p class="motto">{architecture.subtitle}</p>
+          <p><Words {...architecture.intro[0]} /></p>
+          <a href={href}><Words es={'Explorar ' + architecture.name} en={'Explore ' + architecture.name} /> →</a>
+        </div>
+      </article>
+    );
+  })}
+</section>
+<p class="essay"><Words {...archiveCopy.note[0]}/></p><FormulaCredit/></article></BaseLayout>

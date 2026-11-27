@@ -1,4 +1,5 @@
 ---
+formulaRefs: [{"slug":"syneris","role":"main"}]
 issue: "001"
 series: "SYNERIS"
 code: "PROJECT DUVAL"
@@ -87,15 +88,18 @@ theme:
 
 <div data-lang-block="es" lang="es">
 
-project duval es un audio bilingüe para manifestar una pareja ideal inspirada en jason duval. la fórmula SYNERIS combina afirmaciones sobre su apariencia y presencia, tus preferencias románticas, cómo se desarrolla la relación y tu propio autoconcepto. los delitos de gta se quedan en la consola, gracias JAJAJA.
+project duval es un audio bilingüe para manifestar una pareja ideal inspirada en jason duval. la fórmula [SYNERIS](/the-diaries-library/formulas/syneris/) combina afirmaciones sobre su apariencia y presencia, tus preferencias románticas, cómo se desarrolla la relación y tu propio autoconcepto. los delitos de gta se quedan en la consola, gracias JAJAJA.
 
 </div>
 
 <div data-lang-block="en" lang="en">
 
-project duval is a bilingual audio for manifesting your ideal boyfriend, inspired by jason duval. SYNERIS covers his looks and presence, what you want in a partner, how the relationship unfolds, and your own self-concept. the gta crimes can stay in the game, thanks.
+project duval is a bilingual audio for manifesting your ideal boyfriend, inspired by jason duval. [SYNERIS](/the-diaries-library/formulas/syneris/) covers his looks and presence, what you want in a partner, how the relationship unfolds, and your own self-concept. the gta crimes can stay in the game, thanks.
 
 </div>
+
+<p data-lang-block="es"><a href="/the-diaries-library/formulas/syneris/">Explorar la fórmula SYNERIS →</a></p>
+<p data-lang-block="en"><a href="/the-diaries-library/formulas/syneris/">Explore the SYNERIS formula →</a></p>
 
 ## Resumen de beneficios / Benefits at a glance
 
